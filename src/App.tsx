@@ -986,7 +986,15 @@ export default function App() {
                   <BookOpen className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl md:text-3xl mb-6 text-white">{story.title}</h3>
-                <p className="text-lg text-white/70 leading-relaxed">{story.excerpt}</p>
+                {/* story1: Mobile 2줄 */}
+                {index === 0 ? (
+                  <p className="text-lg text-white/70 leading-relaxed">
+                    <span className="block md:hidden whitespace-pre-line">{'고종황제 입관 의식을\n현대에 복원하다'}</span>
+                    <span className="hidden md:block">{story.excerpt}</span>
+                  </p>
+                ) : (
+                  <p className="text-lg text-white/70 leading-relaxed">{story.excerpt}</p>
+                )}
               </div>
             ))}
           </div>
