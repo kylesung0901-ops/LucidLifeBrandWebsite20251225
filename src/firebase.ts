@@ -2,15 +2,15 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
-// Firebase 설정 값
+// Firebase 설정 값 (환경 변수에서 로드)
 const firebaseConfig = {
-  apiKey: "AIzaSyBROSVZBrWW0lcONg4hf_HAbASD_5ghwc4",
-  authDomain: "lucid-life-brand-website-27cd4.firebaseapp.com",
-  projectId: "lucid-life-brand-website-27cd4",
-  storageBucket: "lucid-life-brand-website-27cd4.firebasestorage.app",
-  messagingSenderId: "1060319849010",
-  appId: "1:1060319849010:web:d1a1ca38dbd5910a8eaa2b",
-  measurementId: "G-7VV5R72Y3E"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Firebase 초기화
