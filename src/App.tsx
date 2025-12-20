@@ -707,9 +707,9 @@ export default function App() {
                     <span className="hidden md:block whitespace-pre-line">{item.data.desc}</span>
                   </p>
                 ) : index === 2 ? (
-                  /* 영혼의 보살핌: Mobile 2줄 */
+                  /* 영혼의 보살핌: Mobile 3줄 */
                   <p className="text-neutral-600 text-center leading-relaxed text-lg">
-                    <span className="block md:hidden whitespace-pre-line">{'죽음학과 심리상담을 통합한 의식 케어.\n이별앞에서, 깨어 있도록.'}</span>
+                    <span className="block md:hidden whitespace-pre-line">{'죽음학과 심리상담을\n통합한 의식 케어.\n이별앞에서, 깨어 있도록.'}</span>
                     <span className="hidden md:block whitespace-pre-line">{item.data.desc}</span>
                   </p>
                 ) : (
