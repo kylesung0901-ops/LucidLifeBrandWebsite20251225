@@ -741,7 +741,15 @@ export default function App() {
                 className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#8c7b65]/20 text-center"
               >
                 <h3 className="text-2xl md:text-3xl mb-6 text-[#2c3e50]">{item.title}</h3>
-                <p className="text-neutral-600 text-lg leading-relaxed">{item.desc}</p>
+                {/* 감정의 존중: Mobile 2줄 / PC 1줄 */}
+                {index === 2 ? (
+                  <p className="text-neutral-600 text-lg leading-relaxed">
+                    <span className="block md:hidden whitespace-pre-line">{'절차보다 사람의 상태를\n먼저 봅니다.'}</span>
+                    <span className="hidden md:block">{item.desc}</span>
+                  </p>
+                ) : (
+                  <p className="text-neutral-600 text-lg leading-relaxed">{item.desc}</p>
+                )}
               </div>
             ))}
           </div>
