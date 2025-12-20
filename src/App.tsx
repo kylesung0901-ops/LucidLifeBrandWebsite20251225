@@ -603,8 +603,14 @@ export default function App() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#2c3e50]/98 backdrop-blur-md">
-          <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
+        <div className="fixed inset-0 z-40 bg-[#2c3e50]/98 backdrop-blur-md pt-28">
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-6 right-6 p-2 text-[#eecfa1] hover:bg-[#8c7b65]/20 rounded-lg transition-colors"
+          >
+            <X className="w-7 h-7" />
+          </button>
+          <div className="flex flex-col items-center justify-center h-full gap-6 px-6 pb-28">
             {[
               { id: 'hero', label: t.nav.lucidlife },
               { id: 'services', label: t.nav.services },
@@ -617,7 +623,7 @@ export default function App() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-3xl text-[#eecfa1] hover:text-[#8c7b65] transition-colors tracking-wide"
+                className="text-2xl text-[#eecfa1] hover:text-[#8c7b65] transition-colors tracking-wide"
               >
                 {item.label}
               </button>
@@ -1071,20 +1077,20 @@ export default function App() {
       </footer>
 
       {/* Floating Buttons */}
-      <div className="fixed bottom-8 right-8 flex flex-col gap-4 z-40">
+      <div className="fixed bottom-6 right-4 md:bottom-8 md:right-8 flex flex-col gap-3 md:gap-4 z-40">
         <a
           href="tel:010-2116-4114"
-          className="w-16 h-16 bg-[#8c7b65] hover:bg-[#8c7b65]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
+          className="w-12 h-12 md:w-16 md:h-16 bg-[#8c7b65] hover:bg-[#8c7b65]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
           title={language === 'ko' ? '전화' : 'Call'}
         >
-          <Phone className="w-7 h-7 text-white" />
+          <Phone className="w-5 h-5 md:w-7 md:h-7 text-white" />
         </a>
         <button
           onClick={openGoogleForm}
-          className="w-16 h-16 bg-[#2c3e50] hover:bg-[#2c3e50]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
+          className="w-12 h-12 md:w-16 md:h-16 bg-[#2c3e50] hover:bg-[#2c3e50]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
           title={language === 'ko' ? '멤버십 사전등록' : 'Pre-register'}
         >
-          <Edit3 className="w-7 h-7 text-[#eecfa1]" />
+          <Edit3 className="w-5 h-5 md:w-7 md:h-7 text-[#eecfa1]" />
         </button>
       </div>
 
