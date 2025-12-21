@@ -394,10 +394,10 @@ const translations = {
       emergency: 'Emergency',
     },
     footer: {
-      company: 'LUCID DRIVE | CEO: Dowon',
-      business: 'Business Registration: 000-00-00000',
-      address: 'Address: Seoul, South Korea',
-      contact: 'Customer Service: 1800-0000',
+      company: 'LUCIDLIFE | CEO: Seo Dong-won',
+      business: 'Business Registration: 123-92-47792',
+      address: 'Address: 908-102, 100, Gyoha-ro, Paju-si, Gyeonggi-do, Republic of Korea',
+      contact: 'Customer Service: (+82) 10-2116-4114',
       copyright: '© 2024 LUCID LIFE. All rights reserved.',
     },
     floating: {
@@ -1229,13 +1229,13 @@ export default function App() {
               onClick={() => setShowPrivacyModal(true)}
               className="text-white/50 hover:text-white underline underline-offset-4 text-sm transition-colors"
             >
-              개인정보 처리방침
+              {language === 'ko' ? '개인정보 처리방침' : 'Privacy Policy'}
             </button>
             <button
               onClick={() => setShowTermsModal(true)}
               className="text-white/50 hover:text-white underline underline-offset-4 text-sm transition-colors"
             >
-              이용약관양식
+              {language === 'ko' ? '이용약관양식' : 'Terms and Conditions Template'}
             </button>
           </div>
           <div className="text-center text-sm border-t border-white/10 pt-8">
@@ -1474,16 +1474,18 @@ export default function App() {
 
             {/* Header */}
             <div className="p-6 lg:p-8 border-b border-white/10">
-              <h2 className="text-xl lg:text-2xl font-bold text-[#d4af7d]">개인정보 처리방침</h2>
+              <h2 className="text-xl lg:text-2xl font-bold text-[#d4af7d]">{language === 'ko' ? '개인정보 처리방침' : 'Privacy Policy'}</h2>
             </div>
 
             {/* Content */}
             <div className="p-6 lg:p-8 overflow-y-auto max-h-[calc(90vh-120px)]">
               <div className="space-y-6 text-sm lg:text-base text-white/80 leading-relaxed">
-                <p>
-                  루시드라이프 (이하 "회사"는) 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.
-                  회사는 개인정보처리방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
-                </p>
+                {language === 'ko' ? (
+                  <>
+                    <p>
+                      루시드라이프 (이하 "회사"는) 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.
+                      회사는 개인정보처리방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+                    </p>
 
                 <div>
                   <h3 className="text-[#d4af7d] font-semibold mb-3">■ 수집하는 개인정보 항목 및 수집방법</h3>
@@ -1605,6 +1607,136 @@ export default function App() {
                     </div>
                   </div>
                 </div>
+                  </>
+                ) : (
+                  <>
+                    <p>
+                      Lucid Life (hereinafter referred to as "the Company") values your personal information and complies with the "Act on Promotion of Information and Communications Network Utilization and Information Protection."
+                      Through this Privacy Policy, the Company informs you about how the personal information you provide is used and for what purposes, and what measures are taken to protect your personal information.
+                    </p>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Items of Personal Information Collected and Collection Methods</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p className="font-medium text-white/90">a. Items of Personal Information Collected</p>
+                        <p>○ The Company collects personal information such as the following for membership registration, consultation, and service application.</p>
+                        <p className="pl-4">- Upon membership registration: Name, Date of birth, Gender, Login ID, Password, Home phone number, Mobile phone number, Email, Information of legal guardian for subscribers under 14 years of age</p>
+                        <p className="pl-4">- Upon service application: Address, Payment information</p>
+                        <p>○ During the service use process or business processing, service usage records, access logs, cookies, access IP, payment records, and misuse records may be generated and collected.</p>
+                        <p className="font-medium text-white/90 mt-3">b. Collection Methods</p>
+                        <p className="pl-4">- Collection through website, written forms, bulletin boards, email, event applications, delivery requests, phone, fax, and generated information collection tools</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Purpose of Collection and Use of Personal Information</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>The Company uses the collected personal information for the following purposes.</p>
+                        <p>○ Contract fulfillment for service provision and fee settlement for service provision</p>
+                        <p className="pl-4">Content provision, purchase and fee payment, delivery of goods or invoices, identity verification for financial transactions and financial services</p>
+                        <p>○ Member management</p>
+                        <p className="pl-4">Identity verification for membership service use, personal identification, prevention of fraudulent use by bad members and unauthorized use, confirmation of membership intention, age verification, confirmation of legal guardian consent for collection of personal information of children under 14, handling of complaints, delivery of notices</p>
+                        <p>○ Use for marketing and advertising</p>
+                        <p className="pl-4">Delivery of advertising information such as events, analysis of access frequency or statistics on member service use</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Retention and Use Period of Personal Information</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>In principle, personal information is destroyed without delay after the purpose of collection and use is achieved. However, the following information may be retained for the period specified below for the following reasons.</p>
+                        <p className="font-medium text-white/90 mt-3">a. Information Retention Reasons According to Company Internal Policy</p>
+                        <p className="pl-4">Even if a member withdraws, the Company may retain member information for 5 years from the date of contract termination to prevent recurrence of fraudulent use by bad members, resolve disputes, and cooperate with requests from investigative agencies.</p>
+                        <p className="font-medium text-white/90 mt-3">b. Information Retention Reasons According to Related Laws</p>
+                        <p>If it is necessary to retain information according to related laws such as the Act on Consumer Protection in Electronic Commerce, the Company retains member information for the period specified by related laws as follows.</p>
+                        <div className="pl-4 space-y-1 mt-2">
+                          <p>○ Records on contracts or withdrawal of offers - Retention period: 5 years</p>
+                          <p>○ Records on payment of money and supply of goods, etc. - Retention period: 5 years</p>
+                          <p>○ Records on consumer complaints or dispute resolution - Retention period: 3 years</p>
+                          <p>○ Log records - Retention period: 3 months</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Procedures and Methods for Destruction of Personal Information</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>In principle, the Company destroys personal information without delay after the purpose of collection and use is achieved. The procedures and methods for destruction are as follows.</p>
+                        <p className="font-medium text-white/90 mt-3">○ Destruction Procedures</p>
+                        <p className="pl-4">Information entered by members for membership registration, etc., is moved to a separate DB (or a separate document box in case of paper) after the purpose is achieved, stored for a certain period according to internal policy and other related laws, and then destroyed. Personal information moved to a separate DB is not used for purposes other than retention unless required by law.</p>
+                        <p className="font-medium text-white/90 mt-3">○ Destruction Methods</p>
+                        <p className="pl-4">Personal information stored in electronic file format is deleted using technical methods that cannot reproduce records.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Provision of Personal Information</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>In principle, the Company does not provide users' personal information to external parties. However, exceptions are made in the following cases.</p>
+                        <p className="pl-4">○ When users have given prior consent</p>
+                        <p className="pl-4">○ When required by investigative agencies according to legal procedures and methods for investigation purposes, in accordance with legal provisions</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Entrustment of Collected Personal Information</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>The Company entrusts and operates personal information to external specialized companies as follows to fulfill services.</p>
+                        <p className="pl-4">○ Entrusted party: [KCP] Netpay</p>
+                        <p className="pl-4">○ Entrusted business: [Card payment / Account transfer / Mobile payment]</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Rights of Users and Legal Guardians and How to Exercise Them</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>○ Users can view or modify their registered personal information at any time and may also request membership cancellation.</p>
+                        <p>○ For users to view or modify their personal information, click "Change Personal Information" (or "Modify Member Information", etc.), and for membership cancellation (withdrawal of consent), click "Withdraw Membership" to go through identity verification procedures, then directly view, correct, or withdraw.</p>
+                        <p>○ Or, if you contact the personal information protection officer in writing, by phone, or by email, we will take action without delay.</p>
+                        <p>○ If you request correction of errors in personal information, we will not use or provide the personal information until the correction is completed. Also, if incorrect personal information has already been provided to a third party, we will notify the third party of the correction processing results without delay to ensure correction is made.</p>
+                        <p>○ Personal information that has been terminated or deleted at the user's request is processed according to the "Retention and Use Period of Personal Information Collected by the Company" and cannot be viewed or used for other purposes.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Installation, Operation, and Refusal of Automatic Collection Devices for Personal Information</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>The Company operates "cookies" that frequently store and retrieve your information. Cookies are very small text files sent by the server used to operate the website to your browser and stored on your computer's hard disk.</p>
+                        <p className="font-medium text-white/90 mt-3">○ Purpose of Using Cookies, etc.</p>
+                        <p className="pl-4">1. Analysis of access frequency or visit time of members and non-members, understanding of user preferences and interests and tracking, understanding of participation in various events and visit frequency, etc., for targeted marketing and personalized service provision</p>
+                        <p className="pl-4">2. You have the right to choose whether to install cookies. Therefore, you can allow all cookies, check each time a cookie is stored, or refuse to store all cookies by setting options in your web browser.</p>
+                        <p className="font-medium text-white/90 mt-3">○ How to Refuse Cookie Settings</p>
+                        <p className="pl-4">1. To refuse cookie settings, you can allow all cookies, check each time a cookie is stored, or refuse to store all cookies by selecting options in the web browser you use.</p>
+                        <p className="pl-4">2. Example of setting method (for Internet Explorer): Tools &gt; Internet Options &gt; Privacy in the web browser menu</p>
+                        <p className="pl-4">3. However, if you refuse to install cookies, there may be difficulties in providing services.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Complaint Services Regarding Personal Information</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>The Company designates related departments and personal information protection officers as follows to protect customers' personal information and handle complaints related to personal information.</p>
+                        <div className="mt-4 p-4 bg-white/5 rounded-lg">
+                          <p className="font-medium text-white/90">○ Personal Information Protection Officer / Personal Information Protection Manager</p>
+                          <div className="pl-4 mt-2 space-y-1">
+                            <p>Name: Seo Dong-won</p>
+                            <p>Affiliation: Lucid Life CEO</p>
+                            <p>Phone: (+82) 10-5320-1237</p>
+                            <p>Email: neen@kakao.com</p>
+                          </div>
+                        </div>
+                        <p className="mt-4">○ You can report all complaints related to personal information protection that occur while using the Company's services to the personal information protection manager or the responsible department.</p>
+                        <p>○ The Company will promptly provide sufficient responses to users' reports.</p>
+                        <p className="mt-4">○ For other reports or consultations regarding personal information infringement, please contact the following agencies.</p>
+                        <div className="pl-4 mt-2 space-y-1">
+                          <p>Personal Information Infringement Report Center (privacy.kisa.or.kr / 118 without area code)</p>
+                          <p>Supreme Prosecutors' Office Cyber Crime Investigation Division (www.spo.go.kr / 02-3480-2000)</p>
+                          <p>National Police Agency Cyber Safety Bureau (www.ctrc.go.kr / 182 without area code)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -1635,98 +1767,187 @@ export default function App() {
 
             {/* Header */}
             <div className="p-6 lg:p-8 border-b border-white/10">
-              <h2 className="text-xl lg:text-2xl font-bold text-[#d4af7d]">이용약관</h2>
+              <h2 className="text-xl lg:text-2xl font-bold text-[#d4af7d]">{language === 'ko' ? '이용약관' : 'Terms and Conditions'}</h2>
             </div>
 
             {/* Content */}
             <div className="p-6 lg:p-8 overflow-y-auto max-h-[calc(90vh-120px)]">
               <div className="space-y-6 text-sm lg:text-base text-white/80 leading-relaxed">
-                
-                <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">제1조(목적)</h3>
-                  <div className="space-y-2 text-white/70">
-                    <p>이 약관은 루시드라이프(전자상거래 사업자)가 운영하는 루시드라이프_사이버 몰(이하 "몰"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리/ 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
-                    <p className="text-white/50 text-sm">※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」</p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">제2조(정의)</h3>
-                  <div className="space-y-2 text-white/70">
-                    <p>① "몰"이란 루시드라이프 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 사이버몰을 운영하는 사업자의 의미로도 사용합니다.</p>
-                    <p>② "이용자"란 "몰"에 접속하여 이 약관에 따라 "몰"이 제공하는 서비스를 받는 회원 및 비회원을 말합니다.</p>
-                    <p>③ '회원'이라 함은 "몰"에 회원등록을 한 자로서, 계속적으로 "몰"이 제공하는 서비스를 이용할 수 있는 자를 말합니다.</p>
-                    <p>④ '비회원'이라 함은 회원에 가입하지 않고 "몰"이 제공하는 서비스를 이용하는 자를 말합니다.</p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">제3조 (약관 등의 명시와 설명 및 개정)</h3>
-                  <div className="space-y-2 text-white/70">
-                    <p>① "몰"은 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수 있는 곳의 주소를 포함), 전화번호, 모사전송번호, 전자우편주소, 사업자등록번호, 통신판매업 신고번호, 개인정보보호책임자등을 이용자가 쉽게 알 수 있도록 루시드라이프 사이버몰의 초기 서비스화면(전면)에 게시합니다. 다만, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.</p>
-                    <p>② "몰은 이용자가 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 청약철회·배송책임·환불조건 등과 같은 중요한 내용을 이용자가 이해할 수 있도록 별도의 연결화면 또는 팝업화면 등을 제공하여 이용자의 확인을 구하여야 합니다.</p>
-                    <p>③ "몰"은 「전자상거래 등에서의 소비자보호에 관한 법률」, 「약관의 규제에 관한 법률」, 「전자문서 및 전자거래기본법」, 「전자금융거래법」, 「전자서명법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」, 「방문판매 등에 관한 법률」, 「소비자기본법」 등 관련 법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.</p>
-                    <p>④ "몰"이 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 몰의 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다. 다만, 이용자에게 불리하게 약관내용을 변경하는 경우에는 최소한 30일 이상의 사전 유예기간을 두고 공지합니다. 이 경우 "몰"은 개정 전 내용과 개정 후 내용을 명확하게 비교하여 이용자가 알기 쉽도록 표시합니다.</p>
-                    <p>⑤ "몰"이 약관을 개정할 경우에는 그 개정약관은 그 적용일자 이후에 체결되는 계약에만 적용되고 그 이전에 이미 체결된 계약에 대해서는 개정 전의 약관조항이 그대로 적용됩니다. 다만 이미 계약을 체결한 이용자가 개정약관 조항의 적용을 받기를 원하는 뜻을 제3항에 의한 개정약관의 공지기간 내에 "몰"에 송신하여 "몰"의 동의를 받은 경우에는 개정약관 조항이 적용됩니다.</p>
-                    <p>⑥ 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제 등에 관한 법률, 공정거래위원회가 정하는 전자상거래 등에서의 소비자 보호지침 및 관계법령 또는 상관례에 따릅니다.</p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">제4조(서비스의 제공 및 변경)</h3>
-                  <div className="space-y-2 text-white/70">
-                    <p>① "몰"은 다음과 같은 업무를 수행합니다.</p>
-                    <div className="pl-4 space-y-1">
-                      <p>1. 재화 또는 용역에 대한 정보 제공 및 구매계약의 체결</p>
-                      <p>2. 구매계약이 체결된 재화 또는 용역의 배송</p>
-                      <p>3. 기타 "몰"이 정하는 업무</p>
+                {language === 'ko' ? (
+                  <>
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">제1조(목적)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>이 약관은 루시드라이프(전자상거래 사업자)가 운영하는 루시드라이프_사이버 몰(이하 "몰"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리/ 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+                        <p className="text-white/50 text-sm">※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」</p>
+                      </div>
                     </div>
-                    <p>② "몰"은 재화 또는 용역의 품절 또는 기술적 사양의 변경 등의 경우에는 장차 체결되는 계약에 의해 제공할 재화 또는 용역의 내용을 변경할 수 있습니다. 이 경우에는 변경된 재화 또는 용역의 내용 및 제공일자를 명시하여 현재의 재화 또는 용역의 내용을 게시한 곳에 즉시 공지합니다.</p>
-                    <p>③ "몰"이 제공하기로 이용자와 계약을 체결한 서비스의 내용을 재화등의 품절 또는 기술적 사양의 변경 등의 사유로 변경할 경우에는 그 사유를 이용자에게 통지 가능한 주소로 즉시 통지합니다.</p>
-                    <p>④ 전항의 경우 "몰"은 이로 인하여 이용자가 입은 손해를 배상합니다. 다만, "몰"이 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.</p>
-                  </div>
-                </div>
 
-                <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">제5조(서비스의 중단)</h3>
-                  <div className="space-y-2 text-white/70">
-                    <p>① "몰"은 컴퓨터 등 정보통신설비의 보수점검 교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.</p>
-                    <p>② "몰"은 제1항의 사유로 서비스의 제공이 일시적으로 중단됨으로 인하여 이용자 또는 제3자가 입은 손해에 대하여 배상합니다. 단, "몰"이 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.</p>
-                    <p>③ 사업종목의 전환, 사업의 포기, 업체 간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 "몰"은 제8조에 정한 방법으로 이용자에게 통지하고 당초 "몰"에서 제시한 조건에 따라 소비자에게 보상합니다. 다만, "몰"이 보상기준 등을 고지하지 아니한 경우에는 이용자들의 마일리지 또는 적립금 등을 "몰"에서 통용되는 통화가치에 상응하는 현물 또는 현금으로 이용자에게 지급합니다.</p>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">제6조(회원가입)</h3>
-                  <div className="space-y-2 text-white/70">
-                    <p>① 이용자는 "몰"이 정한 가입 양식에 따라 회원정보를 기입한 후 이 약관에 동의한다는 의사표시를 함으로서 회원가입을 신청합니다.</p>
-                    <p>② "몰"은 제1항과 같이 회원으로 가입할 것을 신청한 이용자 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다.</p>
-                    <div className="pl-4 space-y-1">
-                      <p>1. 가입신청자가 이 약관 제7조제3항에 의하여 이전에 회원자격을 상실한 적이 있는 경우, 다만 제7조제3항에 의한 회원자격 상실 후 3년이 경과한 자로서 "몰"의 회원재가입 승낙을 얻은 경우에는 예외로 한다.</p>
-                      <p>2. 등록 내용에 허위, 기재누락, 오기가 있는 경우</p>
-                      <p>3. 기타 회원으로 등록하는 것이 "몰"의 기술상 현저히 지장이 있다고 판단되는 경우</p>
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">제2조(정의)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① "몰"이란 루시드라이프 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 사이버몰을 운영하는 사업자의 의미로도 사용합니다.</p>
+                        <p>② "이용자"란 "몰"에 접속하여 이 약관에 따라 "몰"이 제공하는 서비스를 받는 회원 및 비회원을 말합니다.</p>
+                        <p>③ '회원'이라 함은 "몰"에 회원등록을 한 자로서, 계속적으로 "몰"이 제공하는 서비스를 이용할 수 있는 자를 말합니다.</p>
+                        <p>④ '비회원'이라 함은 회원에 가입하지 않고 "몰"이 제공하는 서비스를 이용하는 자를 말합니다.</p>
+                      </div>
                     </div>
-                    <p>③ 회원가입계약의 성립 시기는 "몰"의 승낙이 회원에게 도달한 시점으로 합니다.</p>
-                    <p>④ 회원은 회원가입 시 등록한 사항에 변경이 있는 경우, 상당한 기간 이내에 "몰"에 대하여 회원정보 수정 등의 방법으로 그 변경사항을 알려야 합니다.</p>
-                  </div>
-                </div>
 
-                <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">제7조(회원 탈퇴 및 자격 상실 등)</h3>
-                  <div className="space-y-2 text-white/70">
-                    <p>① 회원은 "몰"에 언제든지 탈퇴를 요청할 수 있으며 "몰"은 즉시 회원탈퇴를 처리합니다.</p>
-                    <p>② 회원이 다음 각 호의 사유에 해당하는 경우, "몰"은 회원자격을 제한 및 정지시킬 수 있습니다.</p>
-                    <div className="pl-4 space-y-1">
-                      <p>1. 가입 신청 시에 허위 내용을 등록한 경우</p>
-                      <p>2. "몰"을 이용하여 구입한 재화 등의 대금, 기타 "몰"이용에 관련하여 회원이 부담하는 채무를 기일에 지급하지 않는 경우</p>
-                      <p>3. 다른 사람의 "몰" 이용을 방해하거나 그 정보를 도용하는 등 전자상거래 질서를 위협하는 경우</p>
-                      <p>4. "몰"을 이용하여 법령 또는 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우</p>
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">제3조 (약관 등의 명시와 설명 및 개정)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① "몰"은 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수 있는 곳의 주소를 포함), 전화번호, 모사전송번호, 전자우편주소, 사업자등록번호, 통신판매업 신고번호, 개인정보보호책임자등을 이용자가 쉽게 알 수 있도록 루시드라이프 사이버몰의 초기 서비스화면(전면)에 게시합니다. 다만, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.</p>
+                        <p>② "몰은 이용자가 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 청약철회·배송책임·환불조건 등과 같은 중요한 내용을 이용자가 이해할 수 있도록 별도의 연결화면 또는 팝업화면 등을 제공하여 이용자의 확인을 구하여야 합니다.</p>
+                        <p>③ "몰"은 「전자상거래 등에서의 소비자보호에 관한 법률」, 「약관의 규제에 관한 법률」, 「전자문서 및 전자거래기본법」, 「전자금융거래법」, 「전자서명법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」, 「방문판매 등에 관한 법률」, 「소비자기본법」 등 관련 법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.</p>
+                        <p>④ "몰"이 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 몰의 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다. 다만, 이용자에게 불리하게 약관내용을 변경하는 경우에는 최소한 30일 이상의 사전 유예기간을 두고 공지합니다. 이 경우 "몰"은 개정 전 내용과 개정 후 내용을 명확하게 비교하여 이용자가 알기 쉽도록 표시합니다.</p>
+                        <p>⑤ "몰"이 약관을 개정할 경우에는 그 개정약관은 그 적용일자 이후에 체결되는 계약에만 적용되고 그 이전에 이미 체결된 계약에 대해서는 개정 전의 약관조항이 그대로 적용됩니다. 다만 이미 계약을 체결한 이용자가 개정약관 조항의 적용을 받기를 원하는 뜻을 제3항에 의한 개정약관의 공지기간 내에 "몰"에 송신하여 "몰"의 동의를 받은 경우에는 개정약관 조항이 적용됩니다.</p>
+                        <p>⑥ 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 전자상거래 등에서의 소비자보호에 관한 법률, 약관의 규제 등에 관한 법률, 공정거래위원회가 정하는 전자상거래 등에서의 소비자 보호지침 및 관계법령 또는 상관례에 따릅니다.</p>
+                      </div>
                     </div>
-                    <p>③ "몰"이 회원 자격을 제한·정지 시킨 후, 동일한 행위가 2회 이상 반복되거나 30일 이내에 그 사유가 시정되지 아니하는 경우 "몰"은 회원자격을 상실시킬 수 있습니다.</p>
-                    <p>④ "몰"이 회원자격을 상실시키는 경우에는 회원등록을 말소합니다. 이 경우 회원에게 이를 통지하고, 회원등록 말소 전에 최소한 30일 이상의 기간을 정하여 소명할 기회를 부여합니다.</p>
-                  </div>
-                </div>
 
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">제4조(서비스의 제공 및 변경)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① "몰"은 다음과 같은 업무를 수행합니다.</p>
+                        <div className="pl-4 space-y-1">
+                          <p>1. 재화 또는 용역에 대한 정보 제공 및 구매계약의 체결</p>
+                          <p>2. 구매계약이 체결된 재화 또는 용역의 배송</p>
+                          <p>3. 기타 "몰"이 정하는 업무</p>
+                        </div>
+                        <p>② "몰"은 재화 또는 용역의 품절 또는 기술적 사양의 변경 등의 경우에는 장차 체결되는 계약에 의해 제공할 재화 또는 용역의 내용을 변경할 수 있습니다. 이 경우에는 변경된 재화 또는 용역의 내용 및 제공일자를 명시하여 현재의 재화 또는 용역의 내용을 게시한 곳에 즉시 공지합니다.</p>
+                        <p>③ "몰"이 제공하기로 이용자와 계약을 체결한 서비스의 내용을 재화등의 품절 또는 기술적 사양의 변경 등의 사유로 변경할 경우에는 그 사유를 이용자에게 통지 가능한 주소로 즉시 통지합니다.</p>
+                        <p>④ 전항의 경우 "몰"은 이로 인하여 이용자가 입은 손해를 배상합니다. 다만, "몰"이 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">제5조(서비스의 중단)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① "몰"은 컴퓨터 등 정보통신설비의 보수점검 교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.</p>
+                        <p>② "몰"은 제1항의 사유로 서비스의 제공이 일시적으로 중단됨으로 인하여 이용자 또는 제3자가 입은 손해에 대하여 배상합니다. 단, "몰"이 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.</p>
+                        <p>③ 사업종목의 전환, 사업의 포기, 업체 간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 "몰"은 제8조에 정한 방법으로 이용자에게 통지하고 당초 "몰"에서 제시한 조건에 따라 소비자에게 보상합니다. 다만, "몰"이 보상기준 등을 고지하지 아니한 경우에는 이용자들의 마일리지 또는 적립금 등을 "몰"에서 통용되는 통화가치에 상응하는 현물 또는 현금으로 이용자에게 지급합니다.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">제6조(회원가입)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① 이용자는 "몰"이 정한 가입 양식에 따라 회원정보를 기입한 후 이 약관에 동의한다는 의사표시를 함으로서 회원가입을 신청합니다.</p>
+                        <p>② "몰"은 제1항과 같이 회원으로 가입할 것을 신청한 이용자 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다.</p>
+                        <div className="pl-4 space-y-1">
+                          <p>1. 가입신청자가 이 약관 제7조제3항에 의하여 이전에 회원자격을 상실한 적이 있는 경우, 다만 제7조제3항에 의한 회원자격 상실 후 3년이 경과한 자로서 "몰"의 회원재가입 승낙을 얻은 경우에는 예외로 한다.</p>
+                          <p>2. 등록 내용에 허위, 기재누락, 오기가 있는 경우</p>
+                          <p>3. 기타 회원으로 등록하는 것이 "몰"의 기술상 현저히 지장이 있다고 판단되는 경우</p>
+                        </div>
+                        <p>③ 회원가입계약의 성립 시기는 "몰"의 승낙이 회원에게 도달한 시점으로 합니다.</p>
+                        <p>④ 회원은 회원가입 시 등록한 사항에 변경이 있는 경우, 상당한 기간 이내에 "몰"에 대하여 회원정보 수정 등의 방법으로 그 변경사항을 알려야 합니다.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">제7조(회원 탈퇴 및 자격 상실 등)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① 회원은 "몰"에 언제든지 탈퇴를 요청할 수 있으며 "몰"은 즉시 회원탈퇴를 처리합니다.</p>
+                        <p>② 회원이 다음 각 호의 사유에 해당하는 경우, "몰"은 회원자격을 제한 및 정지시킬 수 있습니다.</p>
+                        <div className="pl-4 space-y-1">
+                          <p>1. 가입 신청 시에 허위 내용을 등록한 경우</p>
+                          <p>2. "몰"을 이용하여 구입한 재화 등의 대금, 기타 "몰"이용에 관련하여 회원이 부담하는 채무를 기일에 지급하지 않는 경우</p>
+                          <p>3. 다른 사람의 "몰" 이용을 방해하거나 그 정보를 도용하는 등 전자상거래 질서를 위협하는 경우</p>
+                          <p>4. "몰"을 이용하여 법령 또는 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우</p>
+                        </div>
+                        <p>③ "몰"이 회원 자격을 제한·정지 시킨 후, 동일한 행위가 2회 이상 반복되거나 30일 이내에 그 사유가 시정되지 아니하는 경우 "몰"은 회원자격을 상실시킬 수 있습니다.</p>
+                        <p>④ "몰"이 회원자격을 상실시키는 경우에는 회원등록을 말소합니다. 이 경우 회원에게 이를 통지하고, 회원등록 말소 전에 최소한 30일 이상의 기간을 정하여 소명할 기회를 부여합니다.</p>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 1 (Purpose)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>These terms and conditions are intended to regulate the rights, obligations, and responsibilities of the cyber mall and users in using Internet-related services (hereinafter referred to as "Services") provided by the Lucid Life Cyber Mall (hereinafter referred to as "Mall") operated by Lucid Life (e-commerce business operator).</p>
+                        <p className="text-white/50 text-sm">※ "These terms and conditions also apply to e-commerce using PC communication, wireless, etc., unless contrary to their nature."</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 2 (Definitions)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① "Mall" refers to a virtual business place set up by Lucid Life Company to allow users to trade goods or services (hereinafter referred to as "Goods, etc.") using information and communication facilities such as computers, and also refers to the business operator operating the cyber mall.</p>
+                        <p>② "User" refers to members and non-members who access the "Mall" and receive services provided by the "Mall" according to these terms and conditions.</p>
+                        <p>③ "Member" refers to a person who has registered as a member of the "Mall" and can continuously use the services provided by the "Mall".</p>
+                        <p>④ "Non-member" refers to a person who uses the services provided by the "Mall" without joining as a member.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 3 (Disclosure, Explanation, and Amendment of Terms and Conditions)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① The "Mall" posts the contents of these terms and conditions, company name and representative name, business address (including address where consumer complaints can be handled), phone number, fax number, email address, business registration number, communication sales business report number, personal information protection officer, etc., on the initial service screen (front page) of the Lucid Life Cyber Mall so that users can easily know them. However, the contents of the terms and conditions can be viewed by users through a connected screen.</p>
+                        <p>② Before users agree to the terms and conditions, the "Mall" must provide a separate connected screen or popup screen so that users can understand important contents such as withdrawal of offer, delivery responsibility, refund conditions, etc., and seek user confirmation.</p>
+                        <p>③ The "Mall" may amend these terms and conditions within the scope that does not violate related laws such as the "Act on Consumer Protection in Electronic Commerce," "Act on Regulation of Terms and Conditions," "Basic Act on Electronic Documents and Electronic Transactions," "Electronic Financial Transactions Act," "Electronic Signature Act," "Act on Promotion of Information and Communications Network Utilization and Information Protection," "Act on Door-to-Door Sales, etc.," and "Framework Act on Consumers."</p>
+                        <p>④ When the "Mall" amends the terms and conditions, it shall specify the application date and reason for amendment and notify them together with the current terms and conditions on the initial screen of the mall from 7 days before the application date to the day before the application date. However, if the terms and conditions are changed unfavorably to users, they shall be notified with at least 30 days of prior grace period. In this case, the "Mall" clearly compares the contents before and after the amendment so that users can easily understand.</p>
+                        <p>⑤ When the "Mall" amends the terms and conditions, the amended terms and conditions apply only to contracts concluded after the application date, and the terms and conditions before the amendment apply to contracts already concluded before that. However, if a user who has already concluded a contract wishes to be subject to the amended terms and conditions and sends this intention to the "Mall" within the notice period of the amended terms and conditions under paragraph 3 and receives the consent of the "Mall," the amended terms and conditions apply.</p>
+                        <p>⑥ Matters not specified in these terms and conditions and interpretation of these terms and conditions shall be in accordance with the Act on Consumer Protection in Electronic Commerce, Act on Regulation of Terms and Conditions, Consumer Protection Guidelines in Electronic Commerce, etc., set by the Fair Trade Commission, and related laws or commercial practices.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 4 (Provision and Change of Services)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① The "Mall" performs the following tasks.</p>
+                        <div className="pl-4 space-y-1">
+                          <p>1. Provision of information on goods or services and conclusion of purchase contracts</p>
+                          <p>2. Delivery of goods or services for which purchase contracts have been concluded</p>
+                          <p>3. Other tasks determined by the "Mall"</p>
+                        </div>
+                        <p>② The "Mall" may change the contents of goods or services to be provided by contracts to be concluded in the future in cases such as out of stock of goods or services or changes in technical specifications. In this case, the changed contents of goods or services and the provision date are specified and immediately notified where the current contents of goods or services are posted.</p>
+                        <p>③ If the "Mall" changes the contents of services that it has contracted with users to provide due to reasons such as out of stock of goods, etc., or changes in technical specifications, it immediately notifies users of the reason to an address where notification is possible.</p>
+                        <p>④ In the case of the preceding paragraph, the "Mall" compensates for damages suffered by users. However, this does not apply if the "Mall" proves that there was no intention or negligence.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 5 (Suspension of Services)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① The "Mall" may temporarily suspend the provision of services if reasons such as maintenance, replacement, and failure of information and communication facilities such as computers, or interruption of communication occur.</p>
+                        <p>② The "Mall" compensates for damages suffered by users or third parties due to temporary suspension of service provision due to the reasons in paragraph 1. However, this does not apply if the "Mall" proves that there was no intention or negligence.</p>
+                        <p>③ If services cannot be provided due to reasons such as conversion of business items, abandonment of business, integration between companies, etc., the "Mall" notifies users by the method specified in Article 8 and compensates consumers according to the conditions initially presented by the "Mall." However, if the "Mall" has not notified compensation standards, etc., it pays users' mileage or accumulated points, etc., to users in kind or cash corresponding to the currency value used in the "Mall."</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 6 (Membership Registration)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① Users apply for membership registration by filling in member information according to the registration form set by the "Mall" and expressing their intention to agree to these terms and conditions.</p>
+                        <p>② The "Mall" registers as members those who have applied for membership as in paragraph 1, unless they fall under any of the following subparagraphs.</p>
+                        <div className="pl-4 space-y-1">
+                          <p>1. If the applicant has previously lost membership qualification under Article 7, Paragraph 3 of these terms and conditions, except for those who have passed 3 years after losing membership qualification under Article 7, Paragraph 3 and have obtained approval for re-registration as a member of the "Mall"</p>
+                          <p>2. If there is falsehood, omission, or error in the registered contents</p>
+                          <p>3. If it is judged that registering as a member significantly hinders the "Mall" technically</p>
+                        </div>
+                        <p>③ The time of establishment of the membership registration contract is when the "Mall's" approval reaches the member.</p>
+                        <p>④ If there are changes in the matters registered at the time of membership registration, members must notify the "Mall" of the changes by methods such as modifying member information within a reasonable period.</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 7 (Member Withdrawal and Loss of Qualification)</h3>
+                      <div className="space-y-2 text-white/70">
+                        <p>① Members may request withdrawal from the "Mall" at any time, and the "Mall" immediately processes member withdrawal.</p>
+                        <p>② If a member falls under any of the following subparagraphs, the "Mall" may restrict or suspend membership qualification.</p>
+                        <div className="pl-4 space-y-1">
+                          <p>1. If false contents were registered at the time of membership application</p>
+                          <p>2. If the member does not pay the price of goods, etc., purchased using the "Mall" or other debts borne by the member related to the use of the "Mall" by the due date</p>
+                          <p>3. If interfering with others' use of the "Mall" or stealing their information, etc., threatening the order of e-commerce</p>
+                          <p>4. If using the "Mall" to commit acts prohibited by laws or these terms and conditions or contrary to public order and morals</p>
+                        </div>
+                        <p>③ After the "Mall" restricts or suspends membership qualification, if the same act is repeated 2 or more times or the reason is not corrected within 30 days, the "Mall" may lose membership qualification.</p>
+                        <p>④ If the "Mall" loses membership qualification, it deletes the member registration. In this case, it notifies the member and gives an opportunity to explain by setting a period of at least 30 days before deleting the member registration.</p>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
