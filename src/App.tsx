@@ -420,104 +420,208 @@ interface ProductDetail {
   }[];
 }
 
-// 상품 상세 정보 데이터
-const productDetails: Record<string, ProductDetail> = {
-  family: {
-    id: 'family',
-    name: '가족장 · 무빈소',
-    tagline: '조용히, 가족만',
-    price: 150,
-    description: '조용히, 가장 가까운 사람들만 남아 이별에 집중하는 시간.',
-    items: [
-      { label: '고인을 모시는 관', value: '오동나무 일반관' },
-      { label: '마지막 옷 (수의)', value: '제공' },
-      { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
-      { label: '영면함 (유골함)', value: '일반함' },
-      { label: '남자 상복', value: '총 5벌' },
-      { label: '여자 상복', value: '(남녀 합계)' },
-      { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
-      { label: '헌화', value: '—' },
-      { label: '장례지도사', value: '1명 + 1명 (입관)' },
-      { label: '의전 도우미', value: '—' },
-      { label: '리무진', value: '택1 / 150km' },
-      { label: '버스', value: '(리무진 또는 버스)' },
-      { label: '고인 이송', value: '관내 무료' },
-      { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
-      { label: '추가 서비스', value: '장지 알선' },
-    ],
-  },
-  practical: {
-    id: 'practical',
-    name: '실용장',
-    tagline: '기본에 충실하게',
-    price: 290,
-    description: '불필요한 부담은 덜고, 장례의 기본은 놓치지 않은 현실적인 선택.',
-    items: [
-      { label: '고인을 모시는 관', value: '오동나무 일반관' },
-      { label: '마지막 옷 (수의)', value: '제공' },
-      { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
-      { label: '영면함 (유골함)', value: '고급함' },
-      { label: '남자 상복', value: '5벌' },
-      { label: '여자 상복', value: '5벌' },
-      { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
-      { label: '헌화', value: '30송이' },
-      { label: '장례지도사', value: '1명 + 1명 (입관)' },
-      { label: '의전 도우미', value: '4명 (8시간)' },
-      { label: '리무진', value: '택1 / 150km' },
-      { label: '버스', value: '(리무진 또는 버스)' },
-      { label: '고인 이송', value: '관내 무료' },
-      { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
-      { label: '추가 서비스', value: '장지 알선' },
-    ],
-  },
-  standard: {
-    id: 'standard',
-    name: '표준장',
-    tagline: '충분히, 정성껏',
-    price: 360,
-    description: '가장 많은 이들이 선택한, 균형과 품위를 갖춘 기본 장례.',
-    items: [
-      { label: '고인을 모시는 관', value: '오동나무 일반관' },
-      { label: '마지막 옷 (수의)', value: '제공' },
-      { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
-      { label: '영면함 (유골함)', value: '일반함' },
-      { label: '남자 상복', value: '7벌' },
-      { label: '여자 상복', value: '7벌' },
-      { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
-      { label: '헌화', value: '30송이' },
-      { label: '장례지도사', value: '1명 + 1명 (입관)' },
-      { label: '의전 도우미', value: '6명 (8시간)' },
-      { label: '리무진', value: '150km' },
-      { label: '버스', value: '150km' },
-      { label: '고인 이송', value: '관내 무료' },
-      { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
-      { label: '추가 서비스', value: '장지 알선' },
-    ],
-  },
-  premium: {
-    id: 'premium',
-    name: '매장 · 미국식장',
-    tagline: '마지막을 완벽하게',
-    price: 450,
-    description: '한 사람의 삶을 중심에 두고, 방식부터 공간까지 설계하는 맞춤형 추모 의식.',
-    items: [
-      { label: '고인을 모시는 관', value: '오동나무 고급관' },
-      { label: '마지막 옷 (수의)', value: '제공' },
-      { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
-      { label: '영면함 (유골함)', value: '고급함' },
-      { label: '남자 상복', value: '9벌' },
-      { label: '여자 상복', value: '9벌' },
-      { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
-      { label: '헌화', value: '50송이' },
-      { label: '장례지도사', value: '1명 + 1명 (입관)' },
-      { label: '의전 도우미', value: '8명 (8시간)' },
-      { label: '리무진', value: '400km' },
-      { label: '버스', value: '전국 무료' },
-      { label: '고인 이송', value: '관내 무료' },
-      { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
-      { label: '추가 서비스', value: '장지 알선' },
-    ],
-  },
+// 상품 상세 정보 데이터 (언어별)
+const getProductDetails = (lang: Language): Record<string, ProductDetail> => {
+  if (lang === 'en') {
+    return {
+      family: {
+        id: 'family',
+        name: 'Family Funeral · No Wake',
+        tagline: 'Quietly, family only',
+        price: 150,
+        description: 'A time for only the closest people to remain quietly and focus on farewell.',
+        items: [
+          { label: 'Casket for the deceased', value: 'Paulownia wood standard casket' },
+          { label: 'Last clothes (shroud)', value: 'Provided' },
+          { label: 'Deceased\'s items', value: 'Alcohol, cotton, tying straps, etc.' },
+          { label: 'Urn for eternal rest', value: 'Standard urn' },
+          { label: 'Men\'s mourning attire', value: 'Total 5 sets' },
+          { label: 'Women\'s mourning attire', value: '(Men and women combined)' },
+          { label: 'Wake items', value: 'Incense, candles, guestbook, ancestral tablet' },
+          { label: 'Floral tribute', value: '—' },
+          { label: 'Funeral director', value: '1 person + 1 person (embalming)' },
+          { label: 'Ceremonial assistant', value: '—' },
+          { label: 'Limousine', value: 'Choose 1 / 150km' },
+          { label: 'Bus', value: '(Limousine or bus)' },
+          { label: 'Deceased transfer', value: 'Free within jurisdiction' },
+          { label: 'Notification service', value: 'Mobile obituary, condolence reply' },
+          { label: 'Additional service', value: 'Burial site arrangement' },
+        ],
+      },
+      practical: {
+        id: 'practical',
+        name: 'Practical Funeral',
+        tagline: 'Faithful to basics',
+        price: 290,
+        description: 'A realistic choice that reduces unnecessary burden and doesn\'t miss the basics of a funeral.',
+        items: [
+          { label: 'Casket for the deceased', value: 'Paulownia wood standard casket' },
+          { label: 'Last clothes (shroud)', value: 'Provided' },
+          { label: 'Deceased\'s items', value: 'Alcohol, cotton, tying straps, etc.' },
+          { label: 'Urn for eternal rest', value: 'Premium urn' },
+          { label: 'Men\'s mourning attire', value: '5 sets' },
+          { label: 'Women\'s mourning attire', value: '5 sets' },
+          { label: 'Wake items', value: 'Incense, candles, guestbook, ancestral tablet' },
+          { label: 'Floral tribute', value: '30 flowers' },
+          { label: 'Funeral director', value: '1 person + 1 person (embalming)' },
+          { label: 'Ceremonial assistant', value: '4 people (8 hours)' },
+          { label: 'Limousine', value: 'Choose 1 / 150km' },
+          { label: 'Bus', value: '(Limousine or bus)' },
+          { label: 'Deceased transfer', value: 'Free within jurisdiction' },
+          { label: 'Notification service', value: 'Mobile obituary, condolence reply' },
+          { label: 'Additional service', value: 'Burial site arrangement' },
+        ],
+      },
+      standard: {
+        id: 'standard',
+        name: 'Standard Funeral',
+        tagline: 'Sufficiently, with care',
+        price: 360,
+        description: 'The basic funeral chosen by the most people, with balance and dignity.',
+        items: [
+          { label: 'Casket for the deceased', value: 'Paulownia wood standard casket' },
+          { label: 'Last clothes (shroud)', value: 'Provided' },
+          { label: 'Deceased\'s items', value: 'Alcohol, cotton, tying straps, etc.' },
+          { label: 'Urn for eternal rest', value: 'Standard urn' },
+          { label: 'Men\'s mourning attire', value: '7 sets' },
+          { label: 'Women\'s mourning attire', value: '7 sets' },
+          { label: 'Wake items', value: 'Incense, candles, guestbook, ancestral tablet' },
+          { label: 'Floral tribute', value: '30 flowers' },
+          { label: 'Funeral director', value: '1 person + 1 person (embalming)' },
+          { label: 'Ceremonial assistant', value: '6 people (8 hours)' },
+          { label: 'Limousine', value: '150km' },
+          { label: 'Bus', value: '150km' },
+          { label: 'Deceased transfer', value: 'Free within jurisdiction' },
+          { label: 'Notification service', value: 'Mobile obituary, condolence reply' },
+          { label: 'Additional service', value: 'Burial site arrangement' },
+        ],
+      },
+      premium: {
+        id: 'premium',
+        name: 'Burial · American Style',
+        tagline: 'Perfect to the last',
+        price: 450,
+        description: 'A customized memorial service designed from the method to the space, centered on one person\'s life.',
+        items: [
+          { label: 'Casket for the deceased', value: 'Paulownia wood premium casket' },
+          { label: 'Last clothes (shroud)', value: 'Provided' },
+          { label: 'Deceased\'s items', value: 'Alcohol, cotton, tying straps, etc.' },
+          { label: 'Urn for eternal rest', value: 'Premium urn' },
+          { label: 'Men\'s mourning attire', value: '9 sets' },
+          { label: 'Women\'s mourning attire', value: '9 sets' },
+          { label: 'Wake items', value: 'Incense, candles, guestbook, ancestral tablet' },
+          { label: 'Floral tribute', value: '50 flowers' },
+          { label: 'Funeral director', value: '1 person + 1 person (embalming)' },
+          { label: 'Ceremonial assistant', value: '8 people (8 hours)' },
+          { label: 'Limousine', value: '400km' },
+          { label: 'Bus', value: 'Nationwide free' },
+          { label: 'Deceased transfer', value: 'Free within jurisdiction' },
+          { label: 'Notification service', value: 'Mobile obituary, condolence reply' },
+          { label: 'Additional service', value: 'Burial site arrangement' },
+        ],
+      },
+    };
+  }
+  
+  // Korean (default)
+  return {
+    family: {
+      id: 'family',
+      name: '가족장 · 무빈소',
+      tagline: '조용히, 가족만',
+      price: 150,
+      description: '조용히, 가장 가까운 사람들만 남아 이별에 집중하는 시간.',
+      items: [
+        { label: '고인을 모시는 관', value: '오동나무 일반관' },
+        { label: '마지막 옷 (수의)', value: '제공' },
+        { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
+        { label: '영면함 (유골함)', value: '일반함' },
+        { label: '남자 상복', value: '총 5벌' },
+        { label: '여자 상복', value: '(남녀 합계)' },
+        { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
+        { label: '헌화', value: '—' },
+        { label: '장례지도사', value: '1명 + 1명 (입관)' },
+        { label: '의전 도우미', value: '—' },
+        { label: '리무진', value: '택1 / 150km' },
+        { label: '버스', value: '(리무진 또는 버스)' },
+        { label: '고인 이송', value: '관내 무료' },
+        { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
+        { label: '추가 서비스', value: '장지 알선' },
+      ],
+    },
+    practical: {
+      id: 'practical',
+      name: '실용장',
+      tagline: '기본에 충실하게',
+      price: 290,
+      description: '불필요한 부담은 덜고, 장례의 기본은 놓치지 않은 현실적인 선택.',
+      items: [
+        { label: '고인을 모시는 관', value: '오동나무 일반관' },
+        { label: '마지막 옷 (수의)', value: '제공' },
+        { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
+        { label: '영면함 (유골함)', value: '고급함' },
+        { label: '남자 상복', value: '5벌' },
+        { label: '여자 상복', value: '5벌' },
+        { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
+        { label: '헌화', value: '30송이' },
+        { label: '장례지도사', value: '1명 + 1명 (입관)' },
+        { label: '의전 도우미', value: '4명 (8시간)' },
+        { label: '리무진', value: '택1 / 150km' },
+        { label: '버스', value: '(리무진 또는 버스)' },
+        { label: '고인 이송', value: '관내 무료' },
+        { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
+        { label: '추가 서비스', value: '장지 알선' },
+      ],
+    },
+    standard: {
+      id: 'standard',
+      name: '표준장',
+      tagline: '충분히, 정성껏',
+      price: 360,
+      description: '가장 많은 이들이 선택한, 균형과 품위를 갖춘 기본 장례.',
+      items: [
+        { label: '고인을 모시는 관', value: '오동나무 일반관' },
+        { label: '마지막 옷 (수의)', value: '제공' },
+        { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
+        { label: '영면함 (유골함)', value: '일반함' },
+        { label: '남자 상복', value: '7벌' },
+        { label: '여자 상복', value: '7벌' },
+        { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
+        { label: '헌화', value: '30송이' },
+        { label: '장례지도사', value: '1명 + 1명 (입관)' },
+        { label: '의전 도우미', value: '6명 (8시간)' },
+        { label: '리무진', value: '150km' },
+        { label: '버스', value: '150km' },
+        { label: '고인 이송', value: '관내 무료' },
+        { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
+        { label: '추가 서비스', value: '장지 알선' },
+      ],
+    },
+    premium: {
+      id: 'premium',
+      name: '매장 · 미국식장',
+      tagline: '마지막을 완벽하게',
+      price: 450,
+      description: '한 사람의 삶을 중심에 두고, 방식부터 공간까지 설계하는 맞춤형 추모 의식.',
+      items: [
+        { label: '고인을 모시는 관', value: '오동나무 고급관' },
+        { label: '마지막 옷 (수의)', value: '제공' },
+        { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
+        { label: '영면함 (유골함)', value: '고급함' },
+        { label: '남자 상복', value: '9벌' },
+        { label: '여자 상복', value: '9벌' },
+        { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
+        { label: '헌화', value: '50송이' },
+        { label: '장례지도사', value: '1명 + 1명 (입관)' },
+        { label: '의전 도우미', value: '8명 (8시간)' },
+        { label: '리무진', value: '400km' },
+        { label: '버스', value: '전국 무료' },
+        { label: '고인 이송', value: '관내 무료' },
+        { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
+        { label: '추가 서비스', value: '장지 알선' },
+      ],
+    },
+  };
 };
 
 export default function App() {
@@ -904,7 +1008,7 @@ export default function App() {
                 </div>
                 
                 <button 
-                  onClick={() => setSelectedProduct(productDetails[product.id])}
+                  onClick={() => setSelectedProduct(getProductDetails(language)[product.id])}
                   className="w-full py-2.5 rounded-lg text-sm bg-[#d4af7d]/10 text-[#d4af7d] border border-[#d4af7d]/20 hover:bg-[#d4af7d]/20 hover:border-[#d4af7d]/40 transition-all"
                 >
                   {language === 'ko' ? '자세히 보기' : 'View Details'}
@@ -1169,7 +1273,7 @@ export default function App() {
           
           {/* Modal Content */}
           <div 
-            className="relative bg-[#1e1e1e] rounded-lg w-full max-w-[400px] max-h-[85vh] overflow-hidden shadow-2xl"
+            className="relative bg-[#1e1e1e] rounded-lg w-full max-w-[400px] md:max-w-[400px] max-h-[85vh] overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -1181,40 +1285,40 @@ export default function App() {
             </button>
 
             {/* Scrollable Content */}
-            <div className="overflow-y-auto max-h-[85vh] p-5">
+            <div className="overflow-y-auto max-h-[85vh] p-4 md:p-5">
               {/* Header - 제목 */}
-              <h3 className="text-lg font-medium text-[#d4af7d] mb-1">
+              <h3 className="text-base md:text-lg font-medium text-[#d4af7d] mb-1">
                 {selectedProduct.name}
               </h3>
               
               {/* Tagline */}
-              <p className="text-sm text-[#808080] mb-3">"{selectedProduct.tagline}"</p>
+              <p className="text-xs md:text-sm text-[#808080] mb-3">"{selectedProduct.tagline}"</p>
 
               {/* Price */}
               <div className="mb-2">
-                <span className="text-4xl font-light text-white">{selectedProduct.price}</span>
-                <span className="text-sm text-[#808080] ml-1">만원부터</span>
+                <span className="text-3xl md:text-4xl font-light text-white">{selectedProduct.price}</span>
+                <span className="text-xs md:text-sm text-[#808080] ml-1">{language === 'ko' ? '만원부터' : '0k KRW~'}</span>
               </div>
 
               {/* Description */}
-              <p className="text-sm text-[#808080] mb-5 pb-5 border-b border-white/10">
+              <p className="text-xs md:text-sm text-[#808080] mb-5 pb-5 border-b border-white/10">
                 {selectedProduct.description}
               </p>
 
               {/* Items List - 구성 항목 */}
               <div className="mb-4">
-                <p className="text-sm text-[#d4af7d] mb-4">구성 항목</p>
+                <p className="text-xs md:text-sm text-[#d4af7d] mb-4">{language === 'ko' ? '구성 항목' : 'Composition Items'}</p>
                 <div className="space-y-0">
                   {selectedProduct.items.map((item, idx) => (
                     <div 
                       key={idx} 
-                      className="flex justify-between items-center py-3 border-b border-white/5"
+                      className="flex justify-between items-center py-2 md:py-3 border-b border-white/5 gap-2 md:gap-4"
                     >
-                      <span className="text-sm text-[#808080]">{item.label}</span>
-                      <span className={`text-sm ${
+                      <span className="text-xs md:text-sm text-[#808080] flex-shrink-0" style={{ minWidth: '90px', maxWidth: '120px' }}>{item.label}</span>
+                      <span className={`text-xs md:text-sm text-right flex-1 ${
                         item.value === '—' ? 'text-[#505050]' : 
                         item.value.startsWith('(') ? 'text-[#606060]' : 'text-white'
-                      }`}>
+                      }`} style={{ wordBreak: 'keep-all', whiteSpace: 'normal', textAlign: 'right' }}>
                         {item.value}
                       </span>
                     </div>
@@ -1237,7 +1341,7 @@ export default function App() {
           
           {/* Modal Content */}
           <div 
-            className="relative bg-[#1e1e1e] rounded-lg w-full max-w-[1000px] lg:max-w-[1200px] max-h-[90vh] overflow-hidden shadow-2xl"
+            className="relative bg-[#1e1e1e] rounded-lg w-full max-w-[calc(100vw-32px)] md:max-w-[1000px] lg:max-w-[1200px] max-h-[90vh] overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -1249,54 +1353,54 @@ export default function App() {
             </button>
 
             {/* Scrollable Content */}
-            <div className="overflow-y-auto max-h-[90vh] p-6 lg:p-10">
+            <div className="overflow-y-auto max-h-[90vh] p-4 md:p-6 lg:p-10">
               {/* Header */}
-              <h3 className="text-lg lg:text-3xl font-medium text-[#d4af7d] mb-1 lg:mb-2">
-                전체 상품 비교
+              <h3 className="text-base md:text-lg lg:text-3xl font-medium text-[#d4af7d] mb-1 lg:mb-2">
+                {language === 'ko' ? '전체 상품 비교' : 'Compare All Products'}
               </h3>
-              <p className="text-xs lg:text-base text-[#808080] mb-6 lg:mb-10">
-                각 상품의 구성을 한눈에 비교해보세요
+              <p className="text-xs md:text-sm lg:text-base text-[#808080] mb-4 md:mb-6 lg:mb-10">
+                {language === 'ko' ? '각 상품의 구성을 한눈에 비교해보세요' : 'Compare the composition of each product at a glance'}
               </p>
 
               {/* Comparison Table */}
               <div className="overflow-x-auto">
-                <table className="w-full text-[8px] lg:text-base" style={{ tableLayout: 'auto' }}>
+                <table className="w-full text-[8px] md:text-[9px] lg:text-base" style={{ tableLayout: 'auto' }}>
                   {/* Header Row - Product Names */}
                   <thead>
                     <tr className="border-b border-white/10">
-                      <th className="text-left py-2 lg:py-6 pr-2 lg:pr-6 text-[#808080] font-normal text-[8px] lg:text-base w-[70px] lg:w-[160px]">항목</th>
-                      <th className="text-center py-2 lg:py-6 px-0.5 lg:px-4" style={{ minWidth: '75px' }}>
-                        <div className="text-[#d4af7d] font-medium text-[8px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>가족장 · 무빈소</div>
+                      <th className="text-left py-2 md:py-3 lg:py-6 pr-1 md:pr-3 lg:pr-6 text-[#808080] font-normal text-[8px] md:text-[9px] lg:text-base w-[65px] md:w-[80px] lg:w-[160px]">{language === 'ko' ? '항목' : 'Item'}</th>
+                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
+                        <div className="text-[#d4af7d] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '가족장 · 무빈소' : 'Family Funeral · No Wake'}</div>
                         <div className="mt-0.5 lg:mt-2">
-                          <span className="text-sm lg:text-4xl text-white font-light">150</span>
-                          <span className="text-[7px] lg:text-sm text-[#808080]">만원</span>
+                          <span className="text-sm md:text-base lg:text-4xl text-white font-light">150</span>
+                          <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
                         </div>
                       </th>
-                      <th className="text-center py-2 lg:py-6 px-0.5 lg:px-4" style={{ minWidth: '75px' }}>
-                        <div className="text-[#d4af7d] font-medium text-[8px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>실용장</div>
+                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
+                        <div className="text-[#d4af7d] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '실용장' : 'Practical Funeral'}</div>
                         <div className="mt-0.5 lg:mt-2">
-                          <span className="text-sm lg:text-4xl text-white font-light">290</span>
-                          <span className="text-[7px] lg:text-sm text-[#808080]">만원</span>
+                          <span className="text-sm md:text-base lg:text-4xl text-white font-light">290</span>
+                          <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
                         </div>
                       </th>
-                      <th className="text-center py-2 lg:py-6 px-0.5 lg:px-4" style={{ minWidth: '75px' }}>
-                        <div className="text-[#d4af7d] font-medium text-[8px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>표준장</div>
+                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
+                        <div className="text-[#d4af7d] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '표준장' : 'Standard Funeral'}</div>
                         <div className="mt-0.5 lg:mt-2">
-                          <span className="text-sm lg:text-4xl text-white font-light">360</span>
-                          <span className="text-[7px] lg:text-sm text-[#808080]">만원</span>
+                          <span className="text-sm md:text-base lg:text-4xl text-white font-light">360</span>
+                          <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
                         </div>
                       </th>
-                      <th className="text-center py-2 lg:py-6 px-0.5 lg:px-4" style={{ minWidth: '75px' }}>
-                        <div className="text-[#d4af7d] font-medium text-[8px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>매장 · 미국식장</div>
+                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
+                        <div className="text-[#d4af7d] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '매장 · 미국식장' : 'Burial · American Style'}</div>
                         <div className="mt-0.5 lg:mt-2">
-                          <span className="text-sm lg:text-4xl text-white font-light">450</span>
-                          <span className="text-[7px] lg:text-sm text-[#808080]">만원</span>
+                          <span className="text-sm md:text-base lg:text-4xl text-white font-light">450</span>
+                          <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
                         </div>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {[
+                    {(language === 'ko' ? [
                       { label: '고인을 모시는 관', values: ['오동나무 일반관', '오동나무 일반관', '오동나무 일반관', '오동나무 고급관'] },
                       { label: '마지막 옷 (수의)', values: ['제공', '제공', '제공', '제공'] },
                       { label: '고인 용품', values: ['알코올, 탈지면, 결관바 등', '알코올, 탈지면, 결관바 등', '알코올, 탈지면, 결관바 등', '알코올, 탈지면, 결관바 등'] },
@@ -1312,11 +1416,27 @@ export default function App() {
                       { label: '고인 이송', values: ['관내 무료', '관내 무료', '관내 무료', '관내 무료'] },
                       { label: '알림 서비스', values: ['모바일 부고, 조문 답례', '모바일 부고, 조문 답례', '모바일 부고, 조문 답례', '모바일 부고, 조문 답례'] },
                       { label: '추가 서비스', values: ['장지 알선', '장지 알선', '장지 알선', '장지 알선'] },
-                    ].map((row, idx) => (
+                    ] : [
+                      { label: 'Casket for the deceased', values: ['Paulownia wood standard', 'Paulownia wood standard', 'Paulownia wood standard', 'Paulownia wood premium'] },
+                      { label: 'Last clothes (shroud)', values: ['Provided', 'Provided', 'Provided', 'Provided'] },
+                      { label: 'Deceased\'s items', values: ['Alcohol, cotton, tying straps, etc.', 'Alcohol, cotton, tying straps, etc.', 'Alcohol, cotton, tying straps, etc.', 'Alcohol, cotton, tying straps, etc.'] },
+                      { label: 'Urn for eternal rest', values: ['Standard urn', 'Premium urn', 'Standard urn', 'Premium urn'] },
+                      { label: 'Men\'s mourning attire', values: ['Total 5 sets (combined)', '5 sets', '7 sets', '9 sets'] },
+                      { label: 'Women\'s mourning attire', values: ['—', '5 sets', '7 sets', '9 sets'] },
+                      { label: 'Wake items', values: ['Incense, candles, guestbook, ancestral tablet', 'Incense, candles, guestbook, ancestral tablet', 'Incense, candles, guestbook, ancestral tablet', 'Incense, candles, guestbook, ancestral tablet'] },
+                      { label: 'Floral tribute', values: ['—', '30 flowers', '30 flowers', '50 flowers'] },
+                      { label: 'Funeral director', values: ['1 person + 1 person (embalming)', '1 person + 1 person (embalming)', '1 person + 1 person (embalming)', '1 person + 1 person (embalming)'] },
+                      { label: 'Ceremonial assistant', values: ['—', '4 people (8 hours)', '6 people (8 hours)', '8 people (8 hours)'] },
+                      { label: 'Limousine', values: ['Choose 1 / 150km', 'Choose 1 / 150km', '150km', '400km'] },
+                      { label: 'Bus', values: ['—', '—', '150km', 'Nationwide free'] },
+                      { label: 'Deceased transfer', values: ['Free within jurisdiction', 'Free within jurisdiction', 'Free within jurisdiction', 'Free within jurisdiction'] },
+                      { label: 'Notification service', values: ['Mobile obituary, condolence reply', 'Mobile obituary, condolence reply', 'Mobile obituary, condolence reply', 'Mobile obituary, condolence reply'] },
+                      { label: 'Additional service', values: ['Burial site arrangement', 'Burial site arrangement', 'Burial site arrangement', 'Burial site arrangement'] },
+                    ]).map((row, idx) => (
                       <tr key={idx} className="border-b border-white/5">
-                        <td className="py-1.5 lg:py-4 pr-2 lg:pr-6 text-[#808080] text-[8px] lg:text-base leading-tight" style={{ minWidth: '70px' }}>{row.label}</td>
+                        <td className="py-1.5 md:py-2 lg:py-4 pr-1 md:pr-3 lg:pr-6 text-[#808080] text-[8px] md:text-[9px] lg:text-base leading-tight" style={{ minWidth: '65px', maxWidth: '90px' }}>{row.label}</td>
                         {row.values.map((value, vIdx) => (
-                          <td key={vIdx} className={`py-1.5 lg:py-4 px-0.5 lg:px-4 text-center text-[8px] lg:text-base leading-tight ${value === '—' ? 'text-[#505050]' : 'text-white'}`} style={{ wordBreak: 'keep-all', whiteSpace: 'normal', minWidth: '75px', lineHeight: '1.3' }}>
+                          <td key={vIdx} className={`py-1.5 md:py-2 lg:py-4 px-0.5 md:px-1 lg:px-4 text-center text-[8px] md:text-[9px] lg:text-base leading-tight ${value === '—' ? 'text-[#505050]' : 'text-white'}`} style={{ wordBreak: 'keep-all', whiteSpace: 'normal', minWidth: '70px', maxWidth: '90px', lineHeight: '1.3' }}>
                             {value}
                           </td>
                         ))}
