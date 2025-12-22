@@ -20,9 +20,9 @@ const translations = {
     },
     hero: {
       brand: '루시드라이프',
-      title: '모든 이별은 서툴기에,\n누군가는 그 곁에 선다.',
+      title: '이별은 끝이 아니라 완성입니다',
       subtitle: '루시드라이프는 장례를 대신해주는 곳이 아닙니다.\n서툰 이별 앞에, 함께 서 있는 곳입니다.',
-      cta: '사전등록',
+      cta: '자세히 보기',
     },
     accompany: {
       title: '이별동행케어',
@@ -220,9 +220,9 @@ const translations = {
     },
     hero: {
       brand: 'LUCID LIFE',
-      title: 'Every farewell is awkward,\nSomeone stands beside you.',
+      title: 'Farewell is not the end, but completion',
       subtitle: 'LUCID LIFE is not a place that does funerals for you.\nIt is a place that stands with you in awkward farewells.',
-      cta: 'Pre-register',
+      cta: 'Learn More',
     },
     accompany: {
       title: 'Farewell Companion Care',
@@ -653,7 +653,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-neutral-50">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#2c3e50]/95 backdrop-blur-sm border-b border-[#8c7b65]/20">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#141C2E]/95 backdrop-blur-sm border-b border-[#C9A66B]/20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <button 
@@ -672,14 +672,14 @@ export default function App() {
               <div className="hidden md:flex items-center gap-4">
                 <a
                   href="tel:010-2116-4114"
-                  className="flex items-center gap-2 px-5 py-2.5 text-[#eecfa1] hover:bg-[#8c7b65]/20 rounded-lg transition-colors"
+                  className="flex items-center gap-2 px-5 py-2.5 text-[#C9A66B] hover:bg-[#C9A66B]/20 rounded-lg transition-colors"
                 >
                   <Phone className="w-5 h-5 lg:w-6 lg:h-6" />
                   <span className="text-base lg:text-lg">010-2116-4114</span>
                 </a>
                 <button
                   onClick={openGoogleForm}
-                  className="flex items-center gap-2 px-5 py-2.5 bg-[#8c7b65] text-white hover:bg-[#8c7b65]/80 rounded-lg transition-colors"
+                  className="flex items-center gap-2 px-5 py-2.5 bg-[#C9A66B] text-white hover:bg-[#C9A66B]/80 rounded-lg transition-colors"
                 >
                   <Edit3 className="w-5 h-5 lg:w-6 lg:h-6" />
                   <span className="text-base lg:text-lg whitespace-nowrap">멤버십 사전등록</span>
@@ -689,7 +689,7 @@ export default function App() {
               {/* Language Toggle - Mobile */}
               <button
                 onClick={toggleLanguage}
-                className="md:hidden flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-[#8c7b65]/20 transition-colors text-[#eecfa1]"
+                className="md:hidden flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-[#C9A66B]/20 transition-colors text-[#C9A66B]"
               >
                 <Globe className="w-5 h-5" />
                 <span className="text-sm">{language === 'ko' ? 'EN' : 'KO'}</span>
@@ -698,7 +698,7 @@ export default function App() {
               {/* Language Toggle - Desktop */}
               <button
                 onClick={toggleLanguage}
-                className="hidden md:flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-[#8c7b65]/20 transition-colors text-[#eecfa1]"
+                className="hidden md:flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-[#C9A66B]/20 transition-colors text-[#C9A66B]"
               >
                 <Globe className="w-5 h-5 lg:w-6 lg:h-6" />
                 <span className="text-base lg:text-lg">{language === 'ko' ? 'EN' : 'KO'}</span>
@@ -706,7 +706,7 @@ export default function App() {
 
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 hover:bg-[#8c7b65]/20 rounded-lg transition-colors text-[#eecfa1]"
+                className="p-2 hover:bg-[#C9A66B]/20 rounded-lg transition-colors text-[#C9A66B]"
               >
                 {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
               </button>
@@ -717,10 +717,10 @@ export default function App() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#2c3e50]/98 backdrop-blur-md pt-28">
+        <div className="fixed inset-0 z-40 bg-[#141C2E]/98 backdrop-blur-md pt-28">
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="absolute top-6 right-6 p-2 text-[#eecfa1] hover:bg-[#8c7b65]/20 rounded-lg transition-colors"
+            className="absolute top-6 right-6 p-2 text-[#C9A66B] hover:bg-[#C9A66B]/20 rounded-lg transition-colors"
           >
             <X className="w-7 h-7" />
           </button>
@@ -737,7 +737,7 @@ export default function App() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-2xl text-[#eecfa1] hover:text-[#8c7b65] transition-colors tracking-wide"
+                className="text-2xl text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors tracking-wide"
               >
                 {item.label}
               </button>
@@ -747,56 +747,25 @@ export default function App() {
       )}
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-[#141C2E]">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{
-            backgroundImage: `linear-gradient(rgba(44, 62, 80, 0.75), rgba(44, 62, 80, 0.75)), url('https://images.unsplash.com/photo-1723240226503-cc08d5821d87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjZWZ1bCUyMG5hdHVyZSUyMG1lbW9yaWFsfGVufDF8fHx8MTc2NTgwODM5MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')`
+            backgroundImage: `url('https://images.unsplash.com/photo-1723240226503-cc08d5821d87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjZWZ1bCUyMG5hdHVyZSUyMG1lbW9yaWFsfGVufDF8fHx8MTc2NTgwODM5MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')`
           }}
         />
         
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto py-20">
           <div className="mb-16">
-            <p className="text-[#eecfa1] text-2xl md:text-2xl my-12 md:my-16 tracking-[0.3em]">{t.hero.brand}</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl mb-10 text-white whitespace-pre-line leading-tight">
+            <p className="text-[#C9A66B] text-2xl md:text-2xl my-12 md:my-16 tracking-[0.3em] font-serif-kr">{t.hero.brand}</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl mb-10 text-white whitespace-pre-line leading-tight font-serif-kr font-semibold">
               {t.hero.title}
             </h1>
-            {/* Mobile: 3줄 / PC: 2줄 */}
-            <p className="text-lg md:text-xl mb-16 text-white/90 leading-relaxed max-w-3xl mx-auto">
-              <span className="block md:hidden whitespace-pre-line">
-                {language === 'ko' 
-                  ? '루시드라이프는 장례를 대신해주는\n곳이 아닙니다.\n서툰 이별 앞에, 함께 서 있는 곳입니다.'
-                  : 'LUCID LIFE is not a place\nthat does funerals for you.\nIt is a place that stands with you in awkward farewells.'}
-              </span>
-              <span className="hidden md:block whitespace-pre-line">{t.hero.subtitle}</span>
-            </p>
-          </div>
-
-          {/* Accompany Care */}
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 md:p-16 mb-12 border border-white/20">
-            <h2 className="text-3xl md:text-4xl mb-6 text-[#eecfa1]">{t.accompany.title}</h2>
-            {/* Mobile: 3줄 / PC: 2줄 */}
-            <p className="text-lg md:text-xl mb-12 text-white/90 leading-relaxed">
-              <span className="block md:hidden whitespace-pre-line">
-                {language === 'ko'
-                  ? '임종 전부터 이별 이후까지.\n한 사람의 전 과정을,\n하나의 팀이 돌봅니다.'
-                  : 'From before death\nto after farewell.\nOne team cares for the entire process of one person.'}
-              </span>
-              <span className="hidden md:block whitespace-pre-line">{t.accompany.subtitle}</span>
-            </p>
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-              {[t.accompany.before, t.accompany.during, t.accompany.after].map((phase, index) => (
-                <div key={index} className="text-center">
-                  <h3 className="text-2xl mb-4 text-[#eecfa1]">{phase.title}</h3>
-                  <p className="text-white/80 text-lg">{phase.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           <button
             onClick={openGoogleForm}
-            className="px-12 py-5 bg-[#8c7b65] hover:bg-[#8c7b65]/80 text-white rounded-lg transition-all transform hover:scale-105 text-lg"
+            className="px-12 py-5 bg-[#C9A66B] hover:bg-[#C9A66B]/80 text-white rounded-lg transition-all transform hover:scale-105 text-lg"
           >
             {t.hero.cta}
           </button>
@@ -804,10 +773,10 @@ export default function App() {
       </section>
 
       {/* Three Pillars Section */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-[#F8F5E6]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl mb-8 text-[#2c3e50]">{t.pillars.title}</h2>
+            <h2 className="text-4xl md:text-5xl mb-8 text-[#141C2E] font-serif-kr">{t.pillars.title}</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
@@ -818,10 +787,10 @@ export default function App() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-neutral-50 p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-[#8c7b65]/20"
+                className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-[#C9A66B]/20"
               >
-                <item.icon className="w-16 h-16 text-[#8c7b65] mb-8 mx-auto" />
-                <h3 className="text-2xl md:text-3xl mb-6 text-[#2c3e50] text-center">{item.data.title}</h3>
+                <item.icon className="w-16 h-16 text-[#C9A66B] mb-8 mx-auto" />
+                <h3 className="text-2xl md:text-3xl mb-6 text-[#141C2E] text-center font-serif-kr">{item.data.title}</h3>
                 {/* 시대의 요구: Mobile 2줄 */}
                 {index === 1 ? (
                   <p className="text-neutral-600 text-center leading-relaxed text-lg">
@@ -854,17 +823,17 @@ export default function App() {
       </section>
 
       {/* Why Lucid Life Section */}
-      <section className="py-32 bg-[#2c3e50] text-white">
+      <section className="py-32 bg-[#141C2E] text-white">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl mb-12 text-[#eecfa1]">{t.why.title}</h2>
+            <h2 className="text-4xl md:text-5xl mb-12 text-[#C9A66B] font-serif-kr">{t.why.title}</h2>
           </div>
 
           <div className="space-y-16">
             {[t.why.q1, t.why.q2, t.why.q3].map((item, index) => (
               <div key={index} className="text-center max-w-3xl mx-auto">
                 <h3 className="text-2xl md:text-3xl mb-6 text-white/90">{item.question}</h3>
-                <p className="text-xl md:text-2xl text-[#eecfa1]">{item.answer}</p>
+                <p className="text-xl md:text-2xl text-[#C9A66B]">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -875,16 +844,16 @@ export default function App() {
       <section className="py-32 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl mb-8 text-[#2c3e50]">{t.difference.title}</h2>
+            <h2 className="text-4xl md:text-5xl mb-8 text-[#141C2E] font-serif-kr">{t.difference.title}</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
             {[t.difference.responsibility, t.difference.minimal, t.difference.respect].map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#8c7b65]/20 text-center"
+                className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#C9A66B]/20 text-center"
               >
-                <h3 className="text-2xl md:text-3xl mb-6 text-[#2c3e50]">{item.title}</h3>
+                <h3 className="text-2xl md:text-3xl mb-6 text-[#141C2E]">{item.title}</h3>
                 {/* 감정의 존중: Mobile 2줄 / PC 1줄 */}
                 {index === 2 ? (
                   <p className="text-neutral-600 text-lg leading-relaxed">
@@ -905,7 +874,7 @@ export default function App() {
       </section>
 
       {/* Services Section - 함께하는 방식 */}
-      <section id="services" className="py-32 lg:py-40 bg-[#2c3e50] relative overflow-hidden">
+      <section id="services" className="py-32 lg:py-40 bg-[#F8F5E6] relative overflow-hidden">
         {/* Gradient Background */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background: 'radial-gradient(ellipse at 50% 0%, rgba(212, 175, 125, 0.05) 0%, transparent 60%)'
@@ -914,7 +883,7 @@ export default function App() {
         <div className="max-w-5xl mx-auto px-6 lg:px-8 relative">
           {/* Header */}
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.25em] mb-3 text-[#d4af7d] opacity-60">
+            <p className="text-xs uppercase tracking-[0.25em] mb-3 text-[#C9A66B] opacity-60">
               LUCIDLIFE SERVICE
             </p>
             <h2 className="text-4xl font-medium mb-4 text-white">
@@ -975,10 +944,10 @@ export default function App() {
             ].map((product, index) => (
               <div
                 key={index}
-                className="bg-white/[0.03] border border-[#d4af7d]/10 rounded-xl p-5 cursor-pointer hover:border-[#d4af7d]/25 hover:-translate-y-1 transition-all"
+                className="bg-white/[0.03] border border-[#C9A66B]/10 rounded-xl p-5 cursor-pointer hover:border-[#C9A66B]/25 hover:-translate-y-1 transition-all"
               >
                 <div className="mb-3">
-                  <h3 className="text-lg font-light text-[#d4af7d]">{product.name}</h3>
+                  <h3 className="text-lg font-light text-[#C9A66B]">{product.name}</h3>
                 </div>
                 
                 <div className="flex items-baseline gap-1 mb-3">
@@ -1009,7 +978,7 @@ export default function App() {
                 
                 <button 
                   onClick={() => setSelectedProduct(getProductDetails(language)[product.id])}
-                  className="w-full py-2.5 rounded-lg text-sm bg-[#d4af7d]/10 text-[#d4af7d] border border-[#d4af7d]/20 hover:bg-[#d4af7d]/20 hover:border-[#d4af7d]/40 transition-all"
+                  className="w-full py-2.5 rounded-lg text-sm bg-[#C9A66B]/10 text-[#C9A66B] border border-[#C9A66B]/20 hover:bg-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all"
                 >
                   {language === 'ko' ? '자세히 보기' : 'View Details'}
                 </button>
@@ -1021,7 +990,7 @@ export default function App() {
           <div className="text-center">
             <button 
               onClick={() => setShowCompareModal(true)}
-              className="bg-[#d4af7d]/10 text-[#d4af7d] border border-[#d4af7d]/20 px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2 hover:bg-[#d4af7d]/20 hover:border-[#d4af7d]/40 transition-all"
+              className="bg-[#C9A66B]/10 text-[#C9A66B] border border-[#C9A66B]/20 px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2 hover:bg-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all"
             >
               {language === 'ko' ? '전체 상품 비교하기' : 'Compare All Products'}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1036,23 +1005,23 @@ export default function App() {
       <section id="threedays" className="py-32 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#2c3e50]">{t.threedays.title}</h2>
-            <p className="text-xl text-[#8c7b65]">{t.threedays.subtitle}</p>
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#141C2E] font-serif-kr">{t.threedays.title}</h2>
+            <p className="text-xl text-[#C9A66B]">{t.threedays.subtitle}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
             {[t.threedays.day1, t.threedays.day2, t.threedays.day3, t.threedays.after].map((day, index) => (
               <div
                 key={index}
-                className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#8c7b65]/20"
+                className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#C9A66B]/20"
               >
                 <div className="flex items-center gap-6 mb-8">
-                  <div className="w-16 h-16 rounded-full bg-[#8c7b65] text-white flex items-center justify-center text-2xl flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-[#C9A66B] text-white flex items-center justify-center text-2xl flex-shrink-0">
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className="text-2xl md:text-3xl text-[#2c3e50] mb-2">{day.title}</h3>
-                    <p className="text-lg text-[#8c7b65]">{day.desc}</p>
+                    <h3 className="text-2xl md:text-3xl text-[#141C2E] mb-2">{day.title}</h3>
+                    <p className="text-lg text-[#C9A66B]">{day.desc}</p>
                   </div>
                 </div>
                 <p className="text-neutral-600 text-lg leading-relaxed whitespace-pre-line pl-2">
@@ -1068,8 +1037,8 @@ export default function App() {
       <section id="resting" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#2c3e50]">{t.resting.title}</h2>
-            <p className="text-xl text-[#8c7b65]">{t.resting.subtitle}</p>
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#141C2E] font-serif-kr">{t.resting.title}</h2>
+            <p className="text-xl text-[#C9A66B]">{t.resting.subtitle}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
@@ -1081,7 +1050,7 @@ export default function App() {
             ].map((place, index) => (
               <div
                 key={index}
-                className="bg-neutral-50 rounded-3xl overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-[#8c7b65]/20"
+                className="bg-neutral-50 rounded-3xl overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-[#C9A66B]/20"
               >
                 <div className="h-64 overflow-hidden">
                   <img
@@ -1091,8 +1060,8 @@ export default function App() {
                   />
                 </div>
                 <div className="p-10">
-                  <h3 className="text-2xl md:text-3xl mb-4 text-[#2c3e50]">{place.data.title}</h3>
-                  <p className="text-lg text-[#8c7b65] mb-4">{place.data.desc}</p>
+                  <h3 className="text-2xl md:text-3xl mb-4 text-[#141C2E]">{place.data.title}</h3>
+                  <p className="text-lg text-[#C9A66B] mb-4">{place.data.desc}</p>
                   <p className="text-neutral-600">{place.data.info}</p>
                 </div>
               </div>
@@ -1102,10 +1071,10 @@ export default function App() {
       </section>
 
       {/* Stories Section */}
-      <section id="stories" className="py-32 bg-[#2c3e50] text-white">
+      <section id="stories" className="py-32 bg-[#141C2E] text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl mb-6 text-[#eecfa1]">{t.stories.title}</h2>
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#C9A66B] font-serif-kr">{t.stories.title}</h2>
             <p className="text-xl text-white/80">{t.stories.subtitle}</p>
           </div>
 
@@ -1116,7 +1085,7 @@ export default function App() {
                 className="bg-white/10 backdrop-blur-sm p-10 rounded-3xl hover:bg-white/15 transition-all border border-white/20 cursor-pointer"
                 onClick={() => window.open('https://blog.naver.com/lucid-life', '_blank')}
               >
-                <div className="w-12 h-12 rounded-full bg-[#8c7b65] text-white flex items-center justify-center text-xl mb-8">
+                <div className="w-12 h-12 rounded-full bg-[#C9A66B] text-white flex items-center justify-center text-xl mb-8">
                   <BookOpen className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl md:text-3xl mb-6 text-white">{story.title}</h3>
@@ -1142,7 +1111,7 @@ export default function App() {
               href="https://blog.naver.com/lucid-life"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-[#8c7b65] hover:bg-[#8c7b65]/80 text-white rounded-lg transition-all text-lg"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-[#C9A66B] hover:bg-[#C9A66B]/80 text-white rounded-lg transition-all text-lg"
             >
               <BookOpen className="w-6 h-6" />
               {t.stories.visitBlog}
@@ -1157,18 +1126,18 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 md:order-1">
               <div className="mb-8">
-                <h2 className="text-4xl md:text-5xl mb-3 text-[#2c3e50]">{t.ceo.title}</h2>
-                <p className="text-xl text-[#8c7b65]">{t.ceo.subtitle}</p>
+                <h2 className="text-4xl md:text-5xl mb-3 text-[#141C2E] font-serif-kr">{t.ceo.title}</h2>
+                <p className="text-xl text-[#C9A66B]">{t.ceo.subtitle}</p>
               </div>
 
-              <blockquote className="text-2xl md:text-3xl mb-12 text-[#2c3e50] italic whitespace-pre-line leading-relaxed border-l-4 border-[#8c7b65] pl-8">
+              <blockquote className="text-2xl md:text-3xl mb-12 text-[#141C2E] italic whitespace-pre-line leading-relaxed border-l-4 border-[#C9A66B] pl-8">
                 {t.ceo.quote}
               </blockquote>
 
               <ul className="space-y-4">
                 {t.ceo.credentials.map((credential, index) => (
                   <li key={index} className="flex items-start gap-4 text-neutral-700">
-                    <div className="w-2 h-2 rounded-full bg-[#8c7b65] flex-shrink-0 mt-3" />
+                    <div className="w-2 h-2 rounded-full bg-[#C9A66B] flex-shrink-0 mt-3" />
                     <span className="text-lg leading-relaxed">{credential}</span>
                   </li>
                 ))}
@@ -1189,9 +1158,9 @@ export default function App() {
       </section>
 
       {/* Together CTA Section */}
-      <section id="together" className="py-32 bg-[#2c3e50]">
+      <section id="together" className="py-32 bg-[#141C2E]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-6xl mb-8 text-[#eecfa1]">{t.together.title}</h2>
+          <h2 className="text-4xl md:text-6xl mb-8 text-[#C9A66B] font-serif-kr">{t.together.title}</h2>
           <p className="text-xl md:text-2xl mb-16 text-white/90 whitespace-pre-line leading-relaxed">
             {t.together.subtitle}
           </p>
@@ -1199,13 +1168,13 @@ export default function App() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button
               onClick={openGoogleForm}
-              className="px-12 py-5 bg-[#8c7b65] hover:bg-[#8c7b65]/80 text-white rounded-lg transition-all transform hover:scale-105 text-lg"
+              className="px-12 py-5 bg-[#C9A66B] hover:bg-[#C9A66B]/80 text-white rounded-lg transition-all transform hover:scale-105 text-lg"
             >
               {t.together.cta}
             </button>
             <a
               href="tel:010-2116-4114"
-              className="px-12 py-5 bg-transparent border-2 border-[#eecfa1] text-[#eecfa1] hover:bg-[#eecfa1] hover:text-[#2c3e50] rounded-lg transition-all text-lg flex items-center gap-3"
+              className="px-12 py-5 bg-transparent border-2 border-[#eecfa1] text-[#C9A66B] hover:bg-[#eecfa1] hover:text-[#141C2E] rounded-lg transition-all text-lg flex items-center gap-3"
             >
               <Phone className="w-5 h-5" />
               {t.together.emergency}
@@ -1215,7 +1184,7 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1a252f] text-white/70 py-12">
+      <footer className="bg-[#141C2E] text-white/70 py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-3 mb-8">
             <p className="text-lg">{t.footer.company}</p>
@@ -1248,17 +1217,17 @@ export default function App() {
       <div className="fixed bottom-6 right-4 md:bottom-8 md:right-8 flex flex-col gap-3 md:gap-4 z-40">
         <a
           href="tel:010-2116-4114"
-          className="w-12 h-12 md:w-16 md:h-16 bg-[#8c7b65] hover:bg-[#8c7b65]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
+            className="w-12 h-12 md:w-16 md:h-16 bg-[#C9A66B] hover:bg-[#C9A66B]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
           title={language === 'ko' ? '전화' : 'Call'}
         >
           <Phone className="w-5 h-5 md:w-7 md:h-7 text-white" />
         </a>
         <button
           onClick={openGoogleForm}
-          className="w-12 h-12 md:w-16 md:h-16 bg-[#2c3e50] hover:bg-[#2c3e50]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
+            className="w-12 h-12 md:w-16 md:h-16 bg-[#141C2E] hover:bg-[#141C2E]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
           title={language === 'ko' ? '멤버십 사전등록' : 'Pre-register'}
         >
-          <Edit3 className="w-5 h-5 md:w-7 md:h-7 text-[#eecfa1]" />
+          <Edit3 className="w-5 h-5 md:w-7 md:h-7 text-[#C9A66B]" />
         </button>
       </div>
 
@@ -1287,7 +1256,7 @@ export default function App() {
             {/* Scrollable Content */}
             <div className="overflow-y-auto max-h-[85vh] p-4 md:p-5">
               {/* Header - 제목 */}
-              <h3 className="text-base md:text-lg font-medium text-[#d4af7d] mb-1">
+              <h3 className="text-base md:text-lg font-medium text-[#C9A66B] mb-1">
                 {selectedProduct.name}
               </h3>
               
@@ -1307,7 +1276,7 @@ export default function App() {
 
               {/* Items List - 구성 항목 */}
               <div className="mb-4">
-                <p className="text-xs md:text-sm text-[#d4af7d] mb-4">{language === 'ko' ? '구성 항목' : 'Composition Items'}</p>
+                <p className="text-xs md:text-sm text-[#C9A66B] mb-4">{language === 'ko' ? '구성 항목' : 'Composition Items'}</p>
                 <div className="space-y-0">
                   {selectedProduct.items.map((item, idx) => (
                     <div 
@@ -1355,7 +1324,7 @@ export default function App() {
             {/* Scrollable Content */}
             <div className="overflow-y-auto max-h-[90vh] p-4 md:p-6 lg:p-10">
               {/* Header */}
-              <h3 className="text-base md:text-lg lg:text-3xl font-medium text-[#d4af7d] mb-1 lg:mb-2">
+              <h3 className="text-base md:text-lg lg:text-3xl font-medium text-[#C9A66B] mb-1 lg:mb-2">
                 {language === 'ko' ? '전체 상품 비교' : 'Compare All Products'}
               </h3>
               <p className="text-xs md:text-sm lg:text-base text-[#808080] mb-4 md:mb-6 lg:mb-10">
@@ -1370,28 +1339,28 @@ export default function App() {
                     <tr className="border-b border-white/10">
                       <th className="text-left py-2 md:py-3 lg:py-6 pr-1 md:pr-3 lg:pr-6 text-[#808080] font-normal text-[8px] md:text-[9px] lg:text-base w-[65px] md:w-[80px] lg:w-[160px]">{language === 'ko' ? '항목' : 'Item'}</th>
                       <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
-                        <div className="text-[#d4af7d] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '가족장 · 무빈소' : 'Family Funeral · No Wake'}</div>
+                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '가족장 · 무빈소' : 'Family Funeral · No Wake'}</div>
                         <div className="mt-0.5 lg:mt-2">
                           <span className="text-sm md:text-base lg:text-4xl text-white font-light">150</span>
                           <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
                         </div>
                       </th>
                       <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
-                        <div className="text-[#d4af7d] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '실용장' : 'Practical Funeral'}</div>
+                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '실용장' : 'Practical Funeral'}</div>
                         <div className="mt-0.5 lg:mt-2">
                           <span className="text-sm md:text-base lg:text-4xl text-white font-light">290</span>
                           <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
                         </div>
                       </th>
                       <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
-                        <div className="text-[#d4af7d] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '표준장' : 'Standard Funeral'}</div>
+                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '표준장' : 'Standard Funeral'}</div>
                         <div className="mt-0.5 lg:mt-2">
                           <span className="text-sm md:text-base lg:text-4xl text-white font-light">360</span>
                           <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
                         </div>
                       </th>
                       <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
-                        <div className="text-[#d4af7d] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '매장 · 미국식장' : 'Burial · American Style'}</div>
+                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '매장 · 미국식장' : 'Burial · American Style'}</div>
                         <div className="mt-0.5 lg:mt-2">
                           <span className="text-sm md:text-base lg:text-4xl text-white font-light">450</span>
                           <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
@@ -1474,7 +1443,7 @@ export default function App() {
 
             {/* Header */}
             <div className="p-6 lg:p-8 border-b border-white/10">
-              <h2 className="text-xl lg:text-2xl font-bold text-[#d4af7d]">{language === 'ko' ? '개인정보 처리방침' : 'Privacy Policy'}</h2>
+              <h2 className="text-xl lg:text-2xl font-bold text-[#C9A66B]">{language === 'ko' ? '개인정보 처리방침' : 'Privacy Policy'}</h2>
             </div>
 
             {/* Content */}
@@ -1488,7 +1457,7 @@ export default function App() {
                     </p>
 
                 <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">■ 수집하는 개인정보 항목 및 수집방법</h3>
+                  <h3 className="text-[#C9A66B] font-semibold mb-3">■ 수집하는 개인정보 항목 및 수집방법</h3>
                   <div className="space-y-2 text-white/70">
                     <p className="font-medium text-white/90">가. 수집하는 개인정보의 항목</p>
                     <p>○ 회사는 회원가입, 상담, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.</p>
@@ -1501,7 +1470,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">■ 개인정보의 수집 및 이용목적</h3>
+                  <h3 className="text-[#C9A66B] font-semibold mb-3">■ 개인정보의 수집 및 이용목적</h3>
                   <div className="space-y-2 text-white/70">
                     <p>회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
                     <p>○ 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산</p>
@@ -1514,7 +1483,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">■ 개인정보의 보유 및 이용기간</h3>
+                  <h3 className="text-[#C9A66B] font-semibold mb-3">■ 개인정보의 보유 및 이용기간</h3>
                   <div className="space-y-2 text-white/70">
                     <p>원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.</p>
                     <p className="font-medium text-white/90 mt-3">가. 회사 내부방침에 의한 정보보유 사유</p>
@@ -1531,7 +1500,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">■ 개인정보의 파기절차 및 방법</h3>
+                  <h3 className="text-[#C9A66B] font-semibold mb-3">■ 개인정보의 파기절차 및 방법</h3>
                   <div className="space-y-2 text-white/70">
                     <p>회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체없이 파기합니다. 파기절차 및 방법은 다음과 같습니다.</p>
                     <p className="font-medium text-white/90 mt-3">○ 파기절차</p>
@@ -1542,7 +1511,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">■ 개인정보 제공</h3>
+                  <h3 className="text-[#C9A66B] font-semibold mb-3">■ 개인정보 제공</h3>
                   <div className="space-y-2 text-white/70">
                     <p>회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.</p>
                     <p className="pl-4">○ 이용자들이 사전에 동의한 경우</p>
@@ -1551,7 +1520,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">■ 수집한 개인정보의 위탁</h3>
+                  <h3 className="text-[#C9A66B] font-semibold mb-3">■ 수집한 개인정보의 위탁</h3>
                   <div className="space-y-2 text-white/70">
                     <p>회사는 서비스 이행을 위해 아래와 같이 외부 전문업체에 위탁하여 운영하고 있습니다.</p>
                     <p className="pl-4">○ 위탁 대상자 : [KCP] 넷페이</p>
@@ -1560,7 +1529,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">■ 이용자 및 법정대리인의 권리와 그 행사방법</h3>
+                  <h3 className="text-[#C9A66B] font-semibold mb-3">■ 이용자 및 법정대리인의 권리와 그 행사방법</h3>
                   <div className="space-y-2 text-white/70">
                     <p>○ 이용자는 언제든지 등록되어 있는 자신의 개인정보를 조회하거나 수정할 수 있으며 가입해지를 요청할 수도 있습니다.</p>
                     <p>○ 이용자들의 개인정보 조회,수정을 위해서는 "개인정보변경"(또는 "회원정보수정" 등)을 가입해지(동의철회)를 위해서는 "회원탈퇴"를 클릭하여 본인 확인 절차를 거치신 후 직접 열람, 정정 또는 탈퇴가 가능합니다.</p>
@@ -1571,7 +1540,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">■ 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항</h3>
+                  <h3 className="text-[#C9A66B] font-semibold mb-3">■ 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항</h3>
                   <div className="space-y-2 text-white/70">
                     <p>회사는 귀하의 정보를 수시로 저장하고 찾아내는 "쿠키(cookie)" 등을 운용합니다. 쿠키란 웹사이트를 운영하는데 이용되는 서버가 귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의 컴퓨터 하드디스크에 저장됩니다.</p>
                     <p className="font-medium text-white/90 mt-3">○ 쿠키 등 사용 목적</p>
@@ -1585,7 +1554,7 @@ export default function App() {
                 </div>
 
                 <div>
-                  <h3 className="text-[#d4af7d] font-semibold mb-3">■ 개인정보에 관한 민원서비스</h3>
+                  <h3 className="text-[#C9A66B] font-semibold mb-3">■ 개인정보에 관한 민원서비스</h3>
                   <div className="space-y-2 text-white/70">
                     <p>회사는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보보호책임자를 지정하고 있습니다.</p>
                     <div className="mt-4 p-4 bg-white/5 rounded-lg">
@@ -1616,7 +1585,7 @@ export default function App() {
                     </p>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Items of Personal Information Collected and Collection Methods</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">■ Items of Personal Information Collected and Collection Methods</h3>
                       <div className="space-y-2 text-white/70">
                         <p className="font-medium text-white/90">a. Items of Personal Information Collected</p>
                         <p>○ The Company collects personal information such as the following for membership registration, consultation, and service application.</p>
@@ -1629,7 +1598,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Purpose of Collection and Use of Personal Information</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">■ Purpose of Collection and Use of Personal Information</h3>
                       <div className="space-y-2 text-white/70">
                         <p>The Company uses the collected personal information for the following purposes.</p>
                         <p>○ Contract fulfillment for service provision and fee settlement for service provision</p>
@@ -1642,7 +1611,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Retention and Use Period of Personal Information</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">■ Retention and Use Period of Personal Information</h3>
                       <div className="space-y-2 text-white/70">
                         <p>In principle, personal information is destroyed without delay after the purpose of collection and use is achieved. However, the following information may be retained for the period specified below for the following reasons.</p>
                         <p className="font-medium text-white/90 mt-3">a. Information Retention Reasons According to Company Internal Policy</p>
@@ -1659,7 +1628,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Procedures and Methods for Destruction of Personal Information</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">■ Procedures and Methods for Destruction of Personal Information</h3>
                       <div className="space-y-2 text-white/70">
                         <p>In principle, the Company destroys personal information without delay after the purpose of collection and use is achieved. The procedures and methods for destruction are as follows.</p>
                         <p className="font-medium text-white/90 mt-3">○ Destruction Procedures</p>
@@ -1670,7 +1639,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Provision of Personal Information</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">■ Provision of Personal Information</h3>
                       <div className="space-y-2 text-white/70">
                         <p>In principle, the Company does not provide users' personal information to external parties. However, exceptions are made in the following cases.</p>
                         <p className="pl-4">○ When users have given prior consent</p>
@@ -1679,7 +1648,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Entrustment of Collected Personal Information</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">■ Entrustment of Collected Personal Information</h3>
                       <div className="space-y-2 text-white/70">
                         <p>The Company entrusts and operates personal information to external specialized companies as follows to fulfill services.</p>
                         <p className="pl-4">○ Entrusted party: [KCP] Netpay</p>
@@ -1688,7 +1657,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Rights of Users and Legal Guardians and How to Exercise Them</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">■ Rights of Users and Legal Guardians and How to Exercise Them</h3>
                       <div className="space-y-2 text-white/70">
                         <p>○ Users can view or modify their registered personal information at any time and may also request membership cancellation.</p>
                         <p>○ For users to view or modify their personal information, click "Change Personal Information" (or "Modify Member Information", etc.), and for membership cancellation (withdrawal of consent), click "Withdraw Membership" to go through identity verification procedures, then directly view, correct, or withdraw.</p>
@@ -1699,7 +1668,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Installation, Operation, and Refusal of Automatic Collection Devices for Personal Information</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">■ Installation, Operation, and Refusal of Automatic Collection Devices for Personal Information</h3>
                       <div className="space-y-2 text-white/70">
                         <p>The Company operates "cookies" that frequently store and retrieve your information. Cookies are very small text files sent by the server used to operate the website to your browser and stored on your computer's hard disk.</p>
                         <p className="font-medium text-white/90 mt-3">○ Purpose of Using Cookies, etc.</p>
@@ -1713,7 +1682,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">■ Complaint Services Regarding Personal Information</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">■ Complaint Services Regarding Personal Information</h3>
                       <div className="space-y-2 text-white/70">
                         <p>The Company designates related departments and personal information protection officers as follows to protect customers' personal information and handle complaints related to personal information.</p>
                         <div className="mt-4 p-4 bg-white/5 rounded-lg">
@@ -1767,7 +1736,7 @@ export default function App() {
 
             {/* Header */}
             <div className="p-6 lg:p-8 border-b border-white/10">
-              <h2 className="text-xl lg:text-2xl font-bold text-[#d4af7d]">{language === 'ko' ? '이용약관' : 'Terms and Conditions'}</h2>
+              <h2 className="text-xl lg:text-2xl font-bold text-[#C9A66B]">{language === 'ko' ? '이용약관' : 'Terms and Conditions'}</h2>
             </div>
 
             {/* Content */}
@@ -1776,7 +1745,7 @@ export default function App() {
                 {language === 'ko' ? (
                   <>
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">제1조(목적)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">제1조(목적)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>이 약관은 루시드라이프(전자상거래 사업자)가 운영하는 루시드라이프_사이버 몰(이하 "몰"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리/ 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
                         <p className="text-white/50 text-sm">※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」</p>
@@ -1784,7 +1753,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">제2조(정의)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">제2조(정의)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① "몰"이란 루시드라이프 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 사이버몰을 운영하는 사업자의 의미로도 사용합니다.</p>
                         <p>② "이용자"란 "몰"에 접속하여 이 약관에 따라 "몰"이 제공하는 서비스를 받는 회원 및 비회원을 말합니다.</p>
@@ -1794,7 +1763,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">제3조 (약관 등의 명시와 설명 및 개정)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">제3조 (약관 등의 명시와 설명 및 개정)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① "몰"은 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수 있는 곳의 주소를 포함), 전화번호, 모사전송번호, 전자우편주소, 사업자등록번호, 통신판매업 신고번호, 개인정보보호책임자등을 이용자가 쉽게 알 수 있도록 루시드라이프 사이버몰의 초기 서비스화면(전면)에 게시합니다. 다만, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.</p>
                         <p>② "몰은 이용자가 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 청약철회·배송책임·환불조건 등과 같은 중요한 내용을 이용자가 이해할 수 있도록 별도의 연결화면 또는 팝업화면 등을 제공하여 이용자의 확인을 구하여야 합니다.</p>
@@ -1806,7 +1775,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">제4조(서비스의 제공 및 변경)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">제4조(서비스의 제공 및 변경)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① "몰"은 다음과 같은 업무를 수행합니다.</p>
                         <div className="pl-4 space-y-1">
@@ -1821,7 +1790,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">제5조(서비스의 중단)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">제5조(서비스의 중단)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① "몰"은 컴퓨터 등 정보통신설비의 보수점검 교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.</p>
                         <p>② "몰"은 제1항의 사유로 서비스의 제공이 일시적으로 중단됨으로 인하여 이용자 또는 제3자가 입은 손해에 대하여 배상합니다. 단, "몰"이 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.</p>
@@ -1830,7 +1799,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">제6조(회원가입)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">제6조(회원가입)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① 이용자는 "몰"이 정한 가입 양식에 따라 회원정보를 기입한 후 이 약관에 동의한다는 의사표시를 함으로서 회원가입을 신청합니다.</p>
                         <p>② "몰"은 제1항과 같이 회원으로 가입할 것을 신청한 이용자 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다.</p>
@@ -1845,7 +1814,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">제7조(회원 탈퇴 및 자격 상실 등)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">제7조(회원 탈퇴 및 자격 상실 등)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① 회원은 "몰"에 언제든지 탈퇴를 요청할 수 있으며 "몰"은 즉시 회원탈퇴를 처리합니다.</p>
                         <p>② 회원이 다음 각 호의 사유에 해당하는 경우, "몰"은 회원자격을 제한 및 정지시킬 수 있습니다.</p>
@@ -1863,7 +1832,7 @@ export default function App() {
                 ) : (
                   <>
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 1 (Purpose)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">Article 1 (Purpose)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>These terms and conditions are intended to regulate the rights, obligations, and responsibilities of the cyber mall and users in using Internet-related services (hereinafter referred to as "Services") provided by the Lucid Life Cyber Mall (hereinafter referred to as "Mall") operated by Lucid Life (e-commerce business operator).</p>
                         <p className="text-white/50 text-sm">※ "These terms and conditions also apply to e-commerce using PC communication, wireless, etc., unless contrary to their nature."</p>
@@ -1871,7 +1840,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 2 (Definitions)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">Article 2 (Definitions)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① "Mall" refers to a virtual business place set up by Lucid Life Company to allow users to trade goods or services (hereinafter referred to as "Goods, etc.") using information and communication facilities such as computers, and also refers to the business operator operating the cyber mall.</p>
                         <p>② "User" refers to members and non-members who access the "Mall" and receive services provided by the "Mall" according to these terms and conditions.</p>
@@ -1881,7 +1850,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 3 (Disclosure, Explanation, and Amendment of Terms and Conditions)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">Article 3 (Disclosure, Explanation, and Amendment of Terms and Conditions)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① The "Mall" posts the contents of these terms and conditions, company name and representative name, business address (including address where consumer complaints can be handled), phone number, fax number, email address, business registration number, communication sales business report number, personal information protection officer, etc., on the initial service screen (front page) of the Lucid Life Cyber Mall so that users can easily know them. However, the contents of the terms and conditions can be viewed by users through a connected screen.</p>
                         <p>② Before users agree to the terms and conditions, the "Mall" must provide a separate connected screen or popup screen so that users can understand important contents such as withdrawal of offer, delivery responsibility, refund conditions, etc., and seek user confirmation.</p>
@@ -1893,7 +1862,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 4 (Provision and Change of Services)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">Article 4 (Provision and Change of Services)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① The "Mall" performs the following tasks.</p>
                         <div className="pl-4 space-y-1">
@@ -1908,7 +1877,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 5 (Suspension of Services)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">Article 5 (Suspension of Services)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① The "Mall" may temporarily suspend the provision of services if reasons such as maintenance, replacement, and failure of information and communication facilities such as computers, or interruption of communication occur.</p>
                         <p>② The "Mall" compensates for damages suffered by users or third parties due to temporary suspension of service provision due to the reasons in paragraph 1. However, this does not apply if the "Mall" proves that there was no intention or negligence.</p>
@@ -1917,7 +1886,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 6 (Membership Registration)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">Article 6 (Membership Registration)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① Users apply for membership registration by filling in member information according to the registration form set by the "Mall" and expressing their intention to agree to these terms and conditions.</p>
                         <p>② The "Mall" registers as members those who have applied for membership as in paragraph 1, unless they fall under any of the following subparagraphs.</p>
@@ -1932,7 +1901,7 @@ export default function App() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#d4af7d] font-semibold mb-3">Article 7 (Member Withdrawal and Loss of Qualification)</h3>
+                      <h3 className="text-[#C9A66B] font-semibold mb-3">Article 7 (Member Withdrawal and Loss of Qualification)</h3>
                       <div className="space-y-2 text-white/70">
                         <p>① Members may request withdrawal from the "Mall" at any time, and the "Mall" immediately processes member withdrawal.</p>
                         <p>② If a member falls under any of the following subparagraphs, the "Mall" may restrict or suspend membership qualification.</p>
