@@ -941,7 +941,35 @@ export default function App() {
                 className="bg-white rounded-3xl p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20"
               >
                 <h3 className="text-2xl md:text-3xl mb-4 text-[#141C2E] font-serif-kr">{place.data.title}</h3>
-                <p className="text-base text-neutral-600 leading-relaxed">{place.data.desc}</p>
+                <p className="text-base text-neutral-600 leading-relaxed">
+                  {index === 0 ? (
+                    <>
+                      <span className="hidden md:block">
+                        따뜻한 빛이 머무는,<br />
+                        가장 편안한 실내 안치 공간.
+                      </span>
+                      <span className="md:hidden">{place.data.desc}</span>
+                    </>
+                  ) : index === 1 ? (
+                    <>
+                      <span className="hidden md:block">
+                        자연에서 와서 자연으로.<br />
+                        수목장, 잔디장, 해양장.
+                      </span>
+                      <span className="md:hidden">{place.data.desc}</span>
+                    </>
+                  ) : index === 2 ? (
+                    <>
+                      <span className="hidden md:block">
+                        전통의 예를 갖춘,<br />
+                        품격 있는 장지 동행.
+                      </span>
+                      <span className="md:hidden">{place.data.desc}</span>
+                    </>
+                  ) : (
+                    place.data.desc
+                  )}
+                </p>
               </div>
             ))}
           </div>
