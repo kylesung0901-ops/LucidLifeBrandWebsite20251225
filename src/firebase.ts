@@ -1,8 +1,11 @@
-// Firebase 설정 파일
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Firebase 설정 값 (환경 변수 또는 기본값 사용)
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyBROSVZBrWW0lcONg4hf_HAbASD_5ghwc4",
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "lucid-life-brand-website-27cd4.firebaseapp.com",
@@ -13,10 +16,10 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "G-7VV5R72Y3E"
 };
 
-// Firebase 초기화
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Analytics 초기화 (브라우저 환경에서만)
+// Initialize Analytics (only in browser environment)
 let analytics = null;
 if (typeof window !== 'undefined') {
   analytics = getAnalytics(app);

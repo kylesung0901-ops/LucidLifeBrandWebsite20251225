@@ -655,7 +655,7 @@ export default function App() {
     <div className="min-h-screen bg-[#141C2E]">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#141C2E]/95 backdrop-blur-sm border-b border-[#C9A66B]/20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-3 lg:py-2">
           <div className="flex items-center justify-between">
             <button 
               onClick={() => scrollToSection('hero')}
@@ -664,7 +664,7 @@ export default function App() {
               <img 
                 src={logoImage} 
                 alt="LUCID LIFE" 
-                className="h-28 md:h-36 lg:h-44 w-auto"
+                className="h-28 md:h-36 lg:h-36 w-auto"
               />
             </button>
 
