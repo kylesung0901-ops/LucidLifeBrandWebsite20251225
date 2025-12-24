@@ -1188,29 +1188,33 @@ export default function App() {
 
       {/* Three Days Section */}
       <section id="threedays" className="py-40 bg-[#F8F5E6]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr">{t.threedays.title}</h2>
+            <h2 className="text-3xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr">{t.threedays.title}</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
             {[t.threedays.day1, t.threedays.day2, t.threedays.day3].map((day, index) => (
               <div
                 key={index}
-                className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#C9A66B]/20"
+                className="bg-white p-6 md:p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#C9A66B]/20"
               >
-                <div className="mb-6">
-                  <h3 className="text-2xl md:text-3xl text-[#141C2E] mb-2 font-serif-kr">{day.title}</h3>
-                  <p className="text-lg text-[#C9A66B] mb-4">{day.desc}</p>
+                <div className="mb-4 md:mb-6">
+                  <h3 className="text-xl md:text-3xl text-[#141C2E] mb-2 font-serif-kr">{day.title}</h3>
+                  <p className="text-base md:text-lg text-[#C9A66B] mb-3 md:mb-4">{day.desc}</p>
                 </div>
-                <p className="text-neutral-600 text-base leading-relaxed">
+                <p className="text-neutral-600 text-sm md:text-base leading-relaxed">
                   {index === 0 ? (
                     <>
                       <span className="hidden md:block">
                         황망한 첫날,<br />
                         복잡한 절차 대신 고인과의 인사에 집중
                       </span>
-                      <span className="md:hidden">{day.details}</span>
+                      <span className="md:hidden">
+                        황망한 첫날,<br />
+                        복잡한 절차 대신<br />
+                        고인과의 인사에 집중
+                      </span>
                     </>
                   ) : index === 1 ? (
                     <>
@@ -1219,7 +1223,11 @@ export default function App() {
                         기억할 수 있도록,<br />
                         최고의 예를 갖춘 입관식
                       </span>
-                      <span className="md:hidden">{day.details}</span>
+                      <span className="md:hidden">
+                        가장 아름다운 마지막 모습을<br />
+                        기억할 수 있도록,<br />
+                        최고의 예를 갖춘 입관식
+                      </span>
                     </>
                   ) : index === 2 ? (
                     <>
@@ -1227,7 +1235,10 @@ export default function App() {
                         마지막 안식처까지,<br />
                         소홀함 없이 끝까지 동행
                       </span>
-                      <span className="md:hidden">{day.details}</span>
+                      <span className="md:hidden">
+                        마지막 안식처까지,<br />
+                        소홀함 없이 끝까지 동행
+                      </span>
                     </>
                   ) : (
                     day.details
