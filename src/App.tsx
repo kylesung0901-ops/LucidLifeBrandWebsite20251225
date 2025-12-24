@@ -903,6 +903,14 @@ export default function App() {
                       </span>
                       <span className="md:hidden">{day.details}</span>
                     </>
+                  ) : index === 2 ? (
+                    <>
+                      <span className="hidden md:block">
+                        마지막 안식처까지,<br />
+                        소홀함 없이 끝까지 동행
+                      </span>
+                      <span className="md:hidden">{day.details}</span>
+                    </>
                   ) : (
                     day.details
                   )}
