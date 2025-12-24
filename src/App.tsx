@@ -930,6 +930,7 @@ export default function App() {
   const [showCompareModal, setShowCompareModal] = useState(false);
   const [showPopupCTA, setShowPopupCTA] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
   const footerRef = useRef<HTMLElement | null>(null);
 
   const t = translations[language];
