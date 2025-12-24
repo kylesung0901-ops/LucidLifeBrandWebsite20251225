@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Globe, Phone, MessageSquare, Heart, Flower2, MapPin, BookOpen, User, FileText, Edit3 } from 'lucide-react';
 import ceoImage from './assets/e0f2c43b934867240dc85cbcb59db1458376a4f8.png';
 // import logoImage from './assets/ed9c4979525d1d92a2e2ee261a14686c632bc8de.png';
@@ -21,25 +21,27 @@ const translations = {
     },
     hero: {
       brand: '루시드라이프',
-      title: '이별은 끝이 아니라 완성입니다',
-      subtitle: '루시드라이프는 장례를 대신해주는 곳이 아닙니다.\n서툰 이별 앞에, 함께 서 있는 곳입니다.',
+      title: '모든 이별은 서툴기에 누군가는 그 곁에 선다',
+      subtitle: '말하지 않아도 되는 시간을 함께 견딥니다',
+      signature: 'your life lucid life',
       cta: '자세히 보기',
     },
     accompany: {
-      title: '이별동행케어',
-      subtitle: '임종 전부터 이별 이후까지.\n한 사람의 전 과정을, 하나의 팀이 돌봅니다.',
+      subtitle: 'Continuum Care',
+      title: '절차가 아니라, 의식으로. 장례는 3일로 끝나지 않습니다. 생전부터 장례 이후까지, 한 사람을 기억하는 전 과정을 함께합니다.',
       before: {
         title: '임종 전',
-        desc: '불안을 줄이는 준비',
+        desc: '서로가 아직 전하지 못한 것이 남아 있을 때',
       },
       during: {
         title: '장례 중',
-        desc: '절차보다 사람',
+        desc: '고인이 되심에 조문과 입관의 작별의 시간',
       },
       after: {
         title: '이별 이후',
-        desc: '일상으로 돌아가는 정리',
+        desc: '탈상, 제사, 천도제를 지나며 다시 일상으로 돌아갈 때',
       },
+      link: '이별은 하루로 끝나지 않습니다 >',
     },
     pillars: {
       title: '세 가지 축',
@@ -87,105 +89,93 @@ const translations = {
       },
     },
     services: {
-      title: '함께하는 방식',
-      subtitle: '한 사람을 위한, 네 가지 선택',
-      basic: {
-        title: '베이직 케어',
-        desc: '본질에 집중한 기본 케어',
-        features: ['전통 의식 진행', '심리 상담 1회', '49재 안내', '투명한 비용'],
+      title: '함께 하는 방식',
+      subtitle: '부담 없이, 상황에 맞게',
+      family: {
+        title: '가족장 · 무빈소',
+        price: 150,
+        tagline: '조용히, 가족만',
+        desc: '조용히, 가장 가까운 사람들만 남아 이별에 집중하는 시간.',
       },
-      signature: {
-        title: '시그니처 케어',
-        desc: '루시드라이프의 정수',
-        features: ['맞춤 의전 기획', '지속 심리 케어', '미국식 메모리얼', '사후 관리 지원'],
+      practical: {
+        title: '실용장',
+        price: 290,
+        tagline: '기본에 충실하게',
+        desc: '불필요한 부담은 덜고, 장례의 기본은 놓치지 않은 현실적인 선택.',
       },
-      memorial: {
-        title: '메모리얼 파티',
-        desc: '미국식 추모 파티',
-        features: ['원하는 장소 선택', '파티형 추모식', '영상/음악 기획', '케이터링 제공'],
+      standard: {
+        title: '표준장',
+        price: 360,
+        tagline: '충분히, 정성껏',
+        desc: '가장 많은 이들이 선택한, 균형과 품위를 갖춘 기본 장례.',
       },
-      noblesse: {
-        title: '노블레스 케어',
-        desc: '최상급 토탈 케어',
-        features: ['1:1 전담 매니저', '고종황제식 의전', 'VIP 공간 제공', '평생 사후 관리'],
+      burial: {
+        title: '매장 · 미국식장',
+        price: 450,
+        tagline: '마지막을 완벽하게',
+        desc: '한 사람의 삶을 중심에 두고 설계하는 맞춤형 추모 의식.',
       },
+      compareBtn: '전체 상품 비교하기',
+      learnMore: '미국식 장례 알아보기 >',
     },
     threedays: {
       title: '사흘동안',
-      subtitle: '장례의 3일, 한 챕터씩 함께 걷습니다',
       day1: {
-        title: '첫째 날',
-        desc: '임종과 준비',
-        details: '24시간 긴급 출동\n염습과 입관\n장례 계획 수립',
+        title: '1일차',
+        desc: '임종 및 빈소 마련',
+        details: '황망한 첫날, 복잡한 절차 대신 고인과의 인사에 집중',
       },
       day2: {
-        title: '둘째 날',
-        desc: '추모와 의식',
-        details: '조문 공간 운영\n심리 상담 지원\n추모 영상 상영',
+        title: '2일차',
+        desc: '입관 및 조문',
+        details: '가장 아름다운 마지막 모습을 기억할 수 있도록, 최고의 예를 갖춘 입관식',
       },
       day3: {
-        title: '셋째 날',
-        desc: '발인과 안치',
-        details: '발인 의식\n장지 이동\n안치 후 정리',
-      },
-      after: {
-        title: '그 이후',
-        desc: '이별 후 동행',
-        details: '49재 안내\n심리 케어\n일상 복귀 지원',
+        title: '3일차',
+        desc: '발인 및 장지 동행',
+        details: '마지막 안식처까지, 소홀함 없이 끝까지 동행',
       },
     },
     resting: {
       title: '마지막 안식처',
-      subtitle: '2차 장지, 신중하게 선택하도록 돕습니다',
+      subtitle: '안치까지의 선택을 책임집니다',
+      columbarium: {
+        title: '봉안당',
+        desc: '따뜻한 빛이 머무는, 가장 편안한 실내 안치 공간.',
+      },
       natural: {
         title: '자연장',
-        desc: '자연으로 돌아가는 안식',
-        info: '수목장, 산골, 해양장',
+        desc: '자연에서 와서 자연으로. 수목장, 잔디장, 해양장.',
       },
-      memorial: {
-        title: '봉안당',
-        desc: '편안한 참배 공간',
-        info: '실내 봉안, 정기 관리',
+      burial: {
+        title: '매장',
+        desc: '전통의 예를 갖춘, 품격 있는 장지 동행.',
       },
-      family: {
-        title: '가족묘',
-        desc: '함께하는 영원',
-        info: '세대별 공간, 맞춤 조성',
-      },
-      park: {
-        title: '공원묘지',
-        desc: '품격 있는 안식처',
-        info: '조경 관리, 편의시설',
+      relocation: {
+        title: '개장·이장',
+        desc: '오래된 묘소를 새로운 안식처로.',
       },
     },
     stories: {
       title: '이별 이야기',
-      subtitle: '루시드라이프와 함께한 이별의 기록',
-      visitBlog: '블로그 방문하기',
       story1: {
-        title: '전통의 재해석, 그 시작',
-        excerpt: '고종황제 입관 의식을 현대에 복원하다',
+        title: '함께 견뎌낸 이야기들',
+        excerpt: '한 사람의 마지막을 함께 지나온 기록',
       },
       story2: {
-        title: '미국식 메모리얼의 실제',
-        excerpt: '장례식장이 아닌, 추억의 공간에서',
+        title: '서툰 작별을 위한 안내서',
+        excerpt: '알아두면 흔들리지 않는 최소한의 문법',
       },
       story3: {
-        title: '이별 후의 동행',
-        excerpt: '49일간의 심리 케어 이야기',
+        title: '사유하는 이별의 농도',
+        excerpt: '삶과 죽음 사이에서 길어 올린 생각들',
       },
     },
     ceo: {
-      title: '도원',
-      subtitle: '루시드라이프 대표',
-      quote: '"이별은 끝이 아니라,\n한 사람을 기억하는 시작입니다."',
-      credentials: [
-        '국가공인 장례지도사',
-        '최면 상담 전문가',
-        '現 대한 장례지도사 연합회 사무국장',
-        '前 MBC마당놀이 국악관현악단 지휘자',
-        '前 프리드라이프 전국 1% 의전팀장',
-      ],
+      quote: '이별은 끝이 아니라, 한 사람을 기억하는 시작입니다.',
+      name: '도원',
+      title: '루시드라이프 대표',
+      cta: '루시드 함께하기',
     },
     together: {
       title: '루시드와 함께.',
@@ -195,11 +185,11 @@ const translations = {
       emergency: '긴급 상담',
     },
     footer: {
-      company: '업체명 : 루시드라이프 | 대표자 : 서동원',
-      business: '사업자등록번호 : 123-92-47792',
-      address: '사업장소재지 : 경기도 파주시 교하로 100, 908-102',
-      contact: '전화번호 : 010-2116-4114',
-      copyright: '© 2024 LUCID LIFE. All rights reserved.',
+      company: '상호명: 루시드라이프 | 대표자: 도원',
+      business: '사업자등록번호: 000-00-00000',
+      address: '주소: 서울특별시 강남구 테헤란로 000, 00층',
+      copyright: 'Copyright © 2025 Lucid Life. All rights reserved.',
+      membershipBtn: '멤버십 무료 가입',
     },
     floating: {
       call: 'Call',
@@ -221,25 +211,27 @@ const translations = {
     },
     hero: {
       brand: 'LUCID LIFE',
-      title: 'Farewell is not the end, but completion',
-      subtitle: 'LUCID LIFE is not a place that does funerals for you.\nIt is a place that stands with you in awkward farewells.',
+      title: '모든 이별은 서툴기에 누군가는 그 곁에 선다',
+      subtitle: '말하지 않아도 되는 시간을 함께 견딥니다',
+      signature: 'your life lucid life',
       cta: 'Learn More',
     },
     accompany: {
-      title: 'Farewell Companion Care',
-      subtitle: 'From before death to after farewell.\nOne team cares for the entire process of one person.',
+      subtitle: 'Continuum Care',
+      title: '절차가 아니라, 의식으로. 장례는 3일로 끝나지 않습니다. 생전부터 장례 이후까지, 한 사람을 기억하는 전 과정을 함께합니다.',
       before: {
-        title: 'Before Death',
-        desc: 'Preparation to reduce anxiety',
+        title: '임종 전',
+        desc: '서로가 아직 전하지 못한 것이 남아 있을 때',
       },
       during: {
-        title: 'During Funeral',
-        desc: 'People over procedures',
+        title: '장례 중',
+        desc: '고인이 되심에 조문과 입관의 작별의 시간',
       },
       after: {
-        title: 'After Farewell',
-        desc: 'Organization to return to daily life',
+        title: '이별 이후',
+        desc: '탈상, 제사, 천도제를 지나며 다시 일상으로 돌아갈 때',
       },
+      link: '이별은 하루로 끝나지 않습니다 >',
     },
     pillars: {
       title: 'Three Pillars',
@@ -287,105 +279,93 @@ const translations = {
       },
     },
     services: {
-      title: 'Our Services',
-      subtitle: 'Four choices for one person',
-      basic: {
-        title: 'Basic Care',
-        desc: 'Essential care focused on fundamentals',
-        features: ['Traditional ceremony', '1 counseling session', '49-day guidance', 'Transparent pricing'],
+      title: '함께 하는 방식',
+      subtitle: '부담 없이, 상황에 맞게',
+      family: {
+        title: '가족장 · 무빈소',
+        price: 150,
+        tagline: '조용히, 가족만',
+        desc: '조용히, 가장 가까운 사람들만 남아 이별에 집중하는 시간.',
       },
-      signature: {
-        title: 'Signature Care',
-        desc: 'The essence of LUCID LIFE',
-        features: ['Custom protocol planning', 'Ongoing psychological care', 'American memorial', 'Aftercare support'],
+      practical: {
+        title: '실용장',
+        price: 290,
+        tagline: '기본에 충실하게',
+        desc: '불필요한 부담은 덜고, 장례의 기본은 놓치지 않은 현실적인 선택.',
       },
-      memorial: {
-        title: 'Memorial Party',
-        desc: 'American-style celebration',
-        features: ['Choose your location', 'Party-style memorial', 'Video/music planning', 'Catering provided'],
+      standard: {
+        title: '표준장',
+        price: 360,
+        tagline: '충분히, 정성껏',
+        desc: '가장 많은 이들이 선택한, 균형과 품위를 갖춘 기본 장례.',
       },
-      noblesse: {
-        title: 'Noblesse Care',
-        desc: 'Premium total care',
-        features: ['1:1 dedicated manager', 'Emperor-style protocol', 'VIP space', 'Lifetime aftercare'],
+      burial: {
+        title: '매장 · 미국식장',
+        price: 450,
+        tagline: '마지막을 완벽하게',
+        desc: '한 사람의 삶을 중심에 두고 설계하는 맞춤형 추모 의식.',
       },
+      compareBtn: '전체 상품 비교하기',
+      learnMore: '미국식 장례 알아보기 >',
     },
     threedays: {
-      title: 'Three Days',
-      subtitle: 'Walking through 3 days of funeral, one chapter at a time',
+      title: '사흘동안',
       day1: {
-        title: 'Day 1',
-        desc: 'Death and Preparation',
-        details: '24-hour emergency response\nShrouding and coffining\nFuneral planning',
+        title: '1일차',
+        desc: '임종 및 빈소 마련',
+        details: '황망한 첫날, 복잡한 절차 대신 고인과의 인사에 집중',
       },
       day2: {
-        title: 'Day 2',
-        desc: 'Memorial and Ceremony',
-        details: 'Mourning space operation\nPsychological support\nMemorial video screening',
+        title: '2일차',
+        desc: '입관 및 조문',
+        details: '가장 아름다운 마지막 모습을 기억할 수 있도록, 최고의 예를 갖춘 입관식',
       },
       day3: {
-        title: 'Day 3',
-        desc: 'Departure and Burial',
-        details: 'Departure ceremony\nTransport to burial site\nPost-burial arrangement',
-      },
-      after: {
-        title: 'After',
-        desc: 'Companion after farewell',
-        details: '49-day guidance\nPsychological care\nReturn to daily life support',
+        title: '3일차',
+        desc: '발인 및 장지 동행',
+        details: '마지막 안식처까지, 소홀함 없이 끝까지 동행',
       },
     },
     resting: {
-      title: 'Final Resting Place',
-      subtitle: 'We help you carefully choose the secondary burial site',
+      title: '마지막 안식처',
+      subtitle: '안치까지의 선택을 책임집니다',
+      columbarium: {
+        title: '봉안당',
+        desc: '따뜻한 빛이 머무는, 가장 편안한 실내 안치 공간.',
+      },
       natural: {
-        title: 'Natural Burial',
-        desc: 'Rest returning to nature',
-        info: 'Tree burial, scattering, sea burial',
+        title: '자연장',
+        desc: '자연에서 와서 자연으로. 수목장, 잔디장, 해양장.',
       },
-      memorial: {
-        title: 'Columbarium',
-        desc: 'Comfortable visitation space',
-        info: 'Indoor enshrinement, regular care',
+      burial: {
+        title: '매장',
+        desc: '전통의 예를 갖춘, 품격 있는 장지 동행.',
       },
-      family: {
-        title: 'Family Grave',
-        desc: 'Eternal togetherness',
-        info: 'Generational space, custom creation',
-      },
-      park: {
-        title: 'Cemetery Park',
-        desc: 'Dignified resting place',
-        info: 'Landscape care, amenities',
+      relocation: {
+        title: '개장·이장',
+        desc: '오래된 묘소를 새로운 안식처로.',
       },
     },
     stories: {
-      title: 'Farewell Stories',
-      subtitle: 'Records of farewells with LUCID LIFE',
-      visitBlog: 'Visit Blog',
+      title: '이별 이야기',
       story1: {
-        title: 'Reinterpretation of Tradition',
-        excerpt: 'Restoring Emperor Gojong\'s ceremony in modern times',
+        title: '함께 견뎌낸 이야기들',
+        excerpt: '한 사람의 마지막을 함께 지나온 기록',
       },
       story2: {
-        title: 'American Memorial in Practice',
-        excerpt: 'Not at funeral homes, but in places of memories',
+        title: '서툰 작별을 위한 안내서',
+        excerpt: '알아두면 흔들리지 않는 최소한의 문법',
       },
       story3: {
-        title: 'Companion After Farewell',
-        excerpt: 'Stories of 49 days of psychological care',
+        title: '사유하는 이별의 농도',
+        excerpt: '삶과 죽음 사이에서 길어 올린 생각들',
       },
     },
     ceo: {
-      title: 'Dowon',
-      subtitle: 'CEO of LUCID LIFE',
-      quote: '"Farewell is not the end,\nbut the beginning of remembering a person."',
-      credentials: [
-        'Nationally Certified Funeral Director',
-        'Hypnotherapy Counseling Expert',
-        'Current Secretary General, Korean Funeral Directors Association',
-        'Former Conductor, MBC Madangnori Korean Orchestra',
-        'Former Top 1% Protocol Team Leader, FreeLife',
-      ],
+      quote: '이별은 끝이 아니라, 한 사람을 기억하는 시작입니다.',
+      name: '도원',
+      title: '루시드라이프 대표',
+      cta: '루시드 함께하기',
     },
     together: {
       title: 'Together with LUCID.',
@@ -395,11 +375,11 @@ const translations = {
       emergency: 'Emergency',
     },
     footer: {
-      company: 'LUCIDLIFE | CEO: Seo Dong-won',
-      business: 'Business Registration: 123-92-47792',
-      address: 'Address: 908-102, 100, Gyoha-ro, Paju-si, Gyeonggi-do, Republic of Korea',
-      contact: 'Customer Service: (+82) 10-2116-4114',
-      copyright: '© 2024 LUCID LIFE. All rights reserved.',
+      company: '상호명: 루시드라이프 | 대표자: 도원',
+      business: '사업자등록번호: 000-00-00000',
+      address: '주소: 서울특별시 강남구 테헤란로 000, 00층',
+      copyright: 'Copyright © 2025 Lucid Life. All rights reserved.',
+      membershipBtn: '멤버십 무료 가입',
     },
     floating: {
       call: 'Call',
@@ -630,8 +610,27 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
   const [showCompareModal, setShowCompareModal] = useState(false);
+  const [showPopupCTA, setShowPopupCTA] = useState(false);
+  const footerRef = useRef<HTMLElement | null>(null);
 
   const t = translations[language];
+
+  // 스크롤 완료 감지 - 푸터 직전 도달 시 팝업 노출
+  useEffect(() => {
+    const handleScroll = () => {
+      if (footerRef.current) {
+        const footerTop = footerRef.current.offsetTop;
+        const scrollPosition = window.scrollY + window.innerHeight;
+        // 푸터 직전 200px 전에 도달하면 팝업 표시
+        if (scrollPosition >= footerTop - 200 && !showPopupCTA) {
+          setShowPopupCTA(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [showPopupCTA]);
 
   const toggleLanguage = () => {
     setLanguage(language === 'ko' ? 'en' : 'ko');
@@ -655,59 +654,63 @@ export default function App() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#141C2E]/95 backdrop-blur-sm border-b border-[#C9A66B]/20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-3 lg:py-2">
           <div className="flex items-center justify-between">
+            {/* 좌측: 루시드라이프 텍스트 */}
             <button 
               onClick={() => scrollToSection('hero')}
-              className="flex-shrink-0"
+              className="flex-shrink-0 text-[#C9A66B] text-xl md:text-2xl font-medium"
             >
-              <img 
-                src={logoImage} 
-                alt="LUCID LIFE" 
-                className="h-28 md:h-36 lg:h-36 w-auto"
-              />
+              루시드라이프
             </button>
 
-            <div className="flex items-center gap-5">
-              {/* Phone & Membership - Desktop */}
-              <div className="hidden md:flex items-center gap-4">
-                <a
-                  href="tel:010-2116-4114"
-                  className="flex items-center gap-2 px-5 py-2.5 text-[#C9A66B] hover:bg-[#C9A66B]/20 rounded-lg transition-colors"
-                >
-                  <Phone className="w-5 h-5 lg:w-6 lg:h-6" />
-                  <span className="text-base lg:text-lg">010-2116-4114</span>
-                </a>
-                <button
-                  onClick={openGoogleForm}
-                  className="flex items-center gap-2 px-5 py-2.5 bg-[#C9A66B] text-white hover:bg-[#C9A66B]/80 rounded-lg transition-colors"
-                >
-                  <Edit3 className="w-5 h-5 lg:w-6 lg:h-6" />
-                  <span className="text-base lg:text-lg whitespace-nowrap">멤버십 사전등록</span>
-                </button>
-              </div>
+            {/* 우측: 아이콘 및 버튼들 */}
+            <div className="flex items-center gap-3 md:gap-4">
+              {/* 전화기 아이콘 */}
+              <a
+                href="tel:01021164114"
+                className="flex items-center text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors"
+              >
+                <Phone className="w-5 h-5 md:w-6 md:h-6" />
+              </a>
+              
+              {/* 긴급상담 텍스트 - Desktop */}
+              <a
+                href="tel:01021164114"
+                className="hidden md:flex items-center text-[#C9A66B] text-sm md:text-base hover:text-[#C9A66B]/80 transition-colors"
+              >
+                긴급상담 010-2116-4114
+              </a>
 
-              {/* Language Toggle - Mobile */}
+              {/* 카카오톡 아이콘 */}
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.open('https://pf.kakao.com/_your_kakao_id', '_blank'); }}
+                className="flex items-center text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors"
+              >
+                <MessageSquare className="w-5 h-5 md:w-6 md:h-6" />
+              </a>
+
+              {/* 언어 토글 */}
               <button
                 onClick={toggleLanguage}
-                className="md:hidden flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-[#C9A66B]/20 transition-colors text-[#C9A66B]"
+                className="flex items-center gap-1 px-3 py-1.5 text-[#C9A66B] text-sm md:text-base hover:bg-[#C9A66B]/20 rounded transition-colors"
               >
-                <Globe className="w-5 h-5" />
-                <span className="text-sm">{language === 'ko' ? 'EN' : 'KO'}</span>
+                {language === 'ko' ? 'EN' : 'KR'}
               </button>
 
-              {/* Language Toggle - Desktop */}
+              {/* CTA 버튼: 루시드 함께하기 */}
               <button
-                onClick={toggleLanguage}
-                className="hidden md:flex items-center gap-2 px-4 py-2.5 rounded-lg hover:bg-[#C9A66B]/20 transition-colors text-[#C9A66B]"
+                onClick={openGoogleForm}
+                className="hidden md:flex items-center px-4 py-2 bg-[#C9A66B] text-[#141C2E] hover:bg-[#C9A66B]/90 rounded transition-colors text-sm md:text-base font-medium"
               >
-                <Globe className="w-5 h-5 lg:w-6 lg:h-6" />
-                <span className="text-base lg:text-lg">{language === 'ko' ? 'EN' : 'KO'}</span>
+                루시드 함께하기
               </button>
 
+              {/* 햄버거 메뉴 */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 hover:bg-[#C9A66B]/20 rounded-lg transition-colors text-[#C9A66B]"
+                className="p-2 hover:bg-[#C9A66B]/20 rounded transition-colors text-[#C9A66B]"
               >
-                {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+                {isMenuOpen ? <X className="w-6 h-6 md:w-7 md:h-7" /> : <Menu className="w-6 h-6 md:w-7 md:h-7" />}
               </button>
             </div>
           </div>
@@ -756,221 +759,83 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto py-20">
-          <div className="mb-16">
-            <p className="text-[#C9A66B] text-2xl md:text-2xl my-12 md:my-16 tracking-[0.3em] font-serif-kr">{t.hero.brand}</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl mb-10 text-white whitespace-pre-line leading-tight font-serif-kr font-semibold">
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto py-32">
+          <div className="mb-20 space-y-8">
+            {/* 메인 타이틀 */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white leading-tight font-serif-kr font-semibold">
               {t.hero.title}
             </h1>
-          </div>
-
-          <button
-            onClick={openGoogleForm}
-            className="px-12 py-5 bg-[#C9A66B] hover:bg-[#C9A66B]/80 text-white rounded-lg transition-all transform hover:scale-105 text-lg"
-          >
-            {t.hero.cta}
-          </button>
-        </div>
-      </section>
-
-      {/* Three Pillars Section */}
-      <section className="py-40 bg-[#F8F5E6]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr">{t.pillars.title}</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
-            {[
-              { icon: Flower2, data: t.pillars.tradition },
-              { icon: MapPin, data: t.pillars.modern },
-              { icon: Heart, data: t.pillars.soul },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-[#C9A66B]/20"
-              >
-                <item.icon className="w-16 h-16 text-[#C9A66B] mb-8 mx-auto" />
-                <h3 className="text-2xl md:text-3xl mb-4 text-[#141C2E] text-center font-serif-kr">{item.data.title}</h3>
-                {/* 텍스트 축소 - 키워드 중심 */}
-                <p className="text-neutral-600 text-center leading-relaxed text-base">
-                  {index === 1 
-                    ? (language === 'ko' ? '국내최초 미국식 메모리얼' : 'Korea\'s first American-style memorial')
-                    : index === 2
-                    ? (language === 'ko' ? '죽음학과 심리상담 통합 케어' : 'Integrated thanatology and counseling care')
-                    : (language === 'ko' ? '고종황제 입관 의식 재현' : 'Recreation of Emperor Gojong\'s ceremony')
-                  }
-                </p>
-              </div>
-            ))}
+            
+            {/* 서브 타이틀 */}
+            <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-serif-kr">
+              {t.hero.subtitle}
+            </p>
+            
+            {/* 시그니처 */}
+            <p className="text-sm md:text-base text-[#C9A66B] tracking-wider mt-16">
+              {t.hero.signature}
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Why Lucid Life Section */}
-      <section className="py-40 bg-[#141C2E] text-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl mb-4 text-[#C9A66B] font-serif-kr">{t.why.title}</h2>
-          </div>
-
-          <div className="space-y-20">
-            {[t.why.q1, t.why.q2, t.why.q3].map((item, index) => (
-              <div key={index} className="text-center max-w-3xl mx-auto">
-                <h3 className="text-xl md:text-2xl mb-4 text-white/90 font-serif-kr">{item.question}</h3>
-                <p className="text-lg md:text-xl text-[#C9A66B]">{item.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Difference Section */}
-      <section className="py-40 bg-[#F8F5E6]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr">{t.difference.title}</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
-            {[t.difference.responsibility, t.difference.minimal, t.difference.respect].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#C9A66B]/20 text-center"
-              >
-                <h3 className="text-2xl md:text-3xl mb-6 text-[#141C2E]">{item.title}</h3>
-                {/* 감정의 존중: Mobile 2줄 / PC 1줄 */}
-                {index === 2 ? (
-                  <p className="text-neutral-600 text-lg leading-relaxed">
-                    <span className="block md:hidden whitespace-pre-line">
-                      {language === 'ko'
-                        ? '절차보다 사람의 상태를\n먼저 봅니다.'
-                        : 'We see people\'s state\nbefore procedures.'}
-                    </span>
-                    <span className="hidden md:block">{item.desc}</span>
-                  </p>
-                ) : (
-                <p className="text-neutral-600 text-lg leading-relaxed">{item.desc}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Services Section - 함께하는 방식 */}
       <section id="services" className="py-40 bg-[#141C2E] relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-medium mb-2 text-white font-serif-kr">
-              {language === 'ko' ? '함께 하는 방식' : 'Our Services'}
+            <h2 className="text-4xl md:text-5xl font-medium mb-2 text-white font-serif-kr">
+              {t.services.title}
             </h2>
+            <p className="text-base text-white/70 mt-2">
+              {t.services.subtitle}
+            </p>
           </div>
 
-          {/* Product Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 max-w-3xl mx-auto">
+          {/* Product Cards - 4개 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              {
-                id: 'family',
-                name: language === 'ko' ? '가족장 · 무빈소' : 'Family Funeral',
-                price: 150,
-                tagline: language === 'ko' ? '조용히, 가족만' : 'Quietly, family only',
-                details: {
-                  coffin: language === 'ko' ? '일반관' : 'Standard',
-                  suit: language === 'ko' ? '총 5벌' : 'Total 5',
-                  assistant: '—'
-                }
-              },
-              {
-                id: 'practical',
-                name: language === 'ko' ? '실용장' : 'Practical Funeral',
-                price: 290,
-                tagline: language === 'ko' ? '기본에 충실하게' : 'Faithful to basics',
-                details: {
-                  coffin: language === 'ko' ? '일반관' : 'Standard',
-                  suit: language === 'ko' ? '각 5벌' : 'Each 5',
-                  assistant: language === 'ko' ? '4명' : '4 people'
-                }
-              },
-              {
-                id: 'standard',
-                name: language === 'ko' ? '표준장' : 'Standard Funeral',
-                price: 360,
-                tagline: language === 'ko' ? '충분히, 정성껏' : 'Sufficiently, with care',
-                details: {
-                  coffin: language === 'ko' ? '일반관' : 'Standard',
-                  suit: language === 'ko' ? '각 7벌' : 'Each 7',
-                  assistant: language === 'ko' ? '6명' : '6 people'
-                }
-              },
-              {
-                id: 'premium',
-                name: language === 'ko' ? '매장 · 미국식장' : 'Burial · American Style',
-                price: 450,
-                tagline: language === 'ko' ? '마지막을 완벽하게' : 'Perfect to the last',
-                details: {
-                  coffin: language === 'ko' ? '고급관' : 'Premium',
-                  suit: language === 'ko' ? '각 9벌' : 'Each 9',
-                  assistant: language === 'ko' ? '8명' : '8 people'
-                }
-              }
+              { data: t.services.family, id: 'family' },
+              { data: t.services.practical, id: 'practical' },
+              { data: t.services.standard, id: 'standard' },
+              { data: t.services.burial, id: 'burial' },
             ].map((product, index) => (
               <div
                 key={index}
-                className="bg-white/[0.03] border border-[#C9A66B]/10 rounded-xl p-5 cursor-pointer hover:border-[#C9A66B]/25 hover:-translate-y-1 transition-all"
+                className="bg-white/[0.03] border border-[#C9A66B]/10 rounded-xl p-6 cursor-pointer hover:border-[#C9A66B]/25 hover:-translate-y-1 transition-all"
+                onClick={() => setSelectedProduct(getProductDetails(language)[product.id])}
               >
-                <div className="mb-3">
-                  <h3 className="text-lg font-light text-[#C9A66B]">{product.name}</h3>
-                </div>
-                
-                <div className="flex items-baseline gap-1 mb-3">
-                  <span className="text-3xl font-light text-white">{product.price}</span>
-                  <span className="text-xs text-white/30">{language === 'ko' ? '만원~' : '0k KRW~'}</span>
-                </div>
-                
-                <p className="text-sm text-white/50 mb-4">"{product.tagline}"</p>
-                
-                <div className="h-px bg-gradient-to-r from-[#d4af7d]/20 to-transparent mb-4" />
-                
-                <div className="space-y-2 text-xs mb-4">
-                  <div className="flex justify-between">
-                    <span className="text-white/30">{language === 'ko' ? '관' : 'Coffin'}</span>
-                    <span className="text-white/50">{product.details.coffin}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-white/30">{language === 'ko' ? '상복' : 'Mourning'}</span>
-                    <span className="text-white/50">{product.details.suit}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-white/30">{language === 'ko' ? '의전' : 'Protocol'}</span>
-                    <span className={product.details.assistant === '—' ? 'text-white/20' : 'text-white/50'}>
-                      {product.details.assistant}
-                    </span>
+                <div className="mb-4">
+                  <h3 className="text-lg font-medium text-[#C9A66B] mb-2">{product.data.title}</h3>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-light text-white">{product.data.price}</span>
+                    <span className="text-xs text-white/50">만원</span>
                   </div>
                 </div>
                 
-                <button 
-                  onClick={() => setSelectedProduct(getProductDetails(language)[product.id])}
-                  className="w-full py-2.5 rounded-lg text-sm bg-[#C9A66B]/10 text-[#C9A66B] border border-[#C9A66B]/20 hover:bg-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all"
-                >
-                  {language === 'ko' ? '자세히 보기' : 'View Details'}
-                </button>
+                <p className="text-sm text-white/60 mb-3">"{product.data.tagline}"</p>
+                <p className="text-xs text-white/50 leading-relaxed">{product.data.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Compare Button */}
-          <div className="text-center">
+          {/* 하단 버튼 및 링크 */}
+          <div className="text-center space-y-4">
             <button 
               onClick={() => setShowCompareModal(true)}
-              className="bg-[#C9A66B]/10 text-[#C9A66B] border border-[#C9A66B]/20 px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2 hover:bg-[#C9A66B]/20 hover:border-[#C9A66B]/40 transition-all"
+              className="bg-[#C9A66B] text-[#141C2E] px-8 py-3 rounded-lg text-base font-medium hover:bg-[#C9A66B]/90 transition-all"
             >
-              {language === 'ko' ? '전체 상품 비교하기' : 'Compare All Products'}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 9l6 6 6-6"/>
-              </svg>
+              {t.services.compareBtn}
             </button>
+            <div>
+              <a 
+                href="#"
+                className="text-[#C9A66B] text-sm hover:text-[#C9A66B]/80 transition-colors"
+              >
+                {t.services.learnMore}
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -982,23 +847,18 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr">{t.threedays.title}</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
-            {[t.threedays.day1, t.threedays.day2, t.threedays.day3, t.threedays.after].map((day, index) => (
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {[t.threedays.day1, t.threedays.day2, t.threedays.day3].map((day, index) => (
               <div
                 key={index}
                 className="bg-white p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#C9A66B]/20"
               >
-                <div className="flex items-center gap-6 mb-8">
-                  <div className="w-16 h-16 rounded-full bg-[#C9A66B] text-white flex items-center justify-center text-2xl flex-shrink-0">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl md:text-3xl text-[#141C2E] mb-2">{day.title}</h3>
-                    <p className="text-lg text-[#C9A66B]">{day.desc}</p>
-                  </div>
+                <div className="mb-6">
+                  <h3 className="text-2xl md:text-3xl text-[#141C2E] mb-2 font-serif-kr">{day.title}</h3>
+                  <p className="text-lg text-[#C9A66B] mb-4">{day.desc}</p>
                 </div>
-                <p className="text-neutral-600 text-base leading-relaxed pl-2">
-                  {day.details.split('\n').slice(0, 2).join(' ')}
+                <p className="text-neutral-600 text-base leading-relaxed">
+                  {day.details}
                 </p>
               </div>
             ))}
@@ -1011,30 +871,22 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-24">
             <h2 className="text-4xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr">{t.resting.title}</h2>
+            <p className="text-base text-[#C9A66B] mt-2">{t.resting.subtitle}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { data: t.resting.natural, img: 'https://images.unsplash.com/photo-1735222001088-e27f45a75c77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWxtJTIwZm9yZXN0JTIwcGF0hxlbnwxfHx8fDE3NjU4MDgzOTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
-              { data: t.resting.memorial, img: 'https://images.unsplash.com/photo-1764776502723-cd26790363b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjZWZ1bCUyMG1lZGl0YXRpb24lMjBzcGFjZXxlbnwxfHx8fDE3NjU3NjM4OTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
-              { data: t.resting.family, img: 'https://images.unsplash.com/photo-1679767472068-099e64158c0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dGlmdWwlMjBjZW1ldGVyeSUyMGdhcmRlbnxlbnwxfHx8fDE3NjU4MDk2MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
-              { data: t.resting.park, img: 'https://images.unsplash.com/photo-1747115275646-49725fb5a003?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwbWVtb3JpYWwlMjBjZXJlbW9ueXxlbnwxfHx8fDE3NjU4MDk2MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
+              { data: t.resting.columbarium },
+              { data: t.resting.natural },
+              { data: t.resting.burial },
+              { data: t.resting.relocation },
             ].map((place, index) => (
               <div
                 key={index}
-                className="bg-neutral-50 rounded-3xl overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-[#C9A66B]/20"
+                className="bg-white rounded-3xl p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20"
               >
-                <div className="h-64 overflow-hidden">
-                  <img
-                    src={place.img}
-                    alt={place.data.title}
-                    className="w-full h-full object-cover transition-transform hover:scale-105"
-                  />
-                </div>
-                <div className="p-10">
-                  <h3 className="text-2xl md:text-3xl mb-3 text-[#141C2E] font-serif-kr">{place.data.title}</h3>
-                  <p className="text-base text-[#C9A66B]">{place.data.desc}</p>
-                </div>
+                <h3 className="text-2xl md:text-3xl mb-4 text-[#141C2E] font-serif-kr">{place.data.title}</h3>
+                <p className="text-base text-neutral-600 leading-relaxed">{place.data.desc}</p>
               </div>
             ))}
           </div>
@@ -1048,36 +900,61 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl mb-4 text-[#C9A66B] font-serif-kr">{t.stories.title}</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10 lg:gap-12 mb-12">
+          <div className="grid md:grid-cols-3 gap-8">
             {[t.stories.story1, t.stories.story2, t.stories.story3].map((story, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm p-10 rounded-3xl hover:bg-white/15 transition-all border border-white/20 cursor-pointer"
-                onClick={() => window.open('https://blog.naver.com/lucid-life', '_blank')}
+                className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl hover:bg-white/15 transition-all border border-white/20"
               >
-                <div className="w-12 h-12 rounded-full bg-[#C9A66B] text-white flex items-center justify-center text-xl mb-8">
-                  <BookOpen className="w-6 h-6" />
+                <div className="mb-6">
+                  <div className="w-10 h-10 rounded-full bg-[#C9A66B] text-white flex items-center justify-center text-lg mb-4">
+                    ✓
+                  </div>
+                  <h3 className="text-xl md:text-2xl mb-3 text-white font-serif-kr">{story.title}</h3>
                 </div>
-                <h3 className="text-xl md:text-2xl mb-4 text-white font-serif-kr">{story.title}</h3>
                 <p className="text-base text-white/70 leading-relaxed">
-                  {index === 0 
-                    ? (language === 'ko' ? '고종황제 입관 의식 현대 복원' : 'Restoring Emperor Gojong\'s ceremony')
-                    : story.excerpt.split('.').slice(0, 1).join('.')
-                  }
+                  {story.excerpt}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Care Section - 이별동행케어 */}
+      <section id="care" className="py-40 bg-[#F8F5E6]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm text-[#C9A66B] mb-4 tracking-wider">{t.accompany.subtitle}</p>
+            <h2 className="text-4xl md:text-5xl mb-6 text-[#141C2E] font-serif-kr leading-relaxed">
+              {t.accompany.title}
+            </h2>
+          </div>
+
+          {/* 타임라인 */}
+          <div className="max-w-4xl mx-auto space-y-8 mb-12">
+            {[
+              { data: t.accompany.before, period: '[임종 전]' },
+              { data: t.accompany.during, period: '[장례 중]' },
+              { data: t.accompany.after, period: '[이별 이후]' },
+            ].map((item, index) => (
+              <div key={index} className="flex gap-6">
+                <div className="flex-shrink-0 w-24 text-right">
+                  <span className="text-sm text-[#C9A66B] font-medium">{item.period}</span>
+                </div>
+                <div className="flex-1">
+                  <p className="text-lg text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                </div>
               </div>
             ))}
           </div>
 
           <div className="text-center">
-            <a
-              href="https://blog.naver.com/lucid-life"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-[#C9A66B] hover:bg-[#C9A66B]/80 text-white rounded-lg transition-all text-lg"
+            <a 
+              href="#"
+              className="text-[#C9A66B] text-base hover:text-[#C9A66B]/80 transition-colors"
             >
-              <BookOpen className="w-6 h-6" />
-              {t.stories.visitBlog}
+              {t.accompany.link}
             </a>
           </div>
         </div>
@@ -1088,22 +965,21 @@ export default function App() {
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="order-2 md:order-1">
+              <blockquote className="text-2xl md:text-3xl mb-8 text-white/90 leading-relaxed border-l-4 border-[#C9A66B] pl-8 font-serif-kr">
+                {t.ceo.quote}
+              </blockquote>
+              
               <div className="mb-8">
-                <h2 className="text-4xl md:text-5xl mb-2 text-white font-serif-kr">{t.ceo.title}</h2>
+                <p className="text-xl text-[#C9A66B] mb-1">{t.ceo.name}</p>
+                <p className="text-base text-white/70">{t.ceo.title}</p>
               </div>
 
-              <blockquote className="text-xl md:text-2xl mb-12 text-white/90 italic leading-relaxed border-l-4 border-[#C9A66B] pl-8 font-serif-kr">
-                {t.ceo.quote.split('\n').slice(0, 2).join(' ')}
-              </blockquote>
-
-              <ul className="space-y-3">
-                {t.ceo.credentials.slice(0, 3).map((credential, index) => (
-                  <li key={index} className="flex items-start gap-4 text-white/80">
-                    <div className="w-2 h-2 rounded-full bg-[#C9A66B] flex-shrink-0 mt-2" />
-                    <span className="text-base leading-relaxed">{credential}</span>
-                  </li>
-                ))}
-              </ul>
+              <button
+                onClick={openGoogleForm}
+                className="px-8 py-4 bg-[#C9A66B] text-[#141C2E] hover:bg-[#C9A66B]/90 rounded-lg transition-all text-base font-medium"
+              >
+                {t.ceo.cta}
+              </button>
             </div>
 
             <div className="order-1 md:order-2">
@@ -1119,51 +995,56 @@ export default function App() {
         </div>
       </section>
 
-      {/* Together CTA Section */}
-      <section id="together" className="py-40 bg-[#141C2E]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-6xl mb-6 text-[#C9A66B] font-serif-kr">{t.together.title}</h2>
-          <p className="text-lg md:text-xl mb-12 text-white/90 leading-relaxed">
-            {t.together.subtitle.split('\n').slice(0, 1).join('')}
-          </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+      {/* Popup CTA - 스크롤 완료 시 */}
+      {showPopupCTA && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/40" onClick={() => setShowPopupCTA(false)} />
+          <div 
+            className="relative bg-[#C9A66B] text-[#141C2E] rounded-lg p-8 max-w-md w-full shadow-2xl hover:opacity-90 transition-opacity"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
-              onClick={openGoogleForm}
-              className="px-12 py-5 bg-[#C9A66B] hover:bg-[#C9A66B]/80 text-white rounded-lg transition-all transform hover:scale-105 text-lg"
+              onClick={() => setShowPopupCTA(false)}
+              className="absolute top-4 right-4 text-[#141C2E] hover:text-[#141C2E]/70 transition-colors"
             >
-              {t.together.cta}
+              <X className="w-6 h-6" />
             </button>
-            <a
-              href="tel:010-2116-4114"
-              className="px-12 py-5 bg-transparent border-2 border-[#eecfa1] text-[#C9A66B] hover:bg-[#eecfa1] hover:text-[#141C2E] rounded-lg transition-all text-lg flex items-center gap-3"
-            >
-              <Phone className="w-5 h-5" />
-              {t.together.emergency}
-            </a>
+            <div className="text-center space-y-6">
+              <button
+                onClick={() => {
+                  openGoogleForm();
+                  setShowPopupCTA(false);
+                }}
+                className="w-full px-8 py-4 bg-[#141C2E] text-[#C9A66B] hover:bg-[#141C2E]/90 rounded-lg transition-all text-lg font-medium"
+              >
+                루시드 함께하기
+              </button>
+              <p className="text-sm text-[#141C2E]/80">
+                미리 가입해두세요. 18개월 치 내드립니다.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      )}
 
       {/* Footer */}
-      <footer className="bg-[#141C2E] text-white/70 py-12">
+      <footer id="footer" ref={footerRef} className="bg-[#141C2E] text-white/70 py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center space-y-3 mb-8">
-            <p className="text-lg">{t.footer.company}</p>
-            <p>{t.footer.business}</p>
-            <p>{t.footer.address}</p>
-            <p>{t.footer.contact}</p>
+          <div className="text-center space-y-2 mb-8">
+            <p className="text-sm">{t.footer.company}</p>
+            <p className="text-sm">{t.footer.business}</p>
+            <p className="text-sm">{t.footer.address}</p>
           </div>
-          {/* 개인정보 처리방침 & 이용약관 - 간단한 텍스트로 표시 */}
-          <div className="flex justify-center items-center gap-8 mb-8">
-            <span className="text-white/30 text-xs">
-              {language === 'ko' ? '개인정보 처리방침' : 'Privacy Policy'}
-            </span>
-            <span className="text-white/30 text-xs">
-              {language === 'ko' ? '이용약관' : 'Terms'}
-            </span>
+          <div className="text-center mb-8">
+            <button
+              onClick={openGoogleForm}
+              className="px-6 py-3 bg-[#C9A66B] text-[#141C2E] hover:bg-[#C9A66B]/90 rounded-lg transition-all text-sm font-medium"
+            >
+              {t.footer.membershipBtn}
+            </button>
           </div>
-          <div className="text-center text-sm border-t border-white/10 pt-8">
+          <div className="text-center text-xs border-t border-white/10 pt-6">
             <p>{t.footer.copyright}</p>
           </div>
         </div>
@@ -1376,10 +1257,11 @@ export default function App() {
       )}
 
       {/* Privacy Policy Modal - Removed per design guidelines */}
-      {false && (
+      {/* Modal code removed */}
+      {false && false && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          onClick={() => setShowPrivacyModal(false)}
+          onClick={() => {}}
         >
           {/* Backdrop */}
           <div className="absolute inset-0 bg-black/80" />
@@ -1391,7 +1273,7 @@ export default function App() {
           >
             {/* Close Button */}
             <button
-              onClick={() => setShowPrivacyModal(false)}
+              onClick={() => {}}
               className="absolute top-4 right-4 z-10 w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition-colors"
             >
               <X className="w-4 h-4 lg:w-5 lg:h-5 text-white/50" />
@@ -1669,10 +1551,11 @@ export default function App() {
       )}
 
       {/* Terms of Service Modal - Removed per design guidelines */}
-      {false && (
+      {/* Modal code removed */}
+      {false && false && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          onClick={() => setShowTermsModal(false)}
+          onClick={() => {}}
         >
           {/* Backdrop */}
           <div className="absolute inset-0 bg-black/80" />
@@ -1684,7 +1567,7 @@ export default function App() {
           >
             {/* Close Button */}
             <button
-              onClick={() => setShowTermsModal(false)}
+              onClick={() => {}}
               className="absolute top-4 right-4 z-10 w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center rounded-full border border-white/20 hover:bg-white/10 transition-colors"
             >
               <X className="w-4 h-4 lg:w-5 lg:h-5 text-white/50" />
