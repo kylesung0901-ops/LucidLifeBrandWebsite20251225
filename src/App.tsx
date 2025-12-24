@@ -1267,17 +1267,20 @@ export default function App() {
             ].map((place, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20"
+                className="bg-white rounded-3xl p-4 md:p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20"
               >
-                <h3 className="text-2xl md:text-3xl mb-4 text-[#141C2E] font-serif-kr">{place.data.title}</h3>
-                <p className="text-base text-neutral-600 leading-relaxed">
+                <h3 className="text-lg md:text-2xl lg:text-3xl mb-3 md:mb-4 text-[#141C2E] font-serif-kr">{place.data.title}</h3>
+                <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
                   {index === 0 ? (
                     <>
                       <span className="hidden md:block">
                         따뜻한 빛이 머무는,<br />
                         가장 편안한 실내 안치 공간.
                       </span>
-                      <span className="md:hidden">{place.data.desc}</span>
+                      <span className="md:hidden">
+                        따뜻한 빛이 머무는,<br />
+                        가장 편안한 실내 안치 공간.
+                      </span>
                     </>
                   ) : index === 1 ? (
                     <>
@@ -1285,7 +1288,10 @@ export default function App() {
                         자연에서 와서 자연으로.<br />
                         수목장, 잔디장, 해양장.
                       </span>
-                      <span className="md:hidden">{place.data.desc}</span>
+                      <span className="md:hidden">
+                        자연에서 와서 자연으로.<br />
+                        수목장, 잔디장, 해양장.
+                      </span>
                     </>
                   ) : index === 2 ? (
                     <>
