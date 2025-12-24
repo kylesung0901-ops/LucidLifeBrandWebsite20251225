@@ -1376,7 +1376,15 @@ export default function App() {
                   <span className="text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-[#C9A66B] font-medium">{item.period}</span>
                 </div>
                 <div className="flex-1">
-                  {index === 1 ? (
+                  {index === 0 ? (
+                    <>
+                      <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                      <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
+                        서로가 아직 전하지 못한 것이<br />
+                        남아 있을 때
+                      </p>
+                    </>
+                  ) : index === 1 ? (
                     <>
                       <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
                       <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
