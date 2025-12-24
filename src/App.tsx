@@ -196,6 +196,14 @@ const translations = {
       kakao: 'KakaoTalk',
       membership: 'Membership Pre-registration',
     },
+    gnb: {
+      emergency: '긴급상담 010-2116-4114',
+      cta: '루시드 함께하기',
+    },
+    popup: {
+      cta: '루시드 함께하기',
+      message: '미리 가입해두세요. 18개월 치 내드립니다.',
+    },
   },
   en: {
     nav: {
@@ -211,27 +219,27 @@ const translations = {
     },
     hero: {
       brand: 'LUCID LIFE',
-      title: '모든 이별은 서툴기에 누군가는 그 곁에 선다',
-      subtitle: '말하지 않아도 되는 시간을 함께 견딥니다',
+      title: 'Because every farewell is clumsy, someone stands by their side',
+      subtitle: 'We endure the time that doesn\'t need words together',
       signature: 'your life lucid life',
       cta: 'Learn More',
     },
     accompany: {
       subtitle: 'Continuum Care',
-      title: '절차가 아니라, 의식으로. 장례는 3일로 끝나지 않습니다. 생전부터 장례 이후까지, 한 사람을 기억하는 전 과정을 함께합니다.',
+      title: 'Not a procedure, but a ceremony. A funeral does not end in 3 days. From before life to after the funeral, we accompany the entire process of remembering one person.',
       before: {
-        title: '임종 전',
-        desc: '서로가 아직 전하지 못한 것이 남아 있을 때',
+        title: 'Before Passing',
+        desc: 'When there are still things we haven\'t said to each other',
       },
       during: {
-        title: '장례 중',
-        desc: '고인이 되심에 조문과 입관의 작별의 시간',
+        title: 'During Funeral',
+        desc: 'The time of farewell with condolences and encoffining as the person becomes the deceased',
       },
       after: {
-        title: '이별 이후',
-        desc: '탈상, 제사, 천도제를 지나며 다시 일상으로 돌아갈 때',
+        title: 'After Farewell',
+        desc: 'When returning to daily life after the end of mourning, ancestral rites, and memorial services',
       },
-      link: '이별은 하루로 끝나지 않습니다 >',
+      link: 'Farewell does not end in a day >',
     },
     pillars: {
       title: 'Three Pillars',
@@ -279,93 +287,93 @@ const translations = {
       },
     },
     services: {
-      title: '함께 하는 방식',
-      subtitle: '부담 없이, 상황에 맞게',
+      title: 'How We Walk Together',
+      subtitle: 'Without burden, according to the situation',
       family: {
-        title: '가족장 · 무빈소',
+        title: 'Family Service · No Visitation',
         price: 150,
-        tagline: '조용히, 가족만',
-        desc: '조용히, 가장 가까운 사람들만 남아 이별에 집중하는 시간.',
+        tagline: 'Quietly, family only',
+        desc: 'Quietly, only the closest people remain, focusing on farewell.',
       },
       practical: {
-        title: '실용장',
+        title: 'Practical Service',
         price: 290,
-        tagline: '기본에 충실하게',
-        desc: '불필요한 부담은 덜고, 장례의 기본은 놓치지 않은 현실적인 선택.',
+        tagline: 'Faithful to the basics',
+        desc: 'A practical choice that reduces unnecessary burden while not missing the basics of a funeral.',
       },
       standard: {
-        title: '표준장',
+        title: 'Standard Service',
         price: 360,
-        tagline: '충분히, 정성껏',
-        desc: '가장 많은 이들이 선택한, 균형과 품위를 갖춘 기본 장례.',
+        tagline: 'Fully, with sincerity',
+        desc: 'The basic funeral chosen by the most people, with balance and dignity.',
       },
       burial: {
-        title: '매장 · 미국식장',
+        title: 'Burial · American-style Service',
         price: 450,
-        tagline: '마지막을 완벽하게',
-        desc: '한 사람의 삶을 중심에 두고 설계하는 맞춤형 추모 의식.',
+        tagline: 'Perfect the final moment',
+        desc: 'A customized memorial ceremony designed around one person\'s life.',
       },
-      compareBtn: '전체 상품 비교하기',
-      learnMore: '미국식 장례 알아보기 >',
+      compareBtn: 'Compare All Products',
+      learnMore: 'Learn about American-style Funerals >',
     },
     threedays: {
-      title: '사흘동안',
+      title: 'Three Days',
       day1: {
-        title: '1일차',
-        desc: '임종 및 빈소 마련',
-        details: '황망한 첫날, 복잡한 절차 대신 고인과의 인사에 집중',
+        title: 'Day 1',
+        desc: 'Passing and Setting Up the Funeral Hall',
+        details: 'On the hectic first day, focus on saying goodbye to the deceased instead of complicated procedures',
       },
       day2: {
-        title: '2일차',
-        desc: '입관 및 조문',
-        details: '가장 아름다운 마지막 모습을 기억할 수 있도록, 최고의 예를 갖춘 입관식',
+        title: 'Day 2',
+        desc: 'Encoffining and Condolences',
+        details: 'An encoffining ceremony with the highest dignity so that the most beautiful final appearance can be remembered',
       },
       day3: {
-        title: '3일차',
-        desc: '발인 및 장지 동행',
-        details: '마지막 안식처까지, 소홀함 없이 끝까지 동행',
+        title: 'Day 3',
+        desc: 'Procession and Accompanying to the Burial Site',
+        details: 'Accompanying to the final resting place without neglect, all the way to the end',
       },
     },
     resting: {
-      title: '마지막 안식처',
-      subtitle: '안치까지의 선택을 책임집니다',
+      title: 'Final Resting Place',
+      subtitle: 'We take responsibility for the choice until interment',
       columbarium: {
-        title: '봉안당',
-        desc: '따뜻한 빛이 머무는, 가장 편안한 실내 안치 공간.',
+        title: 'Columbarium',
+        desc: 'The most comfortable indoor interment space where warm light remains.',
       },
       natural: {
-        title: '자연장',
-        desc: '자연에서 와서 자연으로. 수목장, 잔디장, 해양장.',
+        title: 'Natural Burial',
+        desc: 'From nature to nature. Tree burial, lawn burial, sea burial.',
       },
       burial: {
-        title: '매장',
-        desc: '전통의 예를 갖춘, 품격 있는 장지 동행.',
+        title: 'Burial',
+        desc: 'A dignified accompaniment to the burial site with traditional dignity.',
       },
       relocation: {
-        title: '개장·이장',
-        desc: '오래된 묘소를 새로운 안식처로.',
+        title: 'Relocation · Reburial',
+        desc: 'From an old grave to a new resting place.',
       },
     },
     stories: {
-      title: '이별 이야기',
+      title: 'Stories of Farewell',
       story1: {
-        title: '함께 견뎌낸 이야기들',
-        excerpt: '한 사람의 마지막을 함께 지나온 기록',
+        title: 'Stories We Endured Together',
+        excerpt: 'A record of going through one person\'s final moments together',
       },
       story2: {
-        title: '서툰 작별을 위한 안내서',
-        excerpt: '알아두면 흔들리지 않는 최소한의 문법',
+        title: 'A Guide for Clumsy Farewells',
+        excerpt: 'The minimum grammar that won\'t shake you if you know it',
       },
       story3: {
-        title: '사유하는 이별의 농도',
-        excerpt: '삶과 죽음 사이에서 길어 올린 생각들',
+        title: 'The Depth of Contemplative Farewell',
+        excerpt: 'Thoughts drawn from between life and death',
       },
     },
     ceo: {
-      quote: '이별은 끝이 아니라, 한 사람을 기억하는 시작입니다.',
-      name: '도원',
-      title: '루시드라이프 대표',
-      cta: '루시드 함께하기',
+      quote: 'Farewell is not an end, but the beginning of remembering one person.',
+      name: 'Dowon',
+      title: 'CEO, Lucid Life',
+      cta: 'Join Lucid Life',
     },
     together: {
       title: 'Together with LUCID.',
@@ -375,15 +383,23 @@ const translations = {
       emergency: 'Emergency',
     },
     footer: {
-      company: '상호명: 루시드라이프 | 대표자: 도원',
-      business: '사업자등록번호: 000-00-00000',
-      address: '주소: 서울특별시 강남구 테헤란로 000, 00층',
+      company: 'Company: Lucid Life | CEO: Dowon',
+      business: 'Business Registration: 000-00-00000',
+      address: 'Address: 000 Teheran-ro, Gangnam-gu, Seoul, 00F',
       copyright: 'Copyright © 2025 Lucid Life. All rights reserved.',
-      membershipBtn: '멤버십 무료 가입',
+      membershipBtn: 'Free Membership Registration',
     },
     floating: {
       call: 'Call',
       kakao: 'KakaoTalk',
+    },
+    gnb: {
+      emergency: 'Emergency 010-2116-4114',
+      cta: 'Join Lucid Life',
+    },
+    popup: {
+      cta: 'Join Lucid Life',
+      message: 'Pre-register now. We\'ll give you 18 months worth.',
     },
   },
 };
@@ -681,7 +697,7 @@ export default function App() {
                 href="tel:01021164114"
                 className="hidden md:flex items-center text-[#C9A66B] text-sm md:text-base hover:text-[#C9A66B]/80 transition-colors"
               >
-                긴급상담 010-2116-4114
+                {t.gnb.emergency}
               </a>
 
               {/* 카카오톡 아이콘 */}
@@ -706,7 +722,7 @@ export default function App() {
                 onClick={openGoogleForm}
                 className="hidden md:flex items-center px-4 py-2 bg-[#C9A66B] text-[#141C2E] hover:bg-[#C9A66B]/90 rounded transition-colors text-sm md:text-base font-medium"
               >
-                루시드 함께하기
+                {t.gnb.cta}
               </button>
 
               {/* 햄버거 메뉴 */}
@@ -1022,10 +1038,10 @@ export default function App() {
                 }}
                 className="w-full px-8 py-4 bg-[#141C2E] text-[#C9A66B] hover:bg-[#141C2E]/90 rounded-lg transition-all text-lg font-medium"
               >
-                루시드 함께하기
+                {t.popup.cta}
               </button>
               <p className="text-sm text-[#141C2E]/80">
-                미리 가입해두세요. 18개월 치 내드립니다.
+                {t.popup.message}
               </p>
             </div>
           </div>
