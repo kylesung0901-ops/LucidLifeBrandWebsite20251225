@@ -923,22 +923,39 @@ const getProductDetails = (lang: Language): Record<string, ProductDetail> => {
   };
 };
 
+const POPUP_DISMISS_KEY = 'lucid_popup_dismissed';
+const POPUP_DISMISS_DURATION = 30 * 60 * 1000; // 30분 (밀리초)
+
 export default function App() {
   const [language, setLanguage] = useState<Language>('ko');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<ProductDetail | null>(null);
   const [showCompareModal, setShowCompareModal] = useState(false);
   const [showPopupCTA, setShowPopupCTA] = useState(false);
+  const [dontShowAgain, setDontShowAgain] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
   const footerRef = useRef<HTMLElement | null>(null);
 
   const t = translations[language];
 
+  // 팝업 표시 여부 확인 (localStorage 체크)
+  const shouldShowPopup = (): boolean => {
+    const dismissedTime = localStorage.getItem(POPUP_DISMISS_KEY);
+    if (!dismissedTime) return true;
+    
+    const now = Date.now();
+    const dismissedAt = parseInt(dismissedTime, 10);
+    const timeDiff = now - dismissedAt;
+    
+    // 30분이 지났으면 다시 표시 가능
+    return timeDiff >= POPUP_DISMISS_DURATION;
+  };
+
   // 스크롤 완료 감지 - 푸터 직전 도달 시 팝업 노출
   useEffect(() => {
     const handleScroll = () => {
-      if (footerRef.current) {
+      if (footerRef.current && shouldShowPopup()) {
         const footerTop = footerRef.current.offsetTop;
         const scrollPosition = window.scrollY + window.innerHeight;
         // 푸터 직전 200px 전에 도달하면 팝업 표시
@@ -1486,6 +1503,28 @@ export default function App() {
               <p className="text-sm text-[#141C2E]/80">
                 {t.popup.message}
               </p>
+              <div className="flex items-center justify-center gap-2 pt-2">
+                <input
+                  type="checkbox"
+                  id="dontShowAgain"
+                  checked={dontShowAgain}
+                  onChange={(e) => {
+                    setDontShowAgain(e.target.checked);
+                    if (e.target.checked) {
+                      // 체크박스 클릭 시 현재 시간을 localStorage에 저장
+                      localStorage.setItem(POPUP_DISMISS_KEY, Date.now().toString());
+                      setShowPopupCTA(false);
+                    }
+                  }}
+                  className="w-4 h-4 text-[#141C2E] bg-white border-2 border-[#141C2E] rounded focus:ring-2 focus:ring-[#141C2E] cursor-pointer"
+                />
+                <label
+                  htmlFor="dontShowAgain"
+                  className="text-sm text-[#141C2E]/80 cursor-pointer select-none"
+                >
+                  확인완료, 다시보지 않기
+                </label>
+              </div>
             </div>
           </div>
         </div>
