@@ -1349,26 +1349,52 @@ export default function App() {
             <p className="text-sm md:text-base lg:text-lg xl:text-xl text-[#C9A66B] mb-6 md:mb-8 tracking-wider">
               {t.accompany.subtitle}
             </p>
-            <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-8 md:mb-10 text-[#141C2E] font-serif-kr leading-relaxed">
-              <p className="mb-2 md:mb-3">{t.accompany.title}</p>
-              <p className="mb-2 md:mb-3">{t.accompany.titleLine2}</p>
-              <p>{t.accompany.titleLine3}</p>
+            <div className="text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-8 md:mb-10 text-[#141C2E] font-serif-kr leading-relaxed">
+              <div className="hidden md:block">
+                <p className="mb-2 md:mb-3">{t.accompany.title}</p>
+                <p className="mb-2 md:mb-3">{t.accompany.titleLine2}</p>
+                <p>{t.accompany.titleLine3}</p>
+              </div>
+              <div className="md:hidden">
+                <p className="mb-2">절차가 아니라, 의식으로.</p>
+                <p className="mb-2">장례는 3일로 끝나지 않습니다.</p>
+                <p className="mb-2">생전부터 장례 이후까지,</p>
+                <p>한 사람을 기억하는 전 과정을 함께합니다.</p>
+              </div>
             </div>
           </div>
 
           {/* 타임라인 */}
-          <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 mb-10 md:mb-12">
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 lg:space-y-8 mb-10 md:mb-12 px-2 md:px-0">
             {[
               { data: t.accompany.before, period: '[임종 전]' },
               { data: t.accompany.during, period: '[장례 중]' },
               { data: t.accompany.after, period: '[이별 이후]' },
             ].map((item, index) => (
-              <div key={index} className="flex gap-4 md:gap-6 items-start">
-                <div className="flex-shrink-0 w-24 md:w-28 lg:w-32 text-left">
-                  <span className="text-sm md:text-base lg:text-lg xl:text-xl text-[#C9A66B] font-medium">{item.period}</span>
+              <div key={index} className="flex gap-3 md:gap-4 lg:gap-6 items-start">
+                <div className="flex-shrink-0 w-20 md:w-24 lg:w-28 xl:w-32 text-left">
+                  <span className="text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-[#C9A66B] font-medium">{item.period}</span>
                 </div>
                 <div className="flex-1">
-                  <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                  {index === 1 ? (
+                    <>
+                      <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                      <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
+                        고인이 되심에 조문과 입관의<br />
+                        작별의 시간
+                      </p>
+                    </>
+                  ) : index === 2 ? (
+                    <>
+                      <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                      <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
+                        탈상, 제사, 천도제를 지나며<br />
+                        다시 일상으로 돌아갈 때
+                      </p>
+                    </>
+                  ) : (
+                    <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                  )}
                 </div>
               </div>
             ))}
