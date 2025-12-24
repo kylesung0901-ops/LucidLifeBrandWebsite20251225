@@ -1822,37 +1822,73 @@ export default function App() {
 
               {/* Comparison Table */}
               <div className="overflow-x-auto">
-                <table className="w-full text-[8px] md:text-[9px] lg:text-base" style={{ tableLayout: 'auto' }}>
+                <table className="w-full text-[8px] md:text-[9px] lg:text-base" style={{ tableLayout: 'fixed', width: '100%' }}>
                   {/* Header Row - Product Names */}
                   <thead>
                     <tr className="border-b border-white/10">
-                      <th className="text-left py-2 md:py-3 lg:py-6 pr-1 md:pr-3 lg:pr-6 text-[#808080] font-normal text-[8px] md:text-[9px] lg:text-base w-[65px] md:w-[80px] lg:w-[160px]">{language === 'ko' ? '항목' : 'Item'}</th>
-                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
-                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '가족장 · 무빈소' : 'Family Funeral · No Wake'}</div>
+                      <th className="text-left py-2 md:py-3 lg:py-6 pr-1 md:pr-3 lg:pr-6 text-[#808080] font-normal text-[8px] md:text-[9px] lg:text-base" style={{ width: '20%', minWidth: '65px' }}>{language === 'ko' ? '항목' : 'Item'}</th>
+                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '80px', maxWidth: '120px' }}>
+                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-base leading-tight px-1" style={{ wordBreak: 'break-word', whiteSpace: 'normal' }}>{language === 'ko' ? '가족장 · 무빈소' : 'Family Funeral · No Wake'}</div>
                         <div className="mt-0.5 lg:mt-2">
-                          <span className="text-sm md:text-base lg:text-4xl text-white font-light">150</span>
-                          <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
+                          {language === 'ko' ? (
+                            <>
+                              <span className="text-sm md:text-base lg:text-4xl text-white font-light">150</span>
+                              <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">만원</span>
+                            </>
+                          ) : (
+                            <>
+                              <span className="text-sm md:text-base lg:text-4xl text-white font-light">1.5</span>
+                              <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">M KRW</span>
+                            </>
+                          )}
                         </div>
                       </th>
-                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
-                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '실용장' : 'Practical Funeral'}</div>
+                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '80px', maxWidth: '120px' }}>
+                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-base leading-tight px-1" style={{ wordBreak: 'break-word', whiteSpace: 'normal' }}>{language === 'ko' ? '실용장' : 'Practical Funeral'}</div>
                         <div className="mt-0.5 lg:mt-2">
-                          <span className="text-sm md:text-base lg:text-4xl text-white font-light">290</span>
-                          <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
+                          {language === 'ko' ? (
+                            <>
+                              <span className="text-sm md:text-base lg:text-4xl text-white font-light">290</span>
+                              <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">만원</span>
+                            </>
+                          ) : (
+                            <>
+                              <span className="text-sm md:text-base lg:text-4xl text-white font-light">2.9</span>
+                              <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">M KRW</span>
+                            </>
+                          )}
                         </div>
                       </th>
-                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
-                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '표준장' : 'Standard Funeral'}</div>
+                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '80px', maxWidth: '120px' }}>
+                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-base leading-tight px-1" style={{ wordBreak: 'break-word', whiteSpace: 'normal' }}>{language === 'ko' ? '표준장' : 'Standard Funeral'}</div>
                         <div className="mt-0.5 lg:mt-2">
-                          <span className="text-sm md:text-base lg:text-4xl text-white font-light">360</span>
-                          <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
+                          {language === 'ko' ? (
+                            <>
+                              <span className="text-sm md:text-base lg:text-4xl text-white font-light">360</span>
+                              <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">만원</span>
+                            </>
+                          ) : (
+                            <>
+                              <span className="text-sm md:text-base lg:text-4xl text-white font-light">3.6</span>
+                              <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">M KRW</span>
+                            </>
+                          )}
                         </div>
                       </th>
-                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '70px', maxWidth: '90px' }}>
-                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-lg leading-tight" style={{ wordBreak: 'keep-all', whiteSpace: 'normal' }}>{language === 'ko' ? '매장 · 미국식장' : 'Burial · American Style'}</div>
+                      <th className="text-center py-2 md:py-3 lg:py-6 px-0.5 md:px-1 lg:px-4" style={{ minWidth: '80px', maxWidth: '120px' }}>
+                        <div className="text-[#C9A66B] font-medium text-[8px] md:text-[9px] lg:text-base leading-tight px-1" style={{ wordBreak: 'break-word', whiteSpace: 'normal' }}>{language === 'ko' ? '매장 · 미국식장' : 'Burial · American Style'}</div>
                         <div className="mt-0.5 lg:mt-2">
-                          <span className="text-sm md:text-base lg:text-4xl text-white font-light">450</span>
-                          <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">{language === 'ko' ? '만원' : '0k KRW'}</span>
+                          {language === 'ko' ? (
+                            <>
+                              <span className="text-sm md:text-base lg:text-4xl text-white font-light">450</span>
+                              <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">만원</span>
+                            </>
+                          ) : (
+                            <>
+                              <span className="text-sm md:text-base lg:text-4xl text-white font-light">4.5</span>
+                              <span className="text-[7px] md:text-[8px] lg:text-sm text-[#808080]">M KRW</span>
+                            </>
+                          )}
                         </div>
                       </th>
                     </tr>
@@ -1892,9 +1928,9 @@ export default function App() {
                       { label: 'Additional service', values: ['Burial site arrangement', 'Burial site arrangement', 'Burial site arrangement', 'Burial site arrangement'] },
                     ]).map((row, idx) => (
                       <tr key={idx} className="border-b border-white/5">
-                        <td className="py-1.5 md:py-2 lg:py-4 pr-1 md:pr-3 lg:pr-6 text-[#808080] text-[8px] md:text-[9px] lg:text-base leading-tight" style={{ minWidth: '65px', maxWidth: '90px' }}>{row.label}</td>
+                        <td className="py-1.5 md:py-2 lg:py-4 pr-1 md:pr-3 lg:pr-6 text-[#808080] text-[8px] md:text-[9px] lg:text-base leading-relaxed" style={{ width: '20%', wordBreak: 'break-word', whiteSpace: 'normal' }}>{row.label}</td>
                         {row.values.map((value, vIdx) => (
-                          <td key={vIdx} className={`py-1.5 md:py-2 lg:py-4 px-0.5 md:px-1 lg:px-4 text-center text-[8px] md:text-[9px] lg:text-base leading-tight ${value === '—' ? 'text-[#505050]' : 'text-white'}`} style={{ wordBreak: 'keep-all', whiteSpace: 'normal', minWidth: '70px', maxWidth: '90px', lineHeight: '1.3' }}>
+                          <td key={vIdx} className={`py-1.5 md:py-2 lg:py-4 px-0.5 md:px-1 lg:px-4 text-center text-[8px] md:text-[9px] lg:text-base leading-relaxed ${value === '—' ? 'text-[#505050]' : 'text-white'}`} style={{ width: '20%', wordBreak: 'break-word', whiteSpace: 'normal', lineHeight: '1.4' }}>
                             {value}
                           </td>
                         ))}
