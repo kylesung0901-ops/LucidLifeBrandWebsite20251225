@@ -757,7 +757,7 @@ export default function App() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/photo_2025-12-24_20-10-06.jpg')`
+            backgroundImage: `url('/photo_2025-12-24_21-32-13.jpg')`
           }}
         />
         {/* Dark overlay for better text readability */}
