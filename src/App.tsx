@@ -1045,8 +1045,10 @@ export default function App() {
 
           <div className="text-center">
             <a 
-              href="#"
-              className="text-sm md:text-base lg:text-lg text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors"
+              href="https://forms.gle/tcBbh8kax7HL15ZeA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base md:text-lg lg:text-xl xl:text-2xl text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors cursor-pointer"
             >
               {t.accompany.link}
             </a>
