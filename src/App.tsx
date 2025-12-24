@@ -1596,19 +1596,34 @@ export default function App() {
             </button>
 
             {/* Scrollable Content */}
-            <div className="overflow-y-auto max-h-[90vh] p-6 md:p-8 lg:p-10">
+            <div className="overflow-y-auto max-h-[90vh] p-4 md:p-8 lg:p-10">
               {/* Header - 제목 */}
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-[#C9A66B] mb-2 md:mb-3">
+              <h3 className="text-lg md:text-2xl lg:text-3xl font-medium text-[#C9A66B] mb-2 md:mb-3">
                 {selectedProduct.name}
               </h3>
               
               {/* Tagline */}
-              <p className="text-sm md:text-base lg:text-lg text-white/80 mb-4 md:mb-5">"{selectedProduct.tagline}"</p>
+              <p className="text-xs md:text-base lg:text-lg text-white/80 mb-3 md:mb-5">"{selectedProduct.tagline}"</p>
 
               {/* Price */}
               <div className="mb-4 md:mb-5">
-                <span className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#C9A66B]">{selectedProduct.price}</span>
-                <span className="text-base md:text-lg lg:text-xl text-white/70 ml-2">{language === 'ko' ? '만원부터' : '0k KRW~'}</span>
+                {language === 'en' ? (
+                  <>
+                    {/* 모바일: 영어 형식 (1.5M KRW), PC: 기존 형식 */}
+                    <span className="text-2xl md:text-5xl lg:text-6xl font-semibold text-[#C9A66B] md:hidden">
+                      {(selectedProduct.price / 100).toFixed(1)}M KRW
+                    </span>
+                    <span className="hidden md:inline text-5xl lg:text-6xl font-semibold text-[#C9A66B]">
+                      {selectedProduct.price}
+                    </span>
+                    <span className="hidden md:inline text-lg lg:text-xl text-white/70 ml-2">0k KRW~</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-2xl md:text-5xl lg:text-6xl font-semibold text-[#C9A66B]">{selectedProduct.price}</span>
+                    <span className="text-sm md:text-lg lg:text-xl text-white/70 ml-2">만원부터</span>
+                  </>
+                )}
               </div>
 
               {/* Description */}
