@@ -1116,13 +1116,13 @@ export default function App() {
 
       {/* Services Section - 함께하는 방식 */}
       <section id="services" className="py-40 bg-[#141C2E] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-medium mb-2 text-white font-serif-kr">
+            <h2 className="text-3xl md:text-5xl font-medium mb-2 text-white font-serif-kr">
               {t.services.title}
             </h2>
-            <p className="text-base text-white/70 mt-2">
+            <p className="text-sm md:text-base text-white/70 mt-2">
               {t.services.subtitle}
             </p>
           </div>
@@ -1134,24 +1134,32 @@ export default function App() {
               { data: t.services.practical, id: 'practical' },
               { data: t.services.standard, id: 'standard' },
               { data: t.services.burial, id: 'premium' },
-            ].map((product, index) => (
-              <div
-                key={index}
-                className="bg-white/[0.03] border border-[#C9A66B]/10 rounded-xl p-6 cursor-pointer hover:border-[#C9A66B]/25 hover:-translate-y-1 transition-all"
-                onClick={() => setSelectedProduct(getProductDetails(language)[product.id])}
-              >
-                <div className="mb-4">
-                  <h3 className="text-lg font-medium text-[#C9A66B] mb-2">{product.data.title}</h3>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-light text-white">{product.data.price}</span>
-                    <span className="text-xs text-white/50">만원</span>
+            ].map((product, index) => {
+              // 가격 표기: 한글은 만원, 영어는 M KRW 형식
+              const priceDisplay = language === 'en' 
+                ? `${(product.data.price / 100).toFixed(1)}M KRW`
+                : product.data.price;
+              const priceUnit = language === 'en' ? '' : '만원';
+              
+              return (
+                <div
+                  key={index}
+                  className="bg-white/[0.03] border border-[#C9A66B]/10 rounded-xl p-5 md:p-6 cursor-pointer hover:border-[#C9A66B]/25 hover:-translate-y-1 transition-all"
+                  onClick={() => setSelectedProduct(getProductDetails(language)[product.id])}
+                >
+                  <div className="mb-4">
+                    <h3 className="text-base md:text-lg font-medium text-[#C9A66B] mb-2">{product.data.title}</h3>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-2xl md:text-3xl font-light text-white">{priceDisplay}</span>
+                      {priceUnit && <span className="text-xs text-white/50">{priceUnit}</span>}
+                    </div>
                   </div>
+                  
+                  <p className="text-xs md:text-sm text-white/60 mb-3">"{product.data.tagline}"</p>
+                  <p className="text-[10px] md:text-xs text-white/50 leading-relaxed">{product.data.desc}</p>
                 </div>
-                
-                <p className="text-sm text-white/60 mb-3">"{product.data.tagline}"</p>
-                <p className="text-xs text-white/50 leading-relaxed">{product.data.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* 하단 버튼 및 링크 */}
