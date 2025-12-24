@@ -1115,8 +1115,17 @@ export default function App() {
             {/* 메인 타이틀 - 모바일: 두 줄, PC: 한 줄 */}
             <h1 className="text-3xl md:text-6xl lg:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
               <span className="block md:hidden">
-                모든 이별은 서툴기에<br />
-                누군가는 그 곁에 선다
+                {language === 'ko' ? (
+                  <>
+                    모든 이별은 서툴기에<br />
+                    누군가는 그 곁에 선다
+                  </>
+                ) : (
+                  <>
+                    Because every farewell is clumsy,<br />
+                    someone stands by their side
+                  </>
+                )}
               </span>
               <span className="hidden md:block">
                 {t.hero.title}
