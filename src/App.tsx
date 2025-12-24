@@ -190,9 +190,11 @@ const translations = {
       emergency: '긴급 상담',
     },
     footer: {
-      company: '상호명: 루시드라이프 | 대표자: 도원',
-      business: '사업자등록번호: 000-00-00000',
-      address: '주소: 서울특별시 강남구 테헤란로 000, 00층',
+      company: '업체명: 루시드라이프',
+      representative: '대표자: 서동원',
+      location: '사업장소재지: 경기도 파주시 교하로 100,908-102',
+      business: '사업자등록번호: 123-92-47792',
+      phone: '전화번호: 010-2116-4114',
       copyright: 'Copyright © 2025 Lucid Life. All rights reserved.',
       membershipBtn: '멤버십 무료 가입',
     },
@@ -393,9 +395,11 @@ const translations = {
       emergency: 'Emergency',
     },
     footer: {
-      company: 'Company: Lucid Life | CEO: Dowon',
-      business: 'Business Registration: 000-00-00000',
-      address: 'Address: 000 Teheran-ro, Gangnam-gu, Seoul, 00F',
+      company: 'Company: Lucid Life',
+      representative: 'CEO: Seo Dongwon',
+      location: 'Business Location: 100,908-102, Gyoha-ro, Paju-si, Gyeonggi-do',
+      business: 'Business Registration: 123-92-47792',
+      phone: 'Phone: 010-2116-4114',
       copyright: 'Copyright © 2025 Lucid Life. All rights reserved.',
       membershipBtn: 'Free Membership Registration',
     },
@@ -1137,8 +1141,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-2 mb-8">
             <p className="text-sm">{t.footer.company}</p>
+            <p className="text-sm">{t.footer.representative}</p>
+            <p className="text-sm">{t.footer.location}</p>
             <p className="text-sm">{t.footer.business}</p>
-            <p className="text-sm">{t.footer.address}</p>
+            <p className="text-sm">{t.footer.phone}</p>
           </div>
           <div className="text-center mb-8">
             <button
