@@ -750,11 +750,13 @@ export default function App() {
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-[#141C2E]">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1723240226503-cc08d5821d87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjZWZ1bCUyMG5hdHVyZSUyMG1lbW9yaWFsfGVufDF8fHx8MTc2NTgwODM5MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')`
+            backgroundImage: `url('/photo_2025-12-24_20-10-06.jpg')`
           }}
         />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-[#141C2E]/40" />
         
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto py-20">
           <div className="mb-16">
