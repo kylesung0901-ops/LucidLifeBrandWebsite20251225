@@ -991,6 +991,10 @@ export default function App() {
     window.open('https://forms.gle/tcBbh8kax7HL15ZeA', '_blank');
   };
 
+  const openMembershipForm = () => {
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfS4JVmbSvHNcDjZg79VutuXk5dDb9A2twuui8xRyf9dA610Q/viewform', '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-[#141C2E]">
       {/* Header */}
@@ -1089,7 +1093,14 @@ export default function App() {
             ].map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => {
+                  if (item.id === 'together') {
+                    openMembershipForm();
+                    setIsMenuOpen(false);
+                  } else {
+                    scrollToSection(item.id);
+                  }
+                }}
                 className="text-2xl md:text-2xl text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors tracking-wide"
               >
                 {item.label}
