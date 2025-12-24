@@ -34,14 +34,17 @@ const translations = {
       before: {
         title: '임종 전',
         desc: '서로가 아직 전하지 못한 것이 남아 있을 때',
+        period: '[임종 전]',
       },
       during: {
         title: '장례 중',
         desc: '고인이 되심에 조문과 입관의 작별의 시간',
+        period: '[장례 중]',
       },
       after: {
         title: '이별 이후',
         desc: '탈상, 제사, 천도제를 지나며 다시 일상으로 돌아갈 때',
+        period: '[이별 이후]',
       },
       link: '이별은 하루로 끝나지 않습니다',
     },
@@ -383,14 +386,17 @@ o 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에
       before: {
         title: 'Before Passing',
         desc: 'When there are still things we haven\'t said to each other',
+        period: '[Before Passing]',
       },
       during: {
         title: 'During Funeral',
         desc: 'The time of farewell with condolences and encoffining as the person becomes the deceased',
+        period: '[During Funeral]',
       },
       after: {
         title: 'After Farewell',
         desc: 'When returning to daily life after the end of mourning, ancestral rites, and memorial services',
+        period: '[After Farewell]',
       },
       link: 'Farewell does not end in a day',
     },
@@ -1221,42 +1227,44 @@ export default function App() {
                   <p className="text-base md:text-lg text-[#C9A66B] mb-3 md:mb-4">{day.desc}</p>
                 </div>
                 <p className="text-neutral-600 text-sm md:text-base leading-relaxed">
-                  {index === 0 ? (
-                    <>
-                      <span className="hidden md:block">
-                        황망한 첫날,<br />
-                        복잡한 절차 대신 고인과의 인사에 집중
-                      </span>
-                      <span className="md:hidden">
-                        황망한 첫날,<br />
-                        복잡한 절차 대신<br />
-                        고인과의 인사에 집중
-                      </span>
-                    </>
-                  ) : index === 1 ? (
-                    <>
-                      <span className="hidden md:block">
-                        가장 아름다운 마지막 모습을<br />
-                        기억할 수 있도록,<br />
-                        최고의 예를 갖춘 입관식
-                      </span>
-                      <span className="md:hidden">
-                        가장 아름다운 마지막 모습을<br />
-                        기억할 수 있도록,<br />
-                        최고의 예를 갖춘 입관식
-                      </span>
-                    </>
-                  ) : index === 2 ? (
-                    <>
-                      <span className="hidden md:block">
-                        마지막 안식처까지,<br />
-                        소홀함 없이 끝까지 동행
-                      </span>
-                      <span className="md:hidden">
-                        마지막 안식처까지,<br />
-                        소홀함 없이 끝까지 동행
-                      </span>
-                    </>
+                  {language === 'ko' ? (
+                    index === 0 ? (
+                      <>
+                        <span className="hidden md:block">
+                          황망한 첫날,<br />
+                          복잡한 절차 대신 고인과의 인사에 집중
+                        </span>
+                        <span className="md:hidden">
+                          황망한 첫날,<br />
+                          복잡한 절차 대신<br />
+                          고인과의 인사에 집중
+                        </span>
+                      </>
+                    ) : index === 1 ? (
+                      <>
+                        <span className="hidden md:block">
+                          가장 아름다운 마지막 모습을<br />
+                          기억할 수 있도록,<br />
+                          최고의 예를 갖춘 입관식
+                        </span>
+                        <span className="md:hidden">
+                          가장 아름다운 마지막 모습을<br />
+                          기억할 수 있도록,<br />
+                          최고의 예를 갖춘 입관식
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="hidden md:block">
+                          마지막 안식처까지,<br />
+                          소홀함 없이 끝까지 동행
+                        </span>
+                        <span className="md:hidden">
+                          마지막 안식처까지,<br />
+                          소홀함 없이 끝까지 동행
+                        </span>
+                      </>
+                    )
                   ) : (
                     day.details
                   )}
@@ -1288,36 +1296,40 @@ export default function App() {
               >
                 <h3 className="text-lg md:text-2xl lg:text-3xl mb-3 md:mb-4 text-[#141C2E] font-serif-kr">{place.data.title}</h3>
                 <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
-                  {index === 0 ? (
-                    <>
-                      <span className="hidden md:block">
-                        따뜻한 빛이 머무는,<br />
-                        가장 편안한 실내 안치 공간.
-                      </span>
-                      <span className="md:hidden">
-                        따뜻한 빛이 머무는,<br />
-                        가장 편안한 실내 안치 공간.
-                      </span>
-                    </>
-                  ) : index === 1 ? (
-                    <>
-                      <span className="hidden md:block">
-                        자연에서 와서 자연으로.<br />
-                        수목장, 잔디장, 해양장.
-                      </span>
-                      <span className="md:hidden">
-                        자연에서 와서 자연으로.<br />
-                        수목장, 잔디장, 해양장.
-                      </span>
-                    </>
-                  ) : index === 2 ? (
-                    <>
-                      <span className="hidden md:block">
-                        전통의 예를 갖춘,<br />
-                        품격 있는 장지 동행.
-                      </span>
-                      <span className="md:hidden">{place.data.desc}</span>
-                    </>
+                  {language === 'ko' ? (
+                    index === 0 ? (
+                      <>
+                        <span className="hidden md:block">
+                          따뜻한 빛이 머무는,<br />
+                          가장 편안한 실내 안치 공간.
+                        </span>
+                        <span className="md:hidden">
+                          따뜻한 빛이 머무는,<br />
+                          가장 편안한 실내 안치 공간.
+                        </span>
+                      </>
+                    ) : index === 1 ? (
+                      <>
+                        <span className="hidden md:block">
+                          자연에서 와서 자연으로.<br />
+                          수목장, 잔디장, 해양장.
+                        </span>
+                        <span className="md:hidden">
+                          자연에서 와서 자연으로.<br />
+                          수목장, 잔디장, 해양장.
+                        </span>
+                      </>
+                    ) : index === 2 ? (
+                      <>
+                        <span className="hidden md:block">
+                          전통의 예를 갖춘,<br />
+                          품격 있는 장지 동행.
+                        </span>
+                        <span className="md:hidden">{place.data.desc}</span>
+                      </>
+                    ) : (
+                      place.data.desc
+                    )
                   ) : (
                     place.data.desc
                   )}
@@ -1361,7 +1373,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-2 md:mb-3 text-[#141C2E] font-serif-kr">
-              이별동행케어
+              {language === 'ko' ? '이별동행케어' : 'Continuum Care'}
             </h2>
             <p className="text-sm md:text-base lg:text-lg xl:text-xl text-[#C9A66B] mb-6 md:mb-8 tracking-wider">
               {t.accompany.subtitle}
@@ -1373,10 +1385,20 @@ export default function App() {
                 <p>{t.accompany.titleLine3}</p>
               </div>
               <div className="md:hidden">
-                <p className="mb-2">절차가 아니라, 의식으로.</p>
-                <p className="mb-2">장례는 3일로 끝나지 않습니다.</p>
-                <p className="mb-2">생전부터 장례 이후까지,</p>
-                <p>한 사람을 기억하는 전 과정을 함께합니다.</p>
+                {language === 'ko' ? (
+                  <>
+                    <p className="mb-2">절차가 아니라, 의식으로.</p>
+                    <p className="mb-2">장례는 3일로 끝나지 않습니다.</p>
+                    <p className="mb-2">생전부터 장례 이후까지,</p>
+                    <p>한 사람을 기억하는 전 과정을 함께합니다.</p>
+                  </>
+                ) : (
+                  <>
+                    <p className="mb-2">{t.accompany.title}</p>
+                    <p className="mb-2">{t.accompany.titleLine2}</p>
+                    <p>{t.accompany.titleLine3}</p>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -1384,39 +1406,43 @@ export default function App() {
           {/* 타임라인 */}
           <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 lg:space-y-8 mb-10 md:mb-12 px-2 md:px-0">
             {[
-              { data: t.accompany.before, period: '[임종 전]' },
-              { data: t.accompany.during, period: '[장례 중]' },
-              { data: t.accompany.after, period: '[이별 이후]' },
+              { data: t.accompany.before, period: t.accompany.before.period },
+              { data: t.accompany.during, period: t.accompany.during.period },
+              { data: t.accompany.after, period: t.accompany.after.period },
             ].map((item, index) => (
               <div key={index} className="flex gap-3 md:gap-4 lg:gap-6 items-start">
                 <div className="flex-shrink-0 w-20 md:w-24 lg:w-28 xl:w-32 text-left">
                   <span className="text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-[#C9A66B] font-medium">{item.period}</span>
                 </div>
                 <div className="flex-1">
-                  {index === 0 ? (
-                    <>
-                      <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
-                      <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
-                        서로가 아직 전하지 못한 것이<br />
-                        남아 있을 때
-                      </p>
-                    </>
-                  ) : index === 1 ? (
-                    <>
-                      <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
-                      <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
-                        고인이 되심에 조문과 입관의<br />
-                        작별의 시간
-                      </p>
-                    </>
-                  ) : index === 2 ? (
-                    <>
-                      <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
-                      <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
-                        탈상, 제사, 천도제를 지나며<br />
-                        다시 일상으로 돌아갈 때
-                      </p>
-                    </>
+                  {language === 'ko' ? (
+                    index === 0 ? (
+                      <>
+                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                        <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
+                          서로가 아직 전하지 못한 것이<br />
+                          남아 있을 때
+                        </p>
+                      </>
+                    ) : index === 1 ? (
+                      <>
+                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                        <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
+                          고인이 되심에 조문과 입관의<br />
+                          작별의 시간
+                        </p>
+                      </>
+                    ) : index === 2 ? (
+                      <>
+                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                        <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
+                          탈상, 제사, 천도제를 지나며<br />
+                          다시 일상으로 돌아갈 때
+                        </p>
+                      </>
+                    ) : (
+                      <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                    )
                   ) : (
                     <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
                   )}
