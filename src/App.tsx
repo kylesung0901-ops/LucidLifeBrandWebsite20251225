@@ -1112,7 +1112,7 @@ export default function App() {
         
         <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto py-32">
           <div className="mb-20 space-y-8 lg:space-y-16">
-            {/* 메인 타이틀 - 모바일: 두 줄, PC: 한 줄 */}
+            {/* 메인 타이틀 - 모바일: 두 줄, PC: 두 줄 */}
             <h1 className="text-3xl md:text-6xl lg:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
               <span className="block md:hidden">
                 {language === 'ko' ? (
@@ -1128,7 +1128,14 @@ export default function App() {
                 )}
               </span>
               <span className="hidden md:block">
-                {t.hero.title}
+                {language === 'ko' ? (
+                  t.hero.title
+                ) : (
+                  <>
+                    Because every farewell is clumsy,<br />
+                    someone stands by their side
+                  </>
+                )}
               </span>
             </h1>
             
