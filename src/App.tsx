@@ -1087,15 +1087,21 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto py-32">
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto py-32">
           <div className="mb-20 space-y-8 lg:space-y-16">
-            {/* 메인 타이틀 */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
-              {t.hero.title}
+            {/* 메인 타이틀 - 모바일: 두 줄, PC: 한 줄 */}
+            <h1 className="text-3xl md:text-6xl lg:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
+              <span className="block md:hidden">
+                모든 이별은 서툴기에<br />
+                누군가는 그 곁에 선다
+              </span>
+              <span className="hidden md:block">
+                {t.hero.title}
+              </span>
             </h1>
             
             {/* 서브 타이틀 */}
-            <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-serif-kr lg:mt-8">
+            <p className="text-lg md:text-2xl lg:text-3xl text-white/90 font-serif-kr lg:mt-8">
               {t.hero.subtitle}
             </p>
             
