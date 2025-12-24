@@ -886,7 +886,17 @@ export default function App() {
                   <p className="text-lg text-[#C9A66B] mb-4">{day.desc}</p>
                 </div>
                 <p className="text-neutral-600 text-base leading-relaxed">
-                  {day.details}
+                  {index === 0 ? (
+                    <>
+                      <span className="hidden md:block">
+                        황망한 첫날,<br />
+                        복잡한 절차 대신 고인과의 인사에 집중
+                      </span>
+                      <span className="md:hidden">{day.details}</span>
+                    </>
+                  ) : (
+                    day.details
+                  )}
                 </p>
               </div>
             ))}
