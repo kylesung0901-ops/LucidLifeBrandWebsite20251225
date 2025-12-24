@@ -1140,16 +1140,16 @@ export default function App() {
       <footer id="footer" ref={footerRef} className="bg-[#141C2E] text-white/70 py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-2 mb-8">
-            <p className="text-sm">{t.footer.company}</p>
-            <p className="text-sm">{t.footer.representative}</p>
-            <p className="text-sm">{t.footer.location}</p>
-            <p className="text-sm">{t.footer.business}</p>
-            <p className="text-sm">{t.footer.phone}</p>
+            <p className="text-sm md:text-base lg:text-lg">{t.footer.company}</p>
+            <p className="text-sm md:text-base lg:text-lg">{t.footer.representative}</p>
+            <p className="text-sm md:text-base lg:text-lg">{t.footer.location}</p>
+            <p className="text-sm md:text-base lg:text-lg">{t.footer.business}</p>
+            <p className="text-sm md:text-base lg:text-lg">{t.footer.phone}</p>
           </div>
           <div className="text-center mb-8">
             <button
               onClick={openGoogleForm}
-              className="px-6 py-3 bg-[#C9A66B] text-[#141C2E] hover:bg-[#C9A66B]/90 rounded-lg transition-all text-sm font-medium"
+              className="px-6 py-3 md:px-10 md:py-4 lg:px-12 lg:py-5 bg-[#C9A66B] text-[#141C2E] hover:bg-[#C9A66B]/90 rounded-lg transition-all text-sm md:text-base lg:text-lg xl:text-xl font-medium"
             >
               {t.footer.membershipBtn}
             </button>
