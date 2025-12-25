@@ -1534,49 +1534,50 @@ export default function App() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/40" onClick={() => setShowPopupCTA(false)} />
           <div 
-            className="relative bg-[#C9A66B] text-[#141C2E] rounded-lg p-8 max-w-md w-full shadow-2xl hover:opacity-90 transition-opacity"
+            className="relative rounded-lg max-w-md w-full shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setShowPopupCTA(false)}
-              className="absolute top-4 right-4 text-[#141C2E] hover:text-[#141C2E]/70 transition-colors"
+              className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center bg-black/30 hover:bg-black/50 rounded-full transition-colors"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 text-white" />
             </button>
-            <div className="text-center space-y-6">
-              <button
+            <div className="relative">
+              <img
+                src={language === 'ko' ? '/KakaoTalk_20251225_193446943.png' : '/KakaoTalk_20251225_193600037.png'}
+                alt={language === 'ko' ? '0원 장례준비' : '0 KRW Funeral Prep'}
+                className="w-full h-auto object-contain cursor-pointer"
                 onClick={() => {
-                  openGoogleForm();
+                  openMembershipForm();
                   setShowPopupCTA(false);
                 }}
-                className="w-full px-8 py-4 bg-[#141C2E] text-[#C9A66B] hover:bg-[#141C2E]/90 rounded-lg transition-all text-lg font-medium"
-              >
-                {t.popup.cta}
-              </button>
-              <p className="text-sm text-[#141C2E]/80">
-                {t.popup.message}
-              </p>
-              <div className="flex items-center justify-center gap-2 pt-2">
-                <input
-                  type="checkbox"
-                  id="dontShowAgain"
-                  checked={dontShowAgain}
-                  onChange={(e) => {
-                    setDontShowAgain(e.target.checked);
-                    if (e.target.checked) {
-                      // 체크박스 클릭 시 현재 시간을 localStorage에 저장
-                      localStorage.setItem(POPUP_DISMISS_KEY, Date.now().toString());
-                      setShowPopupCTA(false);
-                    }
-                  }}
-                  className="w-4 h-4 text-[#141C2E] bg-white border-2 border-[#141C2E] rounded focus:ring-2 focus:ring-[#141C2E] cursor-pointer"
-                />
-                <label
-                  htmlFor="dontShowAgain"
-                  className="text-sm text-[#141C2E]/80 cursor-pointer select-none"
-                >
-                  확인완료, 다시보지 않기
-                </label>
+              />
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full px-4 z-10">
+                <div className="flex items-center justify-center gap-2 bg-black/30 backdrop-blur-sm rounded-lg p-2">
+                  <input
+                    type="checkbox"
+                    id="dontShowToday"
+                    checked={dontShowAgain}
+                    onChange={(e) => {
+                      setDontShowAgain(e.target.checked);
+                      if (e.target.checked) {
+                        // 체크박스 클릭 시 현재 시간을 localStorage에 저장
+                        localStorage.setItem(POPUP_DISMISS_KEY, Date.now().toString());
+                        setShowPopupCTA(false);
+                      }
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-4 h-4 text-white bg-white border-2 border-white rounded focus:ring-2 focus:ring-white cursor-pointer"
+                  />
+                  <label
+                    htmlFor="dontShowToday"
+                    className="text-sm text-white cursor-pointer select-none"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {language === 'ko' ? '오늘은 그만 보기' : 'Stop seeing this day'}
+                  </label>
+                </div>
               </div>
             </div>
           </div>
