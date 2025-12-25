@@ -1589,11 +1589,11 @@ export default function App() {
       <footer id="footer" ref={footerRef} className="bg-[#141C2E] text-white/70 py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-2 mb-8">
-            <p className="text-sm md:text-base lg:text-lg">{t.footer.company}</p>
-            <p className="text-sm md:text-base lg:text-lg">{t.footer.representative}</p>
-            <p className="text-sm md:text-base lg:text-lg">{t.footer.location}</p>
-            <p className="text-sm md:text-base lg:text-lg">{t.footer.business}</p>
-            <p className="text-sm md:text-base lg:text-lg">{t.footer.phone}</p>
+            <p className="text-xs md:text-sm font-normal">{t.footer.company}</p>
+            <p className="text-xs md:text-sm font-normal">{t.footer.representative}</p>
+            <p className="text-xs md:text-sm font-normal">{t.footer.location}</p>
+            <p className="text-xs md:text-sm font-normal">{t.footer.business}</p>
+            <p className="text-xs md:text-sm font-normal">{t.footer.phone}</p>
           </div>
           <div className="text-center mb-8 space-y-3">
             <div className="flex items-center justify-center gap-4">
