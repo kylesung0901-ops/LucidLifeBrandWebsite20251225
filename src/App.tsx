@@ -1722,13 +1722,6 @@ export default function App() {
             className="w-full h-full object-contain"
           />
         </a>
-        <button
-          onClick={openGoogleForm}
-            className="w-12 h-12 md:w-16 md:h-16 bg-[#141C2E] hover:bg-[#141C2E]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
-          title={language === 'ko' ? '멤버십 사전등록' : 'Pre-register'}
-        >
-          <Edit3 className="w-5 h-5 md:w-7 md:h-7 text-[#C9A66B]" />
-        </button>
       </div>
 
       {/* Product Detail Modal */}
