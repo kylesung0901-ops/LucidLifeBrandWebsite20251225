@@ -1033,13 +1033,14 @@ export default function App() {
 
               {/* 카카오톡 아이콘 */}
               <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); window.open('https://pf.kakao.com/_your_kakao_id', '_blank'); }}
+                href="http://pf.kakao.com/_sAKxbn/chat"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center hover:opacity-80 transition-opacity"
               >
                 <img 
                   src="/KakaoTalk_20251219_152146545_20.png" 
-                  alt="KakaoTalk" 
+                  alt={language === 'ko' ? '카카오톡 문의' : 'KakaoTalk Inquiry'}
                   className="w-6 h-6 md:w-7 md:h-7"
                 />
               </a>
