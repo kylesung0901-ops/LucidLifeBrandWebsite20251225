@@ -1617,30 +1617,30 @@ export default function App() {
       <footer id="footer" ref={footerRef} className="bg-[#141C2E] text-white/70 py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center space-y-2 mb-8">
-            <p className="text-xs md:text-sm font-normal">{t.footer.company}</p>
-            <p className="text-xs md:text-sm font-normal">{t.footer.representative}</p>
-            <p className="text-xs md:text-sm font-normal">{t.footer.location}</p>
-            <p className="text-xs md:text-sm font-normal">{t.footer.business}</p>
-            <p className="text-xs md:text-sm font-normal">{t.footer.phone}</p>
+            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.company}</p>
+            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.representative}</p>
+            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.location}</p>
+            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.business}</p>
+            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.phone}</p>
           </div>
           <div className="text-center mb-8 space-y-3">
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={() => setShowPrivacyModal(true)}
-                className="text-xs md:text-sm lg:text-base text-white/60 hover:text-white/80 transition-colors underline"
+                className="text-sm md:text-base lg:text-lg text-white/60 hover:text-white/80 transition-colors underline"
               >
                 {t.footer.privacyBtn}
               </button>
-              <span className="text-white/40">|</span>
+              <span className="text-white/40 text-sm md:text-base lg:text-lg">|</span>
               <button
                 onClick={() => setShowTermsModal(true)}
-                className="text-xs md:text-sm lg:text-base text-white/60 hover:text-white/80 transition-colors underline"
+                className="text-sm md:text-base lg:text-lg text-white/60 hover:text-white/80 transition-colors underline"
               >
                 {t.footer.termsBtn}
               </button>
             </div>
           </div>
-          <div className="text-center text-xs border-t border-white/10 pt-6">
+          <div className="text-center text-sm md:text-base border-t border-white/10 pt-6">
             <p>{t.footer.copyright}</p>
           </div>
         </div>
