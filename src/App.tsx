@@ -22,7 +22,7 @@ const translations = {
     hero: {
       brand: '루시드라이프',
       title: '모든 이별은 서툴기에 누군가는 그 곁에 선다',
-      subtitle: '말하지 않아도 되는 시간을 함께 견딥니다',
+      subtitle: '말하지 않아도 되는 시간을 함께 지킵니다',
       signature: 'your life lucid life',
       cta: '자세히 보기',
     },
@@ -374,7 +374,7 @@ o 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에
     hero: {
       brand: 'LUCID LIFE',
       title: 'Because every farewell is clumsy, someone stands by their side',
-      subtitle: 'We endure the time that doesn\'t need words together',
+      subtitle: 'We keep together the time when we don\'t need to speak',
       signature: 'your life lucid life',
       cta: 'Learn More',
     },
