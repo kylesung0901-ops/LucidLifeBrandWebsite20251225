@@ -1223,19 +1223,19 @@ export default function App() {
           </div>
 
           {/* 하단 버튼 및 링크 */}
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-8 md:space-y-10">
             <button 
               onClick={() => setShowCompareModal(true)}
-              className="bg-[#C9A66B] text-[#141C2E] px-8 py-3 rounded-lg text-base font-medium hover:bg-[#C9A66B]/90 transition-all"
+              className="bg-[#C9A66B] text-[#141C2E] px-8 py-3 rounded-lg text-base font-medium hover:bg-[#C9A66B]/90 transition-all block mx-auto"
             >
               {t.services.compareBtn}
             </button>
-            <div>
+            <div className="pt-2">
               <a 
                 href="https://blog.naver.com/lucid-life/224121989139"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#C9A66B] text-sm hover:text-[#C9A66B]/80 transition-colors cursor-pointer"
+                className="text-[#C9A66B] text-sm hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
               >
                 {t.services.learnMore}
               </a>
