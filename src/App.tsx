@@ -1223,11 +1223,9 @@ export default function App() {
             </button>
             <div>
               <a 
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setSelectedProduct(getProductDetails(language).premium);
-                }}
+                href="https://blog.naver.com/lucid-life/224121989139"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#C9A66B] text-sm hover:text-[#C9A66B]/80 transition-colors cursor-pointer"
               >
                 {t.services.learnMore}
@@ -1241,7 +1239,14 @@ export default function App() {
       <section id="threedays" className="py-40 bg-[#F8F5E6]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-24">
-            <h2 className="text-3xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr">{t.threedays.title}</h2>
+            <a 
+              href="https://blog.naver.com/lucid-life/224121990599"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer inline-block"
+            >
+              {t.threedays.title}
+            </a>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
@@ -1322,7 +1327,19 @@ export default function App() {
                 key={index}
                 className="bg-white rounded-3xl p-4 md:p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20"
               >
-                <h3 className="text-lg md:text-2xl lg:text-3xl mb-3 md:mb-4 text-[#141C2E] font-serif-kr">{place.data.title}</h3>
+                <a
+                  href={
+                    index === 0 ? 'https://blog.naver.com/lucid-life/224121991423' :
+                    index === 1 ? 'https://blog.naver.com/lucid-life/224121992026' :
+                    index === 2 ? 'https://blog.naver.com/lucid-life/224121992898' :
+                    'https://blog.naver.com/lucid-life/224121993554'
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg md:text-2xl lg:text-3xl mb-3 md:mb-4 text-[#141C2E] font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer block"
+                >
+                  {place.data.title}
+                </a>
                 <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
                   {language === 'ko' ? (
                     index === 0 ? (
@@ -1385,7 +1402,18 @@ export default function App() {
                   <div className="w-10 h-10 rounded-full bg-[#C9A66B] text-white flex items-center justify-center text-lg mb-4">
                     ✓
                   </div>
-                  <h3 className="text-xl md:text-2xl mb-3 text-white font-serif-kr">{story.title}</h3>
+                  <a
+                    href={
+                      index === 0 ? 'https://blog.naver.com/lucid-life/224122000903' :
+                      index === 1 ? 'https://blog.naver.com/lucid-life/224122002862' :
+                      'https://blog.naver.com/lucid-life/224122004483'
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl md:text-2xl mb-3 text-white font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer block"
+                  >
+                    {story.title}
+                  </a>
                 </div>
                 <p className="text-base text-white/70 leading-relaxed">
                   {story.excerpt}
@@ -1481,7 +1509,7 @@ export default function App() {
 
           <div className="text-center">
             <a 
-              href="https://forms.gle/tcBbh8kax7HL15ZeA"
+              href="https://blog.naver.com/lucid-life/224107549260"
               target="_blank"
               rel="noopener noreferrer"
               className="text-base md:text-lg lg:text-xl xl:text-2xl text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors cursor-pointer"
