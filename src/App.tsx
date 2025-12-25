@@ -1001,16 +1001,17 @@ export default function App() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#141C2E]/95 backdrop-blur-sm border-b border-[#C9A66B]/20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-3 lg:py-2">
           <div className="flex items-center justify-between">
-            {/* 좌측: 루시드라이프 로고 이미지 */}
+            {/* 좌측: 루시드라이프 로고 텍스트 */}
             <button 
               onClick={() => scrollToSection('hero')}
               className="flex-shrink-0"
             >
-              <img 
-                src="/Gemini_Generated_Image_s2yzpks2yzpks2yz-removebg-preview.png" 
-                alt="LUCID LIFE" 
-                className="h-16 md:h-20 lg:h-24 w-auto"
-              />
+              <span 
+                className="text-white text-xl md:text-2xl lg:text-3xl font-medium"
+                style={{ fontFamily: "'Malgun Gothic', '맑은 고딕', sans-serif" }}
+              >
+                {language === 'ko' ? '루시드라이프' : 'Lucid Life'}
+              </span>
             </button>
 
             {/* 우측: 아이콘 및 버튼들 */}
