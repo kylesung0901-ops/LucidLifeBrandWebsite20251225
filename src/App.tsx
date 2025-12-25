@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Globe, Phone, MessageSquare, Heart, Flower2, MapPin, BookOpen, User, FileText, Edit3 } from 'lucide-react';
-import ceoImage from './assets/e0f2c43b934867240dc85cbcb59db1458376a4f8.png';
 // import logoImage from './assets/ed9c4979525d1d92a2e2ee261a14686c632bc8de.png';
 const logoImage = '/logo.png';
+const ceoImage = '/KakaoTalk_20251225_191332983.png';
 
 type Language = 'ko' | 'en';
 
