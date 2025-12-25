@@ -1709,6 +1709,19 @@ export default function App() {
         >
           <Phone className="w-5 h-5 md:w-7 md:h-7 text-white" />
         </a>
+        <a
+          href="http://pf.kakao.com/_sAKxbn/chat"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 md:w-16 md:h-16 bg-white hover:bg-white/90 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110 p-2 md:p-3"
+          title={language === 'ko' ? '카카오톡 문의' : 'KakaoTalk Inquiry'}
+        >
+          <img 
+            src="/KakaoTalk_20251219_152146545_20.png" 
+            alt={language === 'ko' ? '카카오톡 문의' : 'KakaoTalk Inquiry'}
+            className="w-full h-full object-contain"
+          />
+        </a>
         <button
           onClick={openGoogleForm}
             className="w-12 h-12 md:w-16 md:h-16 bg-[#141C2E] hover:bg-[#141C2E]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
