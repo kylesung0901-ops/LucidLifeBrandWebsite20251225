@@ -1596,12 +1596,6 @@ export default function App() {
             <p className="text-sm md:text-base lg:text-lg">{t.footer.phone}</p>
           </div>
           <div className="text-center mb-8 space-y-3">
-            <button
-              onClick={openGoogleForm}
-              className="px-6 py-3 md:px-10 md:py-4 lg:px-12 lg:py-5 bg-[#C9A66B] text-[#141C2E] hover:bg-[#C9A66B]/90 rounded-lg transition-all text-sm md:text-base lg:text-lg xl:text-xl font-medium"
-            >
-              {t.footer.membershipBtn}
-            </button>
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={() => setShowPrivacyModal(true)}
