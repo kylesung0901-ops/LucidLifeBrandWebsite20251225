@@ -1510,15 +1510,33 @@ export default function App() {
           
           {/* 본문 텍스트 */}
           <div className="text-center mb-10 md:mb-14">
-            <p className="text-lg md:text-xl lg:text-2xl text-[#2C2C2C] font-serif-kr leading-relaxed mb-1 md:mb-2">
-              {language === 'ko' ? '절차가 아니라, 의식으로. 장례는 3일로 끝나지 않습니다.' : 'Not a procedure, but a ritual. A funeral doesn\'t end in 3 days.'}
-            </p>
-            <p className="text-lg md:text-xl lg:text-2xl text-[#2C2C2C] font-serif-kr leading-relaxed mb-1 md:mb-2">
-              {language === 'ko' ? '생전부터 장례 이후까지,' : 'From before passing to after the funeral,'}
-            </p>
-            <p className="text-lg md:text-xl lg:text-2xl text-[#2C2C2C] font-serif-kr leading-relaxed">
-              {language === 'ko' ? '한 사람을 기억하는 전 과정을 함께합니다.' : 'we accompany you through the entire journey of remembering a person.'}
-            </p>
+            {/* 모바일 버전 - 4줄 */}
+            <div className="md:hidden">
+              <p className="text-lg text-[#2C2C2C] font-serif-kr leading-relaxed mb-1">
+                {language === 'ko' ? '절차가 아니라, 의식으로.' : 'Not a procedure, but a ritual.'}
+              </p>
+              <p className="text-lg text-[#2C2C2C] font-serif-kr leading-relaxed mb-1">
+                {language === 'ko' ? '장례는 3일로 끝나지 않습니다.' : 'A funeral doesn\'t end in 3 days.'}
+              </p>
+              <p className="text-lg text-[#2C2C2C] font-serif-kr leading-relaxed mb-1">
+                {language === 'ko' ? '생전부터 장례 이후까지,' : 'From before passing to after the funeral,'}
+              </p>
+              <p className="text-lg text-[#2C2C2C] font-serif-kr leading-relaxed">
+                {language === 'ko' ? '한 사람을 기억하는 전 과정을 함께합니다.' : 'we accompany you through the entire journey of remembering a person.'}
+              </p>
+            </div>
+            {/* PC 버전 - 기존 3줄 유지 */}
+            <div className="hidden md:block">
+              <p className="text-xl lg:text-2xl text-[#2C2C2C] font-serif-kr leading-relaxed mb-1 md:mb-2">
+                {language === 'ko' ? '절차가 아니라, 의식으로. 장례는 3일로 끝나지 않습니다.' : 'Not a procedure, but a ritual. A funeral doesn\'t end in 3 days.'}
+              </p>
+              <p className="text-xl lg:text-2xl text-[#2C2C2C] font-serif-kr leading-relaxed mb-1 md:mb-2">
+                {language === 'ko' ? '생전부터 장례 이후까지,' : 'From before passing to after the funeral,'}
+              </p>
+              <p className="text-xl lg:text-2xl text-[#2C2C2C] font-serif-kr leading-relaxed">
+                {language === 'ko' ? '한 사람을 기억하는 전 과정을 함께합니다.' : 'we accompany you through the entire journey of remembering a person.'}
+              </p>
+            </div>
           </div>
           
           {/* 3개 카드 */}
