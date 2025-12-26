@@ -1356,11 +1356,24 @@ export default function App() {
               { data: t.resting.natural },
               { data: t.resting.burial },
               { data: t.resting.relocation },
-            ].map((place, index) => (
+            ].map((place, index) => {
+              // 각 장소별 이미지 파일
+              const placeImages = ['/봉안당st.png', '/자연장st.png', '/매장st.png', '/개장이장st.png'];
+              
+              return (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-4 md:p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20"
+                className="relative bg-white rounded-3xl p-4 md:p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20 overflow-hidden"
               >
+                {/* 우측 상단 이미지 */}
+                <div className="absolute top-4 md:top-6 right-4 md:right-6 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
+                  <img 
+                    src={placeImages[index]} 
+                    alt={`${place.data.title} icon`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                
                 <a
                   href={
                     index === 0 ? 'https://blog.naver.com/lucid-life/224121991423' :
@@ -1414,7 +1427,8 @@ export default function App() {
                   )}
                 </p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
