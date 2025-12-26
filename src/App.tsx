@@ -1486,25 +1486,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* New Section - 새 이미지 섹션 (이별 이야기 밑) */}
-      <section className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] overflow-hidden">
-        {/* 배경 이미지 - PC 버전 */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
-          style={{
-            backgroundImage: `url('/KakaoTalk_20251226_234440347.png')`
-          }}
-        />
-        
-        {/* 배경 이미지 - 모바일 버전 */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-          style={{
-            backgroundImage: `url('/KakaoTalk_20251226_234426300.png')`
-          }}
-        />
-      </section>
-
       {/* Care Section - 이별동행케어 */}
       <section id="care" className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
         {/* 배경 그라데이션 */}
