@@ -1118,7 +1118,7 @@ export default function App() {
       )}
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-6 md:pt-8 bg-[#141C2E]">
+      <section id="hero" className="relative min-h-screen flex flex-col overflow-hidden bg-[#141C2E]">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -1128,9 +1128,9 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto w-full h-full flex flex-col">
-          {/* 로고 이미지 - 헤더 바로 아래 상단 위치 */}
-          <div className="flex justify-center pt-6 md:pt-8">
+        <div className="relative z-10 flex flex-col h-screen px-4 md:px-6 max-w-5xl mx-auto w-full">
+          {/* 상단: 로고 - 네비게이션 바 아래 */}
+          <div className="flex justify-center pt-4 md:pt-6">
             <img 
               src="/lucid_logo_white_3000.png" 
               alt="Lucid Life Logo" 
@@ -1138,8 +1138,8 @@ export default function App() {
             />
           </div>
           
-          {/* 텍스트 영역 - 하단에 배치 */}
-          <div className="flex flex-col items-center justify-end flex-1 pb-12 md:pb-16 lg:pb-20 space-y-4 md:space-y-6 lg:space-y-8">
+          {/* 하단: 텍스트 영역 - 페이지 하단에 위치 */}
+          <div className="mt-auto pb-16 md:pb-20 lg:pb-24 text-center space-y-4 md:space-y-6 lg:space-y-8">
             {/* 메인 타이틀 */}
             <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
               <span className="block md:hidden">
@@ -1176,7 +1176,7 @@ export default function App() {
             </p>
             
             {/* 시그니처 */}
-            <p className="text-sm md:text-base lg:text-lg text-[#C9A66B] tracking-wider">
+            <p className="text-sm md:text-base text-[#C9A66B] tracking-wider">
               {t.hero.signature}
             </p>
           </div>
