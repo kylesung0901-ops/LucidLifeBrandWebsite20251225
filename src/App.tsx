@@ -1506,31 +1506,132 @@ export default function App() {
       </section>
 
       {/* Care Section - 이별동행케어 */}
-      <section id="care" className="relative py-20 md:py-32 lg:py-40 min-h-[600px] md:min-h-[800px] overflow-hidden">
-        {/* 배경 이미지 - PC 버전 */}
+      <section id="care" className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
+        {/* 배경 그라데이션 */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
+          className="absolute inset-0"
           style={{
-            backgroundImage: `url('/이별동행케어PC.png')`
+            background: 'linear-gradient(to bottom, #F5F1E8 0%, #E8DFD0 30%, #D4C4A8 60%, #C9B896 100%)'
           }}
         />
         
-        {/* 배경 이미지 - 모바일 버전 */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-          style={{
-            backgroundImage: `url('/이별동행케어mobile.png')`
-          }}
-        />
-        
-        {/* 클릭 가능한 링크 영역 */}
-        <a 
-          href="https://blog.naver.com/lucid-life/224107549260"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute inset-0 z-10 cursor-pointer"
-          aria-label="이별동행케어 상세보기"
-        />
+        {/* 콘텐츠 */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          {/* 제목 */}
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#2C2C2C] font-serif-kr mb-2 md:mb-3">
+              {language === 'ko' ? '이별동행케어' : 'Continuum Care'}
+            </h2>
+            <p className="text-base md:text-lg text-[#C9A66B] tracking-wider">
+              Continuum Care
+            </p>
+          </div>
+          
+          {/* 본문 텍스트 */}
+          <div className="text-center mb-10 md:mb-14">
+            <p className="text-lg md:text-xl lg:text-2xl text-[#2C2C2C] font-serif-kr leading-relaxed mb-1 md:mb-2">
+              {language === 'ko' ? '절차가 아니라, 의식으로. 장례는 3일로 끝나지 않습니다.' : 'Not a procedure, but a ritual. A funeral doesn\'t end in 3 days.'}
+            </p>
+            <p className="text-lg md:text-xl lg:text-2xl text-[#2C2C2C] font-serif-kr leading-relaxed mb-1 md:mb-2">
+              {language === 'ko' ? '생전부터 장례 이후까지,' : 'From before passing to after the funeral,'}
+            </p>
+            <p className="text-lg md:text-xl lg:text-2xl text-[#2C2C2C] font-serif-kr leading-relaxed">
+              {language === 'ko' ? '한 사람을 기억하는 전 과정을 함께합니다.' : 'we accompany you through the entire journey of remembering a person.'}
+            </p>
+          </div>
+          
+          {/* 3개 카드 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-10 md:mb-14">
+            {/* 카드 1: 임종 전 */}
+            <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg text-center">
+              {/* 아이콘 */}
+              <div className="flex justify-center mb-4 md:mb-6">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-[#C9A66B]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32 8C32 8 20 16 20 28C20 34 24 40 32 44C40 40 44 34 44 28C44 16 32 8 32 8Z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <path d="M24 48C24 48 16 52 16 56L16 60L48 60L48 56C48 52 40 48 40 48" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <path d="M28 44L28 48" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M36 44L36 48" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              </div>
+              {/* 타이틀 */}
+              <h3 className="text-lg md:text-xl text-[#C9A66B] font-medium mb-3 md:mb-4">
+                {language === 'ko' ? '[임종 전]' : '[Before Passing]'}
+              </h3>
+              {/* 설명 */}
+              <p className="text-sm md:text-base text-[#2C2C2C] leading-relaxed">
+                {language === 'ko' ? (
+                  <>서로가 아직 전하지 못한 것이<br />남아 있을 때</>
+                ) : (
+                  <>When there are still things<br />left unsaid between you</>
+                )}
+              </p>
+            </div>
+            
+            {/* 카드 2: 장례 중 */}
+            <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg text-center">
+              {/* 아이콘 */}
+              <div className="flex justify-center mb-4 md:mb-6">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-[#C9A66B]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="28" y="20" width="8" height="36" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <path d="M32 8C32 8 28 12 28 16C28 18 30 20 32 20C34 20 36 18 36 16C36 12 32 8 32 8Z" fill="currentColor"/>
+                  <circle cx="44" cy="44" r="4" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <circle cx="48" cy="36" r="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <circle cx="52" cy="44" r="5" stroke="currentColor" strokeWidth="2" fill="none"/>
+                </svg>
+              </div>
+              {/* 타이틀 */}
+              <h3 className="text-lg md:text-xl text-[#C9A66B] font-medium mb-3 md:mb-4">
+                {language === 'ko' ? '[장례 중]' : '[During Funeral]'}
+              </h3>
+              {/* 설명 */}
+              <p className="text-sm md:text-base text-[#2C2C2C] leading-relaxed">
+                {language === 'ko' ? (
+                  <>고인이 되심에 조문과<br />입관의 작별의 시간</>
+                ) : (
+                  <>Time of condolences and<br />farewell at the encoffining</>
+                )}
+              </p>
+            </div>
+            
+            {/* 카드 3: 이별 이후 */}
+            <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg text-center">
+              {/* 아이콘 */}
+              <div className="flex justify-center mb-4 md:mb-6">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-[#C9A66B]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 48H56" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M32 32C32 32 24 36 24 44H40C40 36 32 32 32 32Z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <circle cx="32" cy="24" r="8" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <path d="M20 20L16 16M44 20L48 16M32 12V8" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              </div>
+              {/* 타이틀 */}
+              <h3 className="text-lg md:text-xl text-[#C9A66B] font-medium mb-3 md:mb-4">
+                {language === 'ko' ? '[이별 이후]' : '[After Farewell]'}
+              </h3>
+              {/* 설명 */}
+              <p className="text-sm md:text-base text-[#2C2C2C] leading-relaxed">
+                {language === 'ko' ? (
+                  <>탈상, 제사, 천도제를 지나며<br />다시 일상으로 돌아갈 때</>
+                ) : (
+                  <>Returning to daily life through<br />memorial rites and ceremonies</>
+                )}
+              </p>
+            </div>
+          </div>
+          
+          {/* 하단 링크 */}
+          <div className="text-center">
+            <a 
+              href="https://blog.naver.com/lucid-life/224107549260"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-xl md:text-2xl lg:text-3xl text-[#C9A66B] font-serif-kr hover:opacity-80 transition-opacity"
+            >
+              {language === 'ko' ? '이별은 왜 하루로 끝나지 않을까 →' : 'Why doesn\'t farewell end in a day →'}
+            </a>
+            <div className="mt-4 w-12 h-0.5 bg-[#C9A66B] mx-auto"></div>
+          </div>
+        </div>
       </section>
 
       {/* CEO Section */}
