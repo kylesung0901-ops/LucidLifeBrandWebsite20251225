@@ -1118,7 +1118,7 @@ export default function App() {
       )}
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-12 md:pt-16 bg-[#141C2E]">
+      <section id="hero" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-8 md:pt-12 bg-[#141C2E]">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -1128,10 +1128,10 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto py-12 md:py-16">
-          <div className="mb-6 md:mb-8 space-y-4 md:space-y-6 lg:space-y-8">
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto pt-8 md:pt-12 pb-12 md:pb-16">
+          <div className="mb-4 md:mb-6 space-y-4 md:space-y-6 lg:space-y-8">
             {/* 로고 이미지 - 크기 더 작게, 위치 네비게이션 바 방향으로 더 위로 */}
-            <div className="flex justify-center mb-1 md:mb-2">
+            <div className="flex justify-center mb-0 md:mb-1">
               <img 
                 src="/lucid_logo_white_3000.png" 
                 alt="Lucid Life Logo" 
