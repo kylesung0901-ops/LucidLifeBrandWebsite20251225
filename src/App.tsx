@@ -1365,8 +1365,8 @@ export default function App() {
                 key={index}
                 className="relative bg-white rounded-3xl p-4 md:p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20 overflow-hidden"
               >
-                {/* 우측 상단 이미지 */}
-                <div className="absolute top-4 md:top-6 right-4 md:right-6 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
+                {/* 우측 상단 이미지 - 모바일은 그대로, PC 버전만 작게 조정 */}
+                <div className="absolute top-4 md:top-3 right-4 md:right-3 w-16 h-16 md:w-14 md:h-14 lg:w-16 lg:h-16">
                   <img 
                     src={placeImages[index]} 
                     alt={`${place.data.title} icon`}
