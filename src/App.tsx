@@ -1118,7 +1118,7 @@ export default function App() {
       )}
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-8 md:pt-12 bg-[#141C2E]">
+      <section id="hero" className="relative min-h-screen flex items-start justify-center overflow-hidden pt-6 md:pt-8 bg-[#141C2E]">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -1128,17 +1128,18 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto pt-8 md:pt-12 pb-12 md:pb-16">
-          <div className="mb-4 md:mb-6 space-y-4 md:space-y-6 lg:space-y-8">
-            {/* 로고 이미지 - 크기 더 작게, 위치 네비게이션 바 방향으로 더 위로 */}
-            <div className="flex justify-center mb-0 md:mb-1">
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto w-full">
+          <div className="flex flex-col items-center justify-start pt-6 md:pt-8 pb-12 md:pb-16 space-y-6 md:space-y-8 lg:space-y-10">
+            {/* 로고 이미지 - 헤더 바로 아래 위치 */}
+            <div className="flex justify-center">
               <img 
                 src="/lucid_logo_white_3000.png" 
                 alt="Lucid Life Logo" 
-                className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain"
+                className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
               />
             </div>
-            {/* 메인 타이틀 - 모바일: 두 줄, PC: 두 줄, 두 줄 사이 간격 넓히기 */}
+            
+            {/* 메인 타이틀 - 로고 아래 위치 */}
             <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
               <span className="block md:hidden">
                 {language === 'ko' ? (
@@ -1168,13 +1169,13 @@ export default function App() {
               </span>
             </h1>
             
-            {/* 서브 타이틀 */}
-            <p className="text-base md:text-xl lg:text-2xl text-white/90 font-serif-kr lg:mt-6">
+            {/* 서브 타이틀 - 메인 타이틀 아래 위치 */}
+            <p className="text-base md:text-xl lg:text-2xl text-white/90 font-serif-kr">
               {t.hero.subtitle}
             </p>
             
-            {/* 시그니처 */}
-            <p className="text-sm md:text-base text-[#C9A66B] tracking-wider mt-16 lg:mt-24">
+            {/* 시그니처 - 맨 아래 위치 */}
+            <p className="text-sm md:text-base text-[#C9A66B] tracking-wider mt-auto">
               {t.hero.signature}
             </p>
           </div>
