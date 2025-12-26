@@ -1441,12 +1441,25 @@ export default function App() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[t.stories.story1, t.stories.story2, t.stories.story3].map((story, index) => (
+            {[t.stories.story1, t.stories.story2, t.stories.story3].map((story, index) => {
+              // 각 스토리별 이미지 파일
+              const storyImages = ['/함께견뎌낸이야기들.png', '/서툰작업을위한안내서-.png', '/사유하는이별의농도.png'];
+              
+              return (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl hover:bg-white/15 transition-all border border-white/20"
+                className="relative bg-white/10 backdrop-blur-sm p-8 rounded-3xl hover:bg-white/15 transition-all border border-white/20 overflow-hidden"
               >
-                <div className="mb-6">
+                {/* 우측 상단 이미지 - 글자를 가리지 않도록 작은 크기 */}
+                <div className="absolute top-3 md:top-4 right-3 md:right-4 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16">
+                  <img 
+                    src={storyImages[index]} 
+                    alt={`${story.title} icon`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                
+                <div className="mb-6 pr-12 md:pr-14 lg:pr-16">
                   <div className="w-10 h-10 rounded-full bg-[#C9A66B] text-white flex items-center justify-center text-lg mb-4">
                     ✓
                   </div>
@@ -1467,7 +1480,8 @@ export default function App() {
                   {story.excerpt}
                 </p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
