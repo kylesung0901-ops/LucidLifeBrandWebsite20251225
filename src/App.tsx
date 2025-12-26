@@ -1128,18 +1128,19 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto w-full">
-          <div className="flex flex-col items-center justify-start pt-6 md:pt-8 pb-12 md:pb-16 space-y-6 md:space-y-8 lg:space-y-10">
-            {/* 로고 이미지 - 헤더 바로 아래 위치 */}
-            <div className="flex justify-center">
-              <img 
-                src="/lucid_logo_white_3000.png" 
-                alt="Lucid Life Logo" 
-                className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
-              />
-            </div>
-            
-            {/* 메인 타이틀 - 로고 아래 위치 */}
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto w-full h-full flex flex-col">
+          {/* 로고 이미지 - 헤더 바로 아래 상단 위치 */}
+          <div className="flex justify-center pt-6 md:pt-8">
+            <img 
+              src="/lucid_logo_white_3000.png" 
+              alt="Lucid Life Logo" 
+              className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
+            />
+          </div>
+          
+          {/* 텍스트 영역 - 하단에 배치 */}
+          <div className="flex flex-col items-center justify-end flex-1 pb-12 md:pb-16 lg:pb-20 space-y-4 md:space-y-6 lg:space-y-8">
+            {/* 메인 타이틀 */}
             <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
               <span className="block md:hidden">
                 {language === 'ko' ? (
@@ -1169,13 +1170,13 @@ export default function App() {
               </span>
             </h1>
             
-            {/* 서브 타이틀 - 메인 타이틀 아래 위치 */}
+            {/* 서브 타이틀 */}
             <p className="text-base md:text-xl lg:text-2xl text-white/90 font-serif-kr">
               {t.hero.subtitle}
             </p>
             
-            {/* 시그니처 - 맨 아래 위치 */}
-            <p className="text-sm md:text-base text-[#C9A66B] tracking-wider mt-auto">
+            {/* 시그니처 */}
+            <p className="text-sm md:text-base lg:text-lg text-[#C9A66B] tracking-wider">
               {t.hero.signature}
             </p>
           </div>
