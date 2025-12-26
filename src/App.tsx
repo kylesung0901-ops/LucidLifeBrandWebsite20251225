@@ -1624,11 +1624,11 @@ export default function App() {
               href="https://blog.naver.com/lucid-life/224107549260"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-xl md:text-2xl lg:text-3xl text-[#C9A66B] font-serif-kr hover:opacity-80 transition-opacity"
+              className="inline-block text-xl md:text-2xl lg:text-3xl text-[#D4AF37] font-serif-kr hover:opacity-80 transition-opacity font-semibold"
             >
               {language === 'ko' ? '이별은 왜 하루로 끝나지 않을까 →' : 'Why doesn\'t farewell end in a day →'}
             </a>
-            <div className="mt-4 w-12 h-0.5 bg-[#C9A66B] mx-auto"></div>
+            <div className="mt-4 w-12 h-0.5 bg-[#D4AF37] mx-auto"></div>
           </div>
         </div>
       </section>
