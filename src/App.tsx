@@ -1241,27 +1241,15 @@ export default function App() {
             >
               {t.services.compareBtn}
             </button>
-            <div className="space-y-3 md:space-y-4">
-              <div>
-                <a 
-                  href="https://blog.naver.com/lucid-life/224121989139"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#C9A66B] text-sm md:text-base hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
-                >
-                  {t.services.learnMore}
-                </a>
-              </div>
-              <div>
-                <a 
-                  href="https://blog.naver.com/lucid-life/224121989139"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#C9A66B] text-sm md:text-base hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
-                >
-                  {t.services.learnMore2}
-                </a>
-              </div>
+            <div>
+              <a 
+                href="https://blog.naver.com/lucid-life/224121989139"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#C9A66B] text-sm md:text-base hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
+              >
+                {t.services.learnMore2}
+              </a>
             </div>
           </div>
         </div>
