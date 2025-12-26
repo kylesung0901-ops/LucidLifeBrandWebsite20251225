@@ -1488,99 +1488,37 @@ export default function App() {
 
       {/* Care Section - 이별동행케어 */}
       <section id="care" className="py-20 md:py-32 lg:py-40 bg-[#F8F5E6]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-2 md:mb-3 text-[#141C2E] font-serif-kr">
-              {language === 'ko' ? '이별동행케어' : 'Continuum Care'}
-            </h2>
-            <p className="text-sm md:text-base lg:text-lg xl:text-xl text-[#C9A66B] mb-4 md:mb-6 tracking-wider">
-              {t.accompany.subtitle}
-            </p>
-            {/* 상단 링크 */}
-            <div className="mb-6 md:mb-8">
-              <a 
-                href="https://blog.naver.com/lucid-life/224107549260"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-base md:text-lg lg:text-xl text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
-              >
-                {t.accompany.link} &gt;
-              </a>
-            </div>
-            <div className="text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-8 md:mb-10 text-[#141C2E] font-serif-kr leading-relaxed">
-              <div className="hidden md:block">
-                <p className="mb-2 md:mb-3">{t.accompany.title}</p>
-                <p className="mb-2 md:mb-3">{t.accompany.titleLine2}</p>
-                <p>{t.accompany.titleLine3}</p>
-              </div>
-              <div className="md:hidden">
-                {language === 'ko' ? (
-                  <>
-                    <p className="mb-2">절차가 아니라, 의식으로.</p>
-                    <p className="mb-2">장례는 3일로 끝나지 않습니다.</p>
-                    <p className="mb-2">생전부터 장례 이후까지,</p>
-                    <p>한 사람을 기억하는 전 과정을 함께합니다.</p>
-                  </>
-                ) : (
-                  <>
-                    <p className="mb-2">{t.accompany.title}</p>
-                    <p className="mb-2">{t.accompany.titleLine2}</p>
-                    <p>{t.accompany.titleLine3}</p>
-                  </>
-                )}
-              </div>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          {/* PC 버전 이미지 */}
+          <div className="hidden md:block">
+            <a 
+              href="https://blog.naver.com/lucid-life/224107549260"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full"
+            >
+              <img 
+                src="/이별동행케어PC.png" 
+                alt="이별동행케어 PC 버전"
+                className="w-full h-auto object-contain rounded-lg"
+              />
+            </a>
           </div>
-
-          {/* 3개 카드 레이아웃 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto mb-10 md:mb-12">
-            {[
-              { data: t.accompany.before, period: t.accompany.before.period },
-              { data: t.accompany.during, period: t.accompany.during.period },
-              { data: t.accompany.after, period: t.accompany.after.period },
-            ].map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all border border-[#C9A66B]/20"
-              >
-                <div className="mb-4 md:mb-6">
-                  <span className="text-sm md:text-base lg:text-lg text-[#C9A66B] font-medium">{item.period}</span>
-                </div>
-                <div className="text-[#141C2E]">
-                  {language === 'ko' ? (
-                    index === 0 ? (
-                      <>
-                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl leading-relaxed font-serif-kr">{item.data.desc}</p>
-                        <p className="md:hidden text-base leading-relaxed font-serif-kr">
-                          서로가 아직 전하지 못한 것이<br />
-                          남아 있을 때
-                        </p>
-                      </>
-                    ) : index === 1 ? (
-                      <>
-                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl leading-relaxed font-serif-kr">{item.data.desc}</p>
-                        <p className="md:hidden text-base leading-relaxed font-serif-kr">
-                          고인이 되심에 조문과 입관의<br />
-                          작별의 시간
-                        </p>
-                      </>
-                    ) : index === 2 ? (
-                      <>
-                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl leading-relaxed font-serif-kr">{item.data.desc}</p>
-                        <p className="md:hidden text-base leading-relaxed font-serif-kr">
-                          탈상, 제사, 천도제를 지나며<br />
-                          다시 일상으로 돌아갈 때
-                        </p>
-                      </>
-                    ) : (
-                      <p className="text-base md:text-lg lg:text-xl leading-relaxed font-serif-kr">{item.data.desc}</p>
-                    )
-                  ) : (
-                    <p className="text-base md:text-lg lg:text-xl leading-relaxed">{item.data.desc}</p>
-                  )}
-                </div>
-              </div>
-            ))}
+          
+          {/* 모바일 버전 이미지 */}
+          <div className="md:hidden">
+            <a 
+              href="https://blog.naver.com/lucid-life/224107549260"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full"
+            >
+              <img 
+                src="/이별동행케어mobile.png" 
+                alt="이별동행케어 모바일 버전"
+                className="w-full h-auto object-contain rounded-lg"
+              />
+            </a>
           </div>
         </div>
       </section>
