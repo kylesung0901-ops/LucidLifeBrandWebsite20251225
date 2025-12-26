@@ -1118,7 +1118,7 @@ export default function App() {
       )}
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28 bg-[#141C2E]">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20 bg-[#141C2E]">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -1128,41 +1128,41 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto py-20 md:py-24">
-          <div className="mb-12 md:mb-16 space-y-6 md:space-y-8 lg:space-y-12">
-            {/* 로고 이미지 - 크기 작게, 위치 위로 */}
-            <div className="flex justify-center mb-4 md:mb-6">
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto py-16 md:py-20">
+          <div className="mb-8 md:mb-12 space-y-4 md:space-y-6 lg:space-y-8">
+            {/* 로고 이미지 - 크기 더 작게, 위치 네비게이션 바 방향으로 위로 */}
+            <div className="flex justify-center mb-2 md:mb-3">
               <img 
                 src="/lucid_logo_white_3000.png" 
                 alt="Lucid Life Logo" 
-                className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain"
+                className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain"
               />
             </div>
-            {/* 메인 타이틀 - 모바일: 두 줄, PC: 두 줄 */}
+            {/* 메인 타이틀 - 모바일: 두 줄, PC: 두 줄, 두 줄 사이 간격 넓히기 */}
             <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
               <span className="block md:hidden">
                 {language === 'ko' ? (
                   <>
-                    모든 이별은 서툴다<br />
-                    우리는 그 곁에 선다
+                    <span className="block mb-3 md:mb-4">모든 이별은 서툴다</span>
+                    <span className="block">우리는 그 곁에 선다</span>
                   </>
                 ) : (
                   <>
-                    Every farewell is clumsy<br />
-                    We stand by their side
+                    <span className="block mb-3 md:mb-4">Every farewell is clumsy</span>
+                    <span className="block">We stand by their side</span>
                   </>
                 )}
               </span>
               <span className="hidden md:block">
                 {language === 'ko' ? (
                   <>
-                    {t.hero.title}<br />
-                    {t.hero.titleLine2}
+                    <span className="block mb-4 lg:mb-6">{t.hero.title}</span>
+                    <span className="block">{t.hero.titleLine2}</span>
                   </>
                 ) : (
                   <>
-                    {t.hero.title}<br />
-                    {t.hero.titleLine2}
+                    <span className="block mb-4 lg:mb-6">{t.hero.title}</span>
+                    <span className="block">{t.hero.titleLine2}</span>
                   </>
                 )}
               </span>
