@@ -1487,40 +1487,31 @@ export default function App() {
       </section>
 
       {/* Care Section - 이별동행케어 */}
-      <section id="care" className="py-20 md:py-32 lg:py-40 bg-[#F8F5E6]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          {/* PC 버전 이미지 */}
-          <div className="hidden md:block">
-            <a 
-              href="https://blog.naver.com/lucid-life/224107549260"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full"
-            >
-              <img 
-                src="/이별동행케어PC.png" 
-                alt="이별동행케어 PC 버전"
-                className="w-full h-auto object-contain rounded-lg"
-              />
-            </a>
-          </div>
-          
-          {/* 모바일 버전 이미지 */}
-          <div className="md:hidden">
-            <a 
-              href="https://blog.naver.com/lucid-life/224107549260"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full"
-            >
-              <img 
-                src="/이별동행케어mobile.png" 
-                alt="이별동행케어 모바일 버전"
-                className="w-full h-auto object-contain rounded-lg"
-              />
-            </a>
-          </div>
-        </div>
+      <section id="care" className="relative py-20 md:py-32 lg:py-40 min-h-[600px] md:min-h-[800px] overflow-hidden">
+        {/* 배경 이미지 - PC 버전 */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
+          style={{
+            backgroundImage: `url('/이별동행케어PC.png')`
+          }}
+        />
+        
+        {/* 배경 이미지 - 모바일 버전 */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+          style={{
+            backgroundImage: `url('/이별동행케어mobile.png')`
+          }}
+        />
+        
+        {/* 클릭 가능한 링크 영역 */}
+        <a 
+          href="https://blog.naver.com/lucid-life/224107549260"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute inset-0 z-10 cursor-pointer"
+          aria-label="이별동행케어 상세보기"
+        />
       </section>
 
       {/* CEO Section */}
