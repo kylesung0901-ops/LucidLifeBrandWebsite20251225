@@ -1270,11 +1270,24 @@ export default function App() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
-            {[t.threedays.day1, t.threedays.day2, t.threedays.day3].map((day, index) => (
+            {[t.threedays.day1, t.threedays.day2, t.threedays.day3].map((day, index) => {
+              // 각 일차별 이미지 파일
+              const dayImages = ['/1st_.png', '/2st_.png', '/3st_.png'];
+              
+              return (
               <div
                 key={index}
-                className="bg-white p-6 md:p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#C9A66B]/20"
+                className="relative bg-white p-6 md:p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#C9A66B]/20 overflow-hidden"
               >
+                {/* 우측 상단 이미지 */}
+                <div className="absolute top-4 md:top-6 right-4 md:right-6 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
+                  <img 
+                    src={dayImages[index]} 
+                    alt={`${day.title} icon`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                
                 <div className="mb-4 md:mb-6">
                   <h3 className="text-xl md:text-3xl text-[#141C2E] mb-2 font-serif-kr">{day.title}</h3>
                   <p className="text-base md:text-lg text-[#C9A66B] mb-3 md:mb-4">{day.desc}</p>
@@ -1323,7 +1336,8 @@ export default function App() {
                   )}
                 </p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
