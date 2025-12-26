@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, Globe, Phone, MessageSquare, Heart, Flower2, MapPin, BookOpen, User, FileText, Edit3 } from 'lucide-react';
+import { Menu, X, Globe, Phone, MessageSquare, Heart, Flower2, MapPin, BookOpen, User, FileText, Edit3, Youtube, Instagram } from 'lucide-react';
 // import logoImage from './assets/ed9c4979525d1d92a2e2ee261a14686c632bc8de.png';
 const logoImage = '/logo.png';
 const ceoImage = '/KakaoTalk_20251225_191332983.png';
@@ -17,12 +17,13 @@ const translations = {
       resting: '마지막 안식처',
       stories: '이별 이야기',
       ceo: '도원 소개',
-      together: '루시드와 함께(상담하기)',
+      together: '지금, 함께하기',
     },
     hero: {
       brand: '루시드라이프',
-      title: '모든 이별은 서툴기에 누군가는 그 곁에 선다',
-      subtitle: '말하지 않아도 되는 시간을 함께 지킵니다',
+      title: '모든 이별은 서툴다',
+      titleLine2: '우리는 그 곁에 선다',
+      subtitle: '말하지 않아도 되는 시간까지',
       signature: 'your life lucid life',
       cta: '자세히 보기',
     },
@@ -97,9 +98,9 @@ const translations = {
       title: '함께 하는 방식',
       subtitle: '부담 없이, 상황에 맞게',
       family: {
-        title: '가족장 · 무빈소',
+        title: '가족장',
         price: 150,
-        tagline: '조용히, 가족만',
+        tagline: '빈소없이, 가족만',
         desc: '조용히, 가장 가까운 사람들만 남아 이별에 집중하는 시간.',
       },
       practical: {
@@ -122,6 +123,7 @@ const translations = {
       },
       compareBtn: '전체 상품 비교하기',
       learnMore: '미국식 장례 알아보기 >',
+      learnMore2: '미국식 장례는 무엇이 다른가 >',
     },
     threedays: {
       title: '사흘동안',
@@ -193,11 +195,12 @@ const translations = {
       emergency: '긴급 상담',
     },
     footer: {
-      company: '업체명: 루시드라이프',
-      representative: '대표자: 서동원',
-      location: '사업장소재지: 경기도 파주시 교하로 100,908-102',
-      business: '사업자등록번호: 123-92-47792',
-      phone: '전화번호: 010-2116-4114',
+      company: '루시드라이프',
+      representative: '대표: 서동원',
+      location: '경기도 파주시 교하로 100, 908-102',
+      business: '사업자번호: 123-92-47792',
+      phone: '대표전화: 010-2116-4114',
+      contact: '문의: 010-2116-4114 / lucidlife@kakao.com',
       copyright: 'Copyright © 2025 Lucid Life. All rights reserved.',
       membershipBtn: '멤버십 무료 가입',
       privacyBtn: '개인정보처리방침',
@@ -369,12 +372,13 @@ o 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에
       resting: 'Final Rest',
       stories: 'Stories of Farewell',
       ceo: 'CEO',
-      together: 'Get in Touch',
+      together: 'Get in Touch Now',
     },
     hero: {
       brand: 'LUCID LIFE',
-      title: 'Because every farewell is clumsy, someone stands by their side',
-      subtitle: 'We keep together the time when we don\'t need to speak',
+      title: 'Every farewell is clumsy',
+      titleLine2: 'We stand by their side',
+      subtitle: 'Until the time when we don\'t need to speak',
       signature: 'your life lucid life',
       cta: 'Learn More',
     },
@@ -449,9 +453,9 @@ o 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에
       title: 'How We Walk Together',
       subtitle: 'Without burden, according to the situation',
       family: {
-        title: 'Family Service · No Visitation',
+        title: 'Family Service',
         price: 150,
-        tagline: 'Quietly, family only',
+        tagline: 'No wake, family only',
         desc: 'Quietly, only the closest people remain, focusing on farewell.',
       },
       practical: {
@@ -474,6 +478,7 @@ o 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에
       },
       compareBtn: 'Compare All Products',
       learnMore: 'Learn about American-style Funerals >',
+      learnMore2: 'What makes American-style funerals different? >',
     },
     threedays: {
       title: 'Three Days',
@@ -545,11 +550,12 @@ o 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에
       emergency: 'Emergency',
     },
     footer: {
-      company: 'Company: Lucid Life',
+      company: 'Lucid Life',
       representative: 'CEO: Seo Dongwon',
-      location: 'Business Location: 100,908-102, Gyoha-ro, Paju-si, Gyeonggi-do',
+      location: '100, 908-102, Gyoha-ro, Paju-si, Gyeonggi-do',
       business: 'Business Registration: 123-92-47792',
       phone: 'Phone: 010-2116-4114',
+      contact: 'Contact: 010-2116-4114 / lucidlife@kakao.com',
       copyright: 'Copyright © 2025 Lucid Life. All rights reserved.',
       membershipBtn: 'Free Membership Registration',
       privacyBtn: 'Privacy Policy',
@@ -1085,7 +1091,6 @@ export default function App() {
           </button>
           <div className="flex flex-col items-center justify-start md:justify-center h-full gap-3 md:gap-3.5 px-6 pb-28 md:pt-0">
             {[
-              { id: 'hero', label: t.nav.lucidlife },
               { id: 'services', label: t.nav.services },
               { id: 'threedays', label: t.nav.process },
               { id: 'resting', label: t.nav.resting },
@@ -1123,45 +1128,48 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto py-32">
-          <div className="mb-20 space-y-8 lg:space-y-16">
-            {/* 로고 이미지 */}
-            <div className="flex justify-center mb-8 md:mb-12">
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto py-20 md:py-24">
+          <div className="mb-12 md:mb-16 space-y-6 md:space-y-8 lg:space-y-12">
+            {/* 로고 이미지 - 크기 작게, 위치 위로 */}
+            <div className="flex justify-center mb-4 md:mb-6">
               <img 
                 src="/lucid_logo_white_3000.png" 
                 alt="Lucid Life Logo" 
-                className="w-28 h-28 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain"
+                className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain"
               />
             </div>
             {/* 메인 타이틀 - 모바일: 두 줄, PC: 두 줄 */}
-            <h1 className="text-3xl md:text-6xl lg:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
               <span className="block md:hidden">
                 {language === 'ko' ? (
                   <>
-                    모든 이별은 서툴기에<br />
-                    누군가는 그 곁에 선다
+                    모든 이별은 서툴다<br />
+                    우리는 그 곁에 선다
                   </>
                 ) : (
                   <>
-                    Because every farewell is clumsy,<br />
-                    someone stands by their side
+                    Every farewell is clumsy<br />
+                    We stand by their side
                   </>
                 )}
               </span>
               <span className="hidden md:block">
                 {language === 'ko' ? (
-                  t.hero.title
+                  <>
+                    {t.hero.title}<br />
+                    {t.hero.titleLine2}
+                  </>
                 ) : (
                   <>
-                    Because every farewell is clumsy,<br />
-                    someone stands by their side
+                    {t.hero.title}<br />
+                    {t.hero.titleLine2}
                   </>
                 )}
               </span>
             </h1>
             
             {/* 서브 타이틀 */}
-            <p className="text-lg md:text-2xl lg:text-3xl text-white/90 font-serif-kr lg:mt-8">
+            <p className="text-base md:text-xl lg:text-2xl text-white/90 font-serif-kr lg:mt-6">
               {t.hero.subtitle}
             </p>
             
@@ -1196,10 +1204,11 @@ export default function App() {
               { data: t.services.burial, id: 'premium' },
             ].map((product, index) => {
               // 가격 표기: 한글은 만원, 영어는 M KRW 형식
+              // 가족장은 "만원"으로만 표시 (만원부터 아님)
               const priceDisplay = language === 'en' 
                 ? `${(product.data.price / 100).toFixed(1)}M KRW`
                 : product.data.price;
-              const priceUnit = language === 'en' ? '' : '만원';
+              const priceUnit = language === 'en' ? '' : (product.id === 'family' ? '만원' : '만원');
               
               return (
                 <div
@@ -1223,22 +1232,34 @@ export default function App() {
           </div>
 
           {/* 하단 버튼 및 링크 */}
-          <div className="text-center space-y-8 md:space-y-10">
+          <div className="text-center space-y-6 md:space-y-8">
             <button 
               onClick={() => setShowCompareModal(true)}
               className="bg-[#C9A66B] text-[#141C2E] px-8 py-3 rounded-lg text-base font-medium hover:bg-[#C9A66B]/90 transition-all block mx-auto"
             >
               {t.services.compareBtn}
             </button>
-            <div className="pt-2">
-              <a 
-                href="https://blog.naver.com/lucid-life/224121989139"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#C9A66B] text-sm hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
-              >
-                {t.services.learnMore}
-              </a>
+            <div className="space-y-3 md:space-y-4">
+              <div>
+                <a 
+                  href="https://blog.naver.com/lucid-life/224121989139"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#C9A66B] text-sm md:text-base hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
+                >
+                  {t.services.learnMore}
+                </a>
+              </div>
+              <div>
+                <a 
+                  href="https://blog.naver.com/lucid-life/224121989139"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#C9A66B] text-sm md:text-base hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
+                >
+                  {t.services.learnMore2}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1440,9 +1461,20 @@ export default function App() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-2 md:mb-3 text-[#141C2E] font-serif-kr">
               {language === 'ko' ? '이별동행케어' : 'Continuum Care'}
             </h2>
-            <p className="text-sm md:text-base lg:text-lg xl:text-xl text-[#C9A66B] mb-6 md:mb-8 tracking-wider">
+            <p className="text-sm md:text-base lg:text-lg xl:text-xl text-[#C9A66B] mb-4 md:mb-6 tracking-wider">
               {t.accompany.subtitle}
             </p>
+            {/* 상단 링크 */}
+            <div className="mb-6 md:mb-8">
+              <a 
+                href="https://blog.naver.com/lucid-life/224107549260"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base md:text-lg lg:text-xl text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
+              >
+                {t.accompany.link} &gt;
+              </a>
+            </div>
             <div className="text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-8 md:mb-10 text-[#141C2E] font-serif-kr leading-relaxed">
               <div className="hidden md:block">
                 <p className="mb-2 md:mb-3">{t.accompany.title}</p>
@@ -1468,63 +1500,55 @@ export default function App() {
             </div>
           </div>
 
-          {/* 타임라인 */}
-          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 lg:space-y-8 mb-10 md:mb-12 px-2 md:px-0">
+          {/* 3개 카드 레이아웃 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto mb-10 md:mb-12">
             {[
               { data: t.accompany.before, period: t.accompany.before.period },
               { data: t.accompany.during, period: t.accompany.during.period },
               { data: t.accompany.after, period: t.accompany.after.period },
             ].map((item, index) => (
-              <div key={index} className="flex gap-3 md:gap-4 lg:gap-6 items-start">
-                <div className="flex-shrink-0 w-20 md:w-24 lg:w-28 xl:w-32 text-left">
-                  <span className="text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl text-[#C9A66B] font-medium">{item.period}</span>
+              <div 
+                key={index} 
+                className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all border border-[#C9A66B]/20"
+              >
+                <div className="mb-4 md:mb-6">
+                  <span className="text-sm md:text-base lg:text-lg text-[#C9A66B] font-medium">{item.period}</span>
                 </div>
-                <div className="flex-1">
+                <div className="text-[#141C2E]">
                   {language === 'ko' ? (
                     index === 0 ? (
                       <>
-                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
-                        <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
+                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl leading-relaxed font-serif-kr">{item.data.desc}</p>
+                        <p className="md:hidden text-base leading-relaxed font-serif-kr">
                           서로가 아직 전하지 못한 것이<br />
                           남아 있을 때
                         </p>
                       </>
                     ) : index === 1 ? (
                       <>
-                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
-                        <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
+                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl leading-relaxed font-serif-kr">{item.data.desc}</p>
+                        <p className="md:hidden text-base leading-relaxed font-serif-kr">
                           고인이 되심에 조문과 입관의<br />
                           작별의 시간
                         </p>
                       </>
                     ) : index === 2 ? (
                       <>
-                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
-                        <p className="md:hidden text-sm text-[#141C2E] leading-relaxed">
+                        <p className="hidden md:block text-lg md:text-xl lg:text-2xl leading-relaxed font-serif-kr">{item.data.desc}</p>
+                        <p className="md:hidden text-base leading-relaxed font-serif-kr">
                           탈상, 제사, 천도제를 지나며<br />
                           다시 일상으로 돌아갈 때
                         </p>
                       </>
                     ) : (
-                      <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                      <p className="text-base md:text-lg lg:text-xl leading-relaxed font-serif-kr">{item.data.desc}</p>
                     )
                   ) : (
-                    <p className="text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-[#141C2E] leading-relaxed">{item.data.desc}</p>
+                    <p className="text-base md:text-lg lg:text-xl leading-relaxed">{item.data.desc}</p>
                   )}
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="text-center">
-            <a 
-              href="https://blog.naver.com/lucid-life/224107549260"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base md:text-lg lg:text-xl xl:text-2xl text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors cursor-pointer"
-            >
-              {t.accompany.link}
-            </a>
           </div>
         </div>
       </section>
@@ -1625,14 +1649,52 @@ export default function App() {
       {/* Footer */}
       <footer id="footer" ref={footerRef} className="bg-[#141C2E] text-white/70 py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center space-y-2 mb-8">
-            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.company}</p>
-            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.representative}</p>
-            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.location}</p>
-            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.business}</p>
-            <p className="text-sm md:text-base lg:text-lg font-normal">{t.footer.phone}</p>
+          {/* 소셜 링크 */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <a
+              href="https://blog.naver.com/lucid-life"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#C9A66B] transition-colors"
+              aria-label="Blog"
+            >
+              <BookOpen className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            </a>
+            <a
+              href="https://www.youtube.com/@lucidlife"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#C9A66B] transition-colors"
+              aria-label="YouTube"
+            >
+              <Youtube className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            </a>
+            <a
+              href="https://www.instagram.com/lucidlife"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#C9A66B] transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            </a>
           </div>
-          <div className="text-center mb-8 space-y-3">
+
+          {/* 회사 정보 - 가로 배치 */}
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-6 text-sm md:text-base lg:text-lg">
+            <span className="font-medium">{t.footer.company}</span>
+            <span className="text-white/40">|</span>
+            <span>{t.footer.representative}</span>
+            <span className="text-white/40">|</span>
+            <span>{t.footer.location}</span>
+            <span className="text-white/40">|</span>
+            <span>{t.footer.business}</span>
+            <span className="text-white/40">|</span>
+            <span>{t.footer.phone}</span>
+          </div>
+
+          {/* 개인정보처리방침 및 이용약관 */}
+          <div className="text-center mb-6">
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={() => setShowPrivacyModal(true)}
@@ -1649,8 +1711,11 @@ export default function App() {
               </button>
             </div>
           </div>
-          <div className="text-center text-sm md:text-base border-t border-white/10 pt-6">
-            <p>{t.footer.copyright}</p>
+
+          {/* 문의 정보 및 저작권 */}
+          <div className="text-center space-y-2 border-t border-white/10 pt-6">
+            <p className="text-sm md:text-base lg:text-lg text-red-300 font-medium">{t.footer.contact}</p>
+            <p className="text-sm md:text-base lg:text-lg">{t.footer.copyright}</p>
           </div>
         </div>
       </footer>
