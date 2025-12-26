@@ -1129,19 +1129,19 @@ export default function App() {
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
         <div className="relative z-10 flex flex-col h-screen px-4 md:px-6 max-w-5xl mx-auto w-full">
-          {/* 상단: 로고 - 네비게이션 바 아래 */}
-          <div className="flex justify-center pt-4 md:pt-6">
-            <img 
-              src="/lucid_logo_white_3000.png" 
-              alt="Lucid Life Logo" 
-              className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
-            />
-          </div>
-          
-          {/* 하단: 텍스트 영역 - 페이지 하단에 위치 */}
-          <div className="mt-auto pb-16 md:pb-20 lg:pb-24 text-center space-y-4 md:space-y-6 lg:space-y-8">
+          {/* 하단: 로고 + 텍스트 영역 - 페이지 하단에 위치 */}
+          <div className="mt-auto pb-16 md:pb-20 lg:pb-24 text-center">
+            {/* 로고 - 메인 텍스트 바로 위에 위치 */}
+            <div className="flex justify-center mb-8 md:mb-12 lg:mb-16">
+              <img 
+                src="/lucid_logo_white_3000.png" 
+                alt="Lucid Life Logo" 
+                className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
+              />
+            </div>
+            
             {/* 메인 타이틀 */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold mb-6 md:mb-8 lg:mb-10">
               <span className="block md:hidden">
                 {language === 'ko' ? (
                   <>
@@ -1171,7 +1171,7 @@ export default function App() {
             </h1>
             
             {/* 서브 타이틀 */}
-            <p className="text-base md:text-xl lg:text-2xl text-white/90 font-serif-kr">
+            <p className="text-base md:text-xl lg:text-2xl text-white/90 font-serif-kr mb-4 md:mb-6 lg:mb-8">
               {t.hero.subtitle}
             </p>
             
