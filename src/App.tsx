@@ -196,11 +196,11 @@ const translations = {
     },
     footer: {
       company: '루시드라이프',
-      representative: '대표: 서동원',
-      location: '경기도 파주시 교하로 100, 908-102',
+      representative: '대표이사: 서동원',
+      location: '경기도 파주시 탄현로 144-55, 310-B02',
       business: '사업자번호: 123-92-47792',
       phone: '대표전화: 010-2116-4114',
-      contact: '문의: 010-2116-4114 / lucidlife@kakao.com',
+      contact: '문의: 010-2116-4114 | lucidlife@kakao.com',
       copyright: 'Copyright © 2025 Lucid Life. All rights reserved.',
       membershipBtn: '멤버십 무료 가입',
       privacyBtn: '개인정보처리방침',
@@ -552,10 +552,10 @@ o 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에
     footer: {
       company: 'Lucid Life',
       representative: 'CEO: Seo Dongwon',
-      location: '100, 908-102, Gyoha-ro, Paju-si, Gyeonggi-do',
+      location: '144-55, Tanhyeon-ro, Paju-si, Gyeonggi-do, 310-B02',
       business: 'Business Registration: 123-92-47792',
       phone: 'Phone: 010-2116-4114',
-      contact: 'Contact: 010-2116-4114 / lucidlife@kakao.com',
+      contact: 'Contact: 010-2116-4114 | lucidlife@kakao.com',
       copyright: 'Copyright © 2025 Lucid Life. All rights reserved.',
       membershipBtn: 'Free Membership Registration',
       privacyBtn: 'Privacy Policy',
@@ -1760,42 +1760,43 @@ export default function App() {
             </a>
           </div>
 
-          {/* 회사 정보 - 가로 배치 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-6 text-sm md:text-base lg:text-lg">
-            <span className="font-medium">{t.footer.company}</span>
-            <span className="text-white/40">|</span>
-            <span>{t.footer.representative}</span>
-            <span className="text-white/40">|</span>
-            <span>{t.footer.location}</span>
-            <span className="text-white/40">|</span>
-            <span>{t.footer.business}</span>
-            <span className="text-white/40">|</span>
-            <span>{t.footer.phone}</span>
+          {/* 문의 정보 */}
+          <div className="text-center mb-4 md:mb-5">
+            <p className="text-xs md:text-sm lg:text-base text-red-300 font-medium whitespace-nowrap">
+              {language === 'ko' ? '문의 : 010-2116-4114 | lucidlife@kakao.com' : 'Contact : 010-2116-4114 | lucidlife@kakao.com'}
+            </p>
           </div>
 
-          {/* 개인정보처리방침 및 이용약관 */}
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center gap-4">
+          {/* 회사 정보 - 가로 배치 */}
+          <div className="text-center mb-4 md:mb-5">
+            <p className="text-xs md:text-sm lg:text-base text-white/80 flex flex-wrap items-center justify-center gap-1 md:gap-2">
+              <span>{language === 'ko' ? '루시드라이프 대표이사 : 서동원' : 'Lucid Life CEO: Seo Dongwon'}</span>
+              <span className="text-white/40">|</span>
+              <span>{language === 'ko' ? '사업자번호 : 123-92-47792' : 'Business No.: 123-92-47792'}</span>
+              <span className="text-white/40">|</span>
+              <span>{language === 'ko' ? '사업장 : 경기도 파주시 탄현로 144-55, 310-B02' : 'Location: 144-55, Tanhyeon-ro, Paju-si, Gyeonggi-do, 310-B02'}</span>
+            </p>
+          </div>
+
+          {/* 개인정보처리방침, 이용약관, 저작권 */}
+          <div className="text-center">
+            <div className="flex flex-wrap items-center justify-center gap-1 md:gap-2 text-xs md:text-sm lg:text-base text-white/60">
               <button
                 onClick={() => setShowPrivacyModal(true)}
-                className="text-sm md:text-base lg:text-lg text-white/60 hover:text-white/80 transition-colors underline"
+                className="hover:text-white/80 transition-colors underline"
               >
                 {t.footer.privacyBtn}
               </button>
-              <span className="text-white/40 text-sm md:text-base lg:text-lg">|</span>
+              <span className="text-white/40">|</span>
               <button
                 onClick={() => setShowTermsModal(true)}
-                className="text-sm md:text-base lg:text-lg text-white/60 hover:text-white/80 transition-colors underline"
+                className="hover:text-white/80 transition-colors underline"
               >
                 {t.footer.termsBtn}
               </button>
+              <span className="text-white/40">|</span>
+              <span>{t.footer.copyright}</span>
             </div>
-          </div>
-
-          {/* 문의 정보 및 저작권 */}
-          <div className="text-center space-y-2 border-t border-white/10 pt-6">
-            <p className="text-sm md:text-base lg:text-lg text-red-300 font-medium">{t.footer.contact}</p>
-            <p className="text-sm md:text-base lg:text-lg">{t.footer.copyright}</p>
           </div>
         </div>
       </footer>
