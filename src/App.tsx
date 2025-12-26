@@ -1858,7 +1858,7 @@ export default function App() {
                 ) : (
                   <>
                     <span className="text-2xl md:text-5xl lg:text-6xl font-semibold text-[#C9A66B]">{selectedProduct.price}</span>
-                    <span className="text-sm md:text-lg lg:text-xl text-white/70 ml-2">만원부터</span>
+                    <span className="text-sm md:text-lg lg:text-xl text-white/70 ml-2">만원</span>
                   </>
                 )}
               </div>
