@@ -1132,7 +1132,7 @@ export default function App() {
           {/* 하단: 로고 + 텍스트 영역 - 페이지 하단에 위치 */}
           <div className="mt-auto pb-16 md:pb-20 lg:pb-24 text-center">
             {/* 로고 - 메인 텍스트 바로 위에 위치, 간격 넓히기 */}
-            <div className="flex justify-center mb-12 md:mb-16 lg:mb-20 -mt-16 md:mt-0">
+            <div className="flex justify-center mb-12 md:mb-16 lg:mb-20 -mt-20 md:mt-0">
               <img 
                 src="/lucid_logo_white_3000.png" 
                 alt="Lucid Life Logo" 
