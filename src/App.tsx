@@ -1275,7 +1275,7 @@ export default function App() {
       <section id="threedays" className="py-40 bg-[#F8F5E6]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="flex flex-col items-center gap-2 md:gap-4">
+            <div className="flex flex-col items-center gap-6 md:gap-8 lg:gap-10">
               <a 
                 href="https://blog.naver.com/lucid-life/224121990599"
                 target="_blank"
