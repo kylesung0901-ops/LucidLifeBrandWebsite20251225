@@ -1141,7 +1141,7 @@ export default function App() {
         
         <div className="relative z-10 flex flex-col h-screen px-4 md:px-8 lg:px-12 xl:px-16 max-w-6xl mx-auto w-full">
           {/* 하단: 로고 + 텍스트 영역 - 페이지 하단에 위치 */}
-          <div className="mt-auto pb-8 md:pb-12 lg:pb-16 xl:pb-20 2xl:pb-24 text-center">
+          <div className="mt-auto pb-8 md:pb-12 lg:pb-16 xl:pb-20 2xl:pb-24 text-center transform -translate-y-12 md:translate-y-0">
             {/* 로고 - 메인 텍스트 바로 위에 위치, 간격 넓히기 */}
             <div className="hidden md:flex justify-center mb-12 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 md:mt-0">
               <img 
