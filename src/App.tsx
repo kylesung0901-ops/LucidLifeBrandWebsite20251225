@@ -1128,20 +1128,20 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 flex flex-col h-screen px-4 md:px-6 max-w-5xl mx-auto w-full">
+        <div className="relative z-10 flex flex-col h-screen px-4 md:px-8 lg:px-12 xl:px-16 max-w-6xl mx-auto w-full">
           {/* 하단: 로고 + 텍스트 영역 - 페이지 하단에 위치 */}
-          <div className="mt-auto pb-8 md:pb-20 lg:pb-24 text-center">
+          <div className="mt-auto pb-8 md:pb-12 lg:pb-16 xl:pb-20 2xl:pb-24 text-center">
             {/* 로고 - 메인 텍스트 바로 위에 위치, 간격 넓히기 */}
-            <div className="flex justify-center mb-6 md:mb-16 lg:mb-20 md:mt-0">
+            <div className="flex justify-center mb-6 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 md:mt-0">
               <img 
                 src="/lucid_logo_white_3000.png" 
                 alt="Lucid Life Logo" 
-                className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain"
+                className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 object-contain"
               />
             </div>
             
             {/* 메인 타이틀 */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight lg:leading-relaxed font-serif-kr font-semibold mb-6 md:mb-8 lg:mb-10">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white leading-tight md:leading-snug lg:leading-relaxed font-serif-kr font-semibold mb-4 md:mb-6 lg:mb-8 xl:mb-10 px-2 md:px-4">
               <span className="block md:hidden">
                 {language === 'ko' ? (
                   <>
@@ -1158,12 +1158,12 @@ export default function App() {
               <span className="hidden md:block">
                 {language === 'ko' ? (
                   <>
-                    <span className="block mb-4 lg:mb-6">{t.hero.title}</span>
+                    <span className="block mb-3 md:mb-4 lg:mb-5 xl:mb-6">{t.hero.title}</span>
                     <span className="block">{t.hero.titleLine2}</span>
                   </>
                 ) : (
                   <>
-                    <span className="block mb-4 lg:mb-6">{t.hero.title}</span>
+                    <span className="block mb-3 md:mb-4 lg:mb-5 xl:mb-6">{t.hero.title}</span>
                     <span className="block">{t.hero.titleLine2}</span>
                   </>
                 )}
@@ -1171,12 +1171,12 @@ export default function App() {
             </h1>
             
             {/* 서브 타이틀 */}
-            <p className="text-base md:text-xl lg:text-2xl text-white/90 font-serif-kr mb-4 md:mb-6 lg:mb-8">
+            <p className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-white/90 font-serif-kr mb-3 md:mb-4 lg:mb-6 xl:mb-8 px-2 md:px-4">
               {t.hero.subtitle}
             </p>
             
             {/* 시그니처 */}
-            <p className="text-sm md:text-base text-[#C9A66B] tracking-wider">
+            <p className="text-sm md:text-base lg:text-lg text-[#C9A66B] tracking-wider px-2 md:px-4">
               {t.hero.signature}
             </p>
           </div>
