@@ -1129,7 +1129,7 @@ export default function App() {
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
         {/* 모바일 버전: 상단 하늘 부분에 로고 */}
-        <div className="md:hidden absolute top-20 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="md:hidden absolute top-[160px] left-1/2 transform -translate-x-1/2 z-20">
           <img 
             src="/lucid_logo_white_3000.png" 
             alt="Lucid Life Logo" 
