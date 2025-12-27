@@ -1275,32 +1275,34 @@ export default function App() {
       <section id="threedays" className="py-40 bg-[#F8F5E6]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <a 
-              href="https://blog.naver.com/lucid-life/224121990599"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer inline-block touch-manipulation"
-              style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
-              onClick={(e) => {
-                e.preventDefault();
-                window.open('https://blog.naver.com/lucid-life/224121990599', '_blank', 'noopener,noreferrer');
-              }}
-            >
-              {t.threedays.title}
-            </a>
-            <a 
-              href="https://blog.naver.com/lucid-life/224121990599"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-serif-kr font-semibold mt-4 inline-block touch-manipulation hover:opacity-80 transition-opacity cursor-pointer"
-              style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
-              onClick={(e) => {
-                e.preventDefault();
-                window.open('https://blog.naver.com/lucid-life/224121990599', '_blank', 'noopener,noreferrer');
-              }}
-            >
-              {t.threedays.intro}
-            </a>
+            <div className="flex flex-col items-center gap-2 md:gap-4">
+              <a 
+                href="https://blog.naver.com/lucid-life/224121990599"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-3xl md:text-5xl text-[#141C2E] font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer inline-block touch-manipulation"
+                style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open('https://blog.naver.com/lucid-life/224121990599', '_blank', 'noopener,noreferrer');
+                }}
+              >
+                {t.threedays.title}
+              </a>
+              <a 
+                href="https://blog.naver.com/lucid-life/224121990599"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-serif-kr font-semibold inline-block touch-manipulation hover:opacity-80 transition-opacity cursor-pointer"
+                style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open('https://blog.naver.com/lucid-life/224121990599', '_blank', 'noopener,noreferrer');
+                }}
+              >
+                {t.threedays.intro}
+              </a>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
