@@ -123,24 +123,25 @@ const translations = {
       },
       compareBtn: '전체 상품 비교하기',
       learnMore: '미국식 장례 알아보기 >',
-      learnMore2: '미국식 장례는 무엇이 다른가 >',
+      learnMore2: '미국식 장례는 무엇이 다른가 ->',
     },
     threedays: {
       title: '사흘동안',
+      intro: '사흘의 흐름을, 차분히 살펴보세요 ->',
       day1: {
         title: '1일차',
         desc: '임종 및 빈소 마련',
-        details: '황망한 첫날, 복잡한 절차 대신 고인과의 인사에 집중',
+        details: '황망한 첫날 복잡한 절차 대신 고인과의 인사에 집중',
       },
       day2: {
         title: '2일차',
         desc: '입관 및 조문',
-        details: '가장 아름다운 마지막 모습을 기억할 수 있도록, 최고의 예를 갖춘 입관식',
+        details: '가장 아름다운 마지막 모습을 기억할 수 있도록 최고의 예를 갖춘 입관식',
       },
       day3: {
         title: '3일차',
         desc: '발인 및 장지 동행',
-        details: '마지막 안식처까지, 소홀함 없이 끝까지 동행',
+        details: '마지막 안식처까지 소홀함 없이 끝까지 동행',
       },
     },
     resting: {
@@ -148,19 +149,19 @@ const translations = {
       subtitle: '안치까지의 선택을 책임집니다',
       columbarium: {
         title: '봉안당',
-        desc: '따뜻한 빛이 머무는, 가장 편안한 실내 안치 공간.',
+        desc: '따뜻한 빛이 머무는 편안한 실내 안치 공간',
       },
       natural: {
         title: '자연장',
-        desc: '자연에서 와서 자연으로. 수목장, 잔디장, 해양장.',
+        desc: '자연에서 와서 자연으로 수목장 잔디장 해양장',
       },
       burial: {
         title: '매장',
-        desc: '전통의 예를 갖춘, 품격 있는 장지 동행.',
+        desc: '전통의 예를 갖춘 품격 있는 장지 동행',
       },
       relocation: {
         title: '개장·이장',
-        desc: '오래된 묘소를 새로운 안식처로.',
+        desc: '오래된 묘소를 새로운 안식처로',
       },
     },
     stories: {
@@ -196,7 +197,7 @@ const translations = {
     },
     footer: {
       company: '루시드라이프',
-      representative: '대표이사: 서동원',
+      representative: '대표: 서동원',
       location: '경기도 파주시 탄현로 144-55, 310-B02',
       business: '사업자번호: 123-92-47792',
       phone: '대표전화: 010-2116-4114',
@@ -482,10 +483,11 @@ o 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에
     },
     threedays: {
       title: 'Three Days',
+      intro: 'Take a calm look at the flow of three days ->',
       day1: {
         title: 'Day 1',
         desc: 'Passing and Setting Up the Funeral Hall',
-        details: 'On the hectic first day, focus on saying goodbye to the deceased instead of complicated procedures',
+        details: 'On the hectic first day focus on saying goodbye to the deceased instead of complicated procedures',
       },
       day2: {
         title: 'Day 2',
@@ -495,7 +497,7 @@ o 기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에
       day3: {
         title: 'Day 3',
         desc: 'Procession and Accompanying to the Burial Site',
-        details: 'Accompanying to the final resting place without neglect, all the way to the end',
+        details: 'Accompanying to the final resting place without neglect all the way to the end',
       },
     },
     resting: {
@@ -1255,7 +1257,7 @@ export default function App() {
                 href="https://blog.naver.com/lucid-life/224121989139"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#C9A66B] text-sm md:text-base hover:text-[#C9A66B]/80 transition-colors cursor-pointer inline-block"
+                className="text-[#C9A66B] text-xl md:text-2xl lg:text-3xl hover:opacity-80 transition-opacity font-semibold font-serif-kr cursor-pointer inline-block"
               >
                 {t.services.learnMore2}
               </a>
@@ -1267,7 +1269,7 @@ export default function App() {
       {/* Three Days Section */}
       <section id="threedays" className="py-40 bg-[#F8F5E6]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-24">
+          <div className="text-center mb-12">
             <a 
               href="https://blog.naver.com/lucid-life/224121990599"
               target="_blank"
@@ -1276,6 +1278,9 @@ export default function App() {
             >
               {t.threedays.title}
             </a>
+            <p className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-serif-kr font-semibold mt-4">
+              {t.threedays.intro}
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
@@ -1286,7 +1291,7 @@ export default function App() {
               return (
               <div
                 key={index}
-                className="relative bg-white p-6 md:p-10 lg:p-12 rounded-3xl hover:shadow-2xl transition-all border border-[#C9A66B]/20 overflow-hidden"
+                className="relative bg-white p-6 md:p-10 lg:p-12 rounded-3xl border border-[#C9A66B]/20 overflow-hidden"
               >
                 {/* 우측 상단 이미지 */}
                 <div className="absolute top-4 md:top-6 right-4 md:right-6 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
@@ -1306,11 +1311,11 @@ export default function App() {
                     index === 0 ? (
                       <>
                         <span className="hidden md:block">
-                          황망한 첫날,<br />
+                          황망한 첫날<br />
                           복잡한 절차 대신 고인과의 인사에 집중
                         </span>
                         <span className="md:hidden">
-                          황망한 첫날,<br />
+                          황망한 첫날<br />
                           복잡한 절차 대신<br />
                           고인과의 인사에 집중
                         </span>
@@ -1319,23 +1324,23 @@ export default function App() {
                       <>
                         <span className="hidden md:block">
                           가장 아름다운 마지막 모습을<br />
-                          기억할 수 있도록,<br />
+                          기억할 수 있도록<br />
                           최고의 예를 갖춘 입관식
                         </span>
                         <span className="md:hidden">
                           가장 아름다운 마지막 모습을<br />
-                          기억할 수 있도록,<br />
+                          기억할 수 있도록<br />
                           최고의 예를 갖춘 입관식
                         </span>
                       </>
                     ) : (
                       <>
                         <span className="hidden md:block">
-                          마지막 안식처까지,<br />
+                          마지막 안식처까지<br />
                           소홀함 없이 끝까지 동행
                         </span>
                         <span className="md:hidden">
-                          마지막 안식처까지,<br />
+                          마지막 안식처까지<br />
                           소홀함 없이 끝까지 동행
                         </span>
                       </>
@@ -1370,9 +1375,17 @@ export default function App() {
               const placeImages = ['/봉안당st.png', '/자연장st.png', '/매장st.png', '/개장이장st.png'];
               
               return (
-              <div
+              <a
                 key={index}
-                className="relative bg-white rounded-3xl p-4 md:p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20 overflow-hidden"
+                href={
+                  index === 0 ? 'https://blog.naver.com/lucid-life/224121991423' :
+                  index === 1 ? 'https://blog.naver.com/lucid-life/224121992026' :
+                  index === 2 ? 'https://blog.naver.com/lucid-life/224121992898' :
+                  'https://blog.naver.com/lucid-life/224121993554'
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative bg-white rounded-3xl p-4 md:p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20 overflow-hidden block cursor-pointer"
               >
                 {/* 우측 상단 이미지 - 모바일은 그대로, PC 버전만 작게 조정 */}
                 <div className="absolute top-4 md:top-3 right-4 md:right-3 w-16 h-16 md:w-14 md:h-14 lg:w-16 lg:h-16">
@@ -1383,59 +1396,58 @@ export default function App() {
                   />
                 </div>
                 
-                <a
-                  href={
-                    index === 0 ? 'https://blog.naver.com/lucid-life/224121991423' :
-                    index === 1 ? 'https://blog.naver.com/lucid-life/224121992026' :
-                    index === 2 ? 'https://blog.naver.com/lucid-life/224121992898' :
-                    'https://blog.naver.com/lucid-life/224121993554'
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-lg md:text-2xl lg:text-3xl mb-3 md:mb-4 text-[#141C2E] font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer block"
-                >
+                <h3 className="text-lg md:text-2xl lg:text-3xl mb-3 md:mb-4 text-[#141C2E] font-serif-kr hover:text-[#C9A66B] transition-colors">
                   {place.data.title}
-                </a>
+                </h3>
                 <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
                   {language === 'ko' ? (
                     index === 0 ? (
                       <>
                         <span className="hidden md:block">
-                          따뜻한 빛이 머무는,<br />
-                          가장 편안한 실내 안치 공간.
+                          따뜻한 빛이 머무는<br />
+                          편안한 실내 안치 공간
                         </span>
                         <span className="md:hidden">
-                          따뜻한 빛이 머무는,<br />
-                          가장 편안한 실내 안치 공간.
+                          따뜻한 빛이 머무는<br />
+                          편안한 실내 안치 공간
                         </span>
                       </>
                     ) : index === 1 ? (
                       <>
                         <span className="hidden md:block">
-                          자연에서 와서 자연으로.<br />
-                          수목장, 잔디장, 해양장.
+                          자연에서 와서 자연으로<br />
+                          수목장 잔디장 해양장
                         </span>
                         <span className="md:hidden">
-                          자연에서 와서 자연으로.<br />
-                          수목장, 잔디장, 해양장.
+                          자연에서 와서 자연으로<br />
+                          수목장 잔디장 해양장
                         </span>
                       </>
                     ) : index === 2 ? (
                       <>
                         <span className="hidden md:block">
-                          전통의 예를 갖춘,<br />
-                          품격 있는 장지 동행.
+                          전통의 예를 갖춘<br />
+                          품격 있는 장지 동행
                         </span>
                         <span className="md:hidden">{place.data.desc}</span>
                       </>
                     ) : (
-                      place.data.desc
+                      <>
+                        <span className="hidden md:block">
+                          오래된 묘소를<br />
+                          새로운 안식처로
+                        </span>
+                        <span className="md:hidden">
+                          오래된 묘소를<br />
+                          새로운 안식처로
+                        </span>
+                      </>
                     )
                   ) : (
                     place.data.desc
                   )}
                 </p>
-              </div>
+              </a>
               );
             })}
           </div>
@@ -1459,8 +1471,8 @@ export default function App() {
                 key={index}
                 className="relative bg-white/10 backdrop-blur-sm p-8 rounded-3xl hover:bg-white/15 transition-all border border-white/20 overflow-hidden"
               >
-                {/* 우측 상단 이미지 - 글자를 가리지 않도록 작은 크기 */}
-                <div className="absolute top-3 md:top-4 right-3 md:right-4 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16">
+                {/* 좌측 상단 이미지 - 글자를 가리지 않도록 작은 크기 */}
+                <div className="absolute top-3 md:top-4 left-3 md:left-4 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16">
                   <img 
                     src={storyImages[index]} 
                     alt={`${story.title} icon`}
@@ -1468,7 +1480,7 @@ export default function App() {
                   />
                 </div>
                 
-                <div className="mb-6 pr-12 md:pr-14 lg:pr-16">
+                <div className="mb-6 pl-12 md:pl-14 lg:pl-16">
                   <a
                     href={
                       index === 0 ? 'https://blog.naver.com/lucid-life/224122000903' :
@@ -1482,7 +1494,7 @@ export default function App() {
                     {story.title}
                   </a>
                 </div>
-                <p className="text-base text-white/70 leading-relaxed">
+                <p className="text-base text-white/70 leading-relaxed pl-12 md:pl-14 lg:pl-16">
                   {story.excerpt}
                 </p>
               </div>
@@ -1775,7 +1787,7 @@ export default function App() {
           {/* 회사 정보 - 가로 배치 */}
           <div className="text-center mb-4 md:mb-5">
             <p className="text-xs md:text-sm lg:text-base text-white/80 flex flex-wrap items-center justify-center gap-1 md:gap-2">
-              <span>{language === 'ko' ? '루시드라이프 대표이사 : 서동원' : 'Lucid Life CEO: Seo Dongwon'}</span>
+              <span>{language === 'ko' ? '루시드라이프 대표 : 서동원' : 'Lucid Life CEO: Seo Dongwon'}</span>
               <span className="text-white/40">|</span>
               <span>{language === 'ko' ? '사업자번호 : 123-92-47792' : 'Business No.: 123-92-47792'}</span>
               <span className="text-white/40">|</span>
