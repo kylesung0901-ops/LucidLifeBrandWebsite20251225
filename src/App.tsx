@@ -1136,7 +1136,7 @@ export default function App() {
               <img 
                 src="/lucid_logo_white_3000.png" 
                 alt="Lucid Life Logo" 
-                className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain"
+                className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain"
               />
             </div>
             
