@@ -1257,7 +1257,8 @@ export default function App() {
                 href="https://blog.naver.com/lucid-life/224121989139"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#C9A66B] text-xl md:text-2xl lg:text-3xl hover:opacity-80 transition-opacity font-semibold font-serif-kr cursor-pointer inline-block"
+                className="text-[#C9A66B] text-xl md:text-2xl lg:text-3xl hover:opacity-80 transition-opacity font-semibold font-serif-kr cursor-pointer inline-block touch-manipulation"
+                style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
               >
                 {t.services.learnMore2}
               </a>
@@ -1274,7 +1275,8 @@ export default function App() {
               href="https://blog.naver.com/lucid-life/224121990599"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer inline-block"
+              className="text-3xl md:text-5xl mb-4 text-[#141C2E] font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer inline-block touch-manipulation"
+              style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
             >
               {t.threedays.title}
             </a>
@@ -1385,10 +1387,11 @@ export default function App() {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative bg-white rounded-3xl p-4 md:p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20 overflow-hidden block cursor-pointer"
+                className="relative bg-white rounded-3xl p-4 md:p-8 hover:shadow-2xl transition-all border border-[#C9A66B]/20 overflow-hidden block cursor-pointer touch-manipulation"
+                style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation', zIndex: 1 }}
               >
                 {/* 우측 상단 이미지 - 모바일은 그대로, PC 버전만 작게 조정 */}
-                <div className="absolute top-4 md:top-3 right-4 md:right-3 w-16 h-16 md:w-14 md:h-14 lg:w-16 lg:h-16">
+                <div className="absolute top-4 md:top-3 right-4 md:right-3 w-16 h-16 md:w-14 md:h-14 lg:w-16 lg:h-16 pointer-events-none" style={{ zIndex: 0 }}>
                   <img 
                     src={placeImages[index]} 
                     alt={`${place.data.title} icon`}
@@ -1472,7 +1475,7 @@ export default function App() {
                 className="relative bg-white/10 backdrop-blur-sm p-8 rounded-3xl hover:bg-white/15 transition-all border border-white/20 overflow-hidden"
               >
                 {/* 좌측 상단 이미지 - 글자를 가리지 않도록 작은 크기 */}
-                <div className="absolute top-3 md:top-4 left-3 md:left-4 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16">
+                <div className="absolute top-3 md:top-4 left-3 md:left-4 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 pointer-events-none" style={{ zIndex: 0 }}>
                   <img 
                     src={storyImages[index]} 
                     alt={`${story.title} icon`}
@@ -1489,7 +1492,8 @@ export default function App() {
                     }
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xl md:text-2xl mb-3 text-white font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer block"
+                    className="text-xl md:text-2xl mb-3 text-white font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer block touch-manipulation"
+                    style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
                   >
                     {story.title}
                   </a>
@@ -1652,7 +1656,8 @@ export default function App() {
               href="https://blog.naver.com/lucid-life/224107549260"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-serif-kr hover:opacity-80 transition-opacity font-semibold"
+              className="inline-block text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-serif-kr hover:opacity-80 transition-opacity font-semibold touch-manipulation"
+              style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
             >
               {language === 'ko' ? '이별은 왜 하루로 끝나지 않을까 →' : 'Why doesn\'t farewell end in a day →'}
             </a>
