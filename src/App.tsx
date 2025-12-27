@@ -1156,12 +1156,12 @@ export default function App() {
               <span className="block md:hidden">
                 {language === 'ko' ? (
                   <>
-                    <span className="block mb-6 md:mb-4">모든 이별은 서툴다</span>
+                    <span className="block mb-2 md:mb-4">모든 이별은 서툴다</span>
                     <span className="block">우리는 그 곁에 선다</span>
                   </>
                 ) : (
                   <>
-                    <span className="block mb-6 md:mb-4">Every farewell is clumsy</span>
+                    <span className="block mb-2 md:mb-4">Every farewell is clumsy</span>
                     <span className="block">We stand by their side</span>
                   </>
                 )}
