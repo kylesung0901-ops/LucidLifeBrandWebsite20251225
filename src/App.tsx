@@ -1500,9 +1500,26 @@ export default function App() {
               const storyImages = ['/함께견뎌낸이야기들.png', '/서툰작업을위한안내서-.png', '/사유하는이별의농도.png'];
               
               return (
-              <div
+              <a
                 key={index}
-                className="relative bg-white/10 backdrop-blur-sm p-8 rounded-3xl hover:bg-white/15 transition-all border border-white/20 overflow-hidden"
+                href={
+                  index === 0 ? 'https://blog.naver.com/lucid-life/224122000903' :
+                  index === 1 ? 'https://blog.naver.com/lucid-life/224122002862' :
+                  'https://blog.naver.com/lucid-life/224122004483'
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative bg-white/10 backdrop-blur-sm p-8 rounded-3xl hover:bg-white/15 transition-all border border-white/20 overflow-hidden block cursor-pointer touch-manipulation"
+                style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation', zIndex: 1 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const urls = [
+                    'https://blog.naver.com/lucid-life/224122000903',
+                    'https://blog.naver.com/lucid-life/224122002862',
+                    'https://blog.naver.com/lucid-life/224122004483'
+                  ];
+                  window.open(urls[index], '_blank', 'noopener,noreferrer');
+                }}
               >
                 {/* 좌측 상단 이미지 - 글자를 가리지 않도록 작은 크기 */}
                 <div className="absolute top-3 md:top-4 left-3 md:left-4 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 pointer-events-none" style={{ zIndex: 0 }}>
@@ -1514,28 +1531,9 @@ export default function App() {
                 </div>
                 
                 <div className="mb-6 pl-12 md:pl-14 lg:pl-16">
-                  <a
-                    href={
-                      index === 0 ? 'https://blog.naver.com/lucid-life/224122000903' :
-                      index === 1 ? 'https://blog.naver.com/lucid-life/224122002862' :
-                      'https://blog.naver.com/lucid-life/224122004483'
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xl md:text-2xl mb-3 text-white font-serif-kr hover:text-[#C9A66B] transition-colors cursor-pointer block touch-manipulation"
-                    style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const urls = [
-                        'https://blog.naver.com/lucid-life/224122000903',
-                        'https://blog.naver.com/lucid-life/224122002862',
-                        'https://blog.naver.com/lucid-life/224122004483'
-                      ];
-                      window.open(urls[index], '_blank', 'noopener,noreferrer');
-                    }}
-                  >
+                  <h3 className="text-xl md:text-2xl mb-3 text-white font-serif-kr hover:text-[#C9A66B] transition-colors">
                     {story.title}
-                  </a>
+                  </h3>
                 </div>
                 <p className="text-base text-white/70 leading-relaxed pl-12 md:pl-14 lg:pl-16">
                   {language === 'ko' ? (
@@ -1550,7 +1548,7 @@ export default function App() {
                     story.excerpt
                   )}
                 </p>
-              </div>
+              </a>
               );
             })}
           </div>
