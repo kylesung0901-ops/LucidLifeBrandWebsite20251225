@@ -1288,9 +1288,19 @@ export default function App() {
             >
               {t.threedays.title}
             </a>
-            <p className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-serif-kr font-semibold mt-4">
+            <a 
+              href="https://blog.naver.com/lucid-life/224121990599"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl md:text-2xl lg:text-3xl text-[#1a237e] font-serif-kr font-semibold mt-4 inline-block touch-manipulation hover:opacity-80 transition-opacity cursor-pointer"
+              style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('https://blog.naver.com/lucid-life/224121990599', '_blank', 'noopener,noreferrer');
+              }}
+            >
               {t.threedays.intro}
-            </p>
+            </a>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
