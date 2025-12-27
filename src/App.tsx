@@ -1460,9 +1460,6 @@ export default function App() {
                 </div>
                 
                 <div className="mb-6 pr-12 md:pr-14 lg:pr-16">
-                  <div className="w-10 h-10 rounded-full bg-[#C9A66B] text-white flex items-center justify-center text-lg mb-4">
-                    ✓
-                  </div>
                   <a
                     href={
                       index === 0 ? 'https://blog.naver.com/lucid-life/224122000903' :
