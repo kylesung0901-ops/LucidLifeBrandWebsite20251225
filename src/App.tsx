@@ -1013,7 +1013,7 @@ export default function App() {
               className="flex-shrink-0"
             >
               <span 
-                className="text-white text-xl md:text-2xl lg:text-3xl font-medium"
+                className="text-white text-base md:text-lg lg:text-xl font-medium"
                 style={{ fontFamily: "'Malgun Gothic', '맑은 고딕', sans-serif" }}
               >
                 {language === 'ko' ? '루시드라이프' : 'Lucid Life'}
