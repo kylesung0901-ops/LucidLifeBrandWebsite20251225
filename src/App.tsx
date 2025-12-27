@@ -1128,6 +1128,15 @@ export default function App() {
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
+        {/* 모바일 버전: 상단 하늘 부분에 로고 */}
+        <div className="md:hidden absolute top-20 left-1/2 transform -translate-x-1/2 z-20">
+          <img 
+            src="/lucid_logo_white_3000.png" 
+            alt="Lucid Life Logo" 
+            className="w-16 h-16 object-contain"
+          />
+        </div>
+        
         <div className="relative z-10 flex flex-col h-screen px-4 md:px-8 lg:px-12 xl:px-16 max-w-6xl mx-auto w-full">
           {/* 하단: 로고 + 텍스트 영역 - 페이지 하단에 위치 */}
           <div className="mt-auto pb-8 md:pb-12 lg:pb-16 xl:pb-20 2xl:pb-24 text-center">
