@@ -1495,7 +1495,17 @@ export default function App() {
                   </a>
                 </div>
                 <p className="text-base text-white/70 leading-relaxed pl-12 md:pl-14 lg:pl-16">
-                  {story.excerpt}
+                  {language === 'ko' ? (
+                    index === 0 ? (
+                      <>한 사람의 마지막을 함께<br />지나온 기록</>
+                    ) : index === 1 ? (
+                      <>알아두면 흔들리지 않는<br />최소한의 문법</>
+                    ) : (
+                      <>삶과 죽음 사이에서 길어 올린<br />생각들</>
+                    )
+                  ) : (
+                    story.excerpt
+                  )}
                 </p>
               </div>
               );
