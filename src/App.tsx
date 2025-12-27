@@ -1156,12 +1156,12 @@ export default function App() {
               <span className="block md:hidden">
                 {language === 'ko' ? (
                   <>
-                    <span className="block mb-3 md:mb-4">모든 이별은 서툴다</span>
+                    <span className="block mb-6 md:mb-4">모든 이별은 서툴다</span>
                     <span className="block">우리는 그 곁에 선다</span>
                   </>
                 ) : (
                   <>
-                    <span className="block mb-3 md:mb-4">Every farewell is clumsy</span>
+                    <span className="block mb-6 md:mb-4">Every farewell is clumsy</span>
                     <span className="block">We stand by their side</span>
                   </>
                 )}
@@ -1182,7 +1182,7 @@ export default function App() {
             </h1>
             
             {/* 서브 타이틀 */}
-            <p className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-white/90 font-serif-kr mb-3 md:mb-4 lg:mb-6 xl:mb-8 px-2 md:px-4">
+            <p className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-white/90 font-serif-kr mb-6 md:mb-4 lg:mb-6 xl:mb-8 px-2 md:px-4">
               {t.hero.subtitle}
             </p>
             
