@@ -1625,7 +1625,6 @@ export default function App() {
             >
               {language === 'ko' ? '이별은 왜 하루로 끝나지 않을까 →' : 'Why doesn\'t farewell end in a day →'}
             </a>
-            <div className="mt-4 w-12 h-0.5 bg-[#1a237e] mx-auto"></div>
           </div>
         </div>
       </section>
