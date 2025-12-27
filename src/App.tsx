@@ -123,11 +123,11 @@ const translations = {
       },
       compareBtn: '전체 상품 비교하기',
       learnMore: '미국식 장례 알아보기 >',
-      learnMore2: '미국식 장례는 무엇이 다른가 ->',
+      learnMore2: '미국식 장례는 무엇이 다른가 →',
     },
     threedays: {
       title: '사흘동안',
-      intro: '사흘의 흐름을, 차분히 살펴보세요 ->',
+      intro: '사흘의 흐름을, 차분히 살펴보세요 →',
       day1: {
         title: '1일차',
         desc: '임종 및 빈소 마련',
