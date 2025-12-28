@@ -1120,41 +1120,40 @@ export default function App() {
       )}
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex flex-col bg-[#141C2E]">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-[#141C2E]">
         <div 
-          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/photo_2025-12-24_21-32-13.jpg')`,
-            zIndex: -2
+            backgroundImage: `url('/photo_2025-12-24_21-32-13.jpg')`
           }}
         />
-        <div className="fixed inset-0 bg-[#141C2E]/40" style={{ zIndex: -1 }} />
+        <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="flex flex-col min-h-screen px-4 max-w-6xl mx-auto w-full">
-          <div className="flex-grow"></div>
-          
-          <div className="pb-20 text-center">
-            <div className="flex justify-center mb-12">
-              <img 
-                src="/lucid_logo_white_3000.png" 
-                alt="Lucid Life Logo" 
-                className="w-20 h-20"
-              />
-            </div>
-            
-            <h1 className="text-5xl text-white font-serif-kr font-semibold mb-8">
-              <span className="block mb-4">{language === 'ko' ? t.hero.title : t.hero.title}</span>
-              <span className="block">{language === 'ko' ? t.hero.titleLine2 : t.hero.titleLine2}</span>
-            </h1>
-            
-            <p className="text-2xl text-white font-serif-kr mb-8">
-              {t.hero.subtitle}
-            </p>
-            
-            <p className="text-xl text-[#C9A66B]">
-              {t.hero.signature}
-            </p>
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 py-20 text-center">
+          {/* 로고 */}
+          <div className="mb-16 md:mb-20">
+            <img 
+              src="/lucid_logo_white_3000.png" 
+              alt="Lucid Life Logo" 
+              className="w-16 h-16 md:w-20 md:h-20 mx-auto"
+            />
           </div>
+          
+          {/* 메인 타이틀 */}
+          <h1 className="text-4xl md:text-6xl text-white font-serif-kr font-semibold mb-10 md:mb-12">
+            <span className="block mb-3 md:mb-4">{language === 'ko' ? t.hero.title : t.hero.title}</span>
+            <span className="block">{language === 'ko' ? t.hero.titleLine2 : t.hero.titleLine2}</span>
+          </h1>
+          
+          {/* 서브 타이틀 */}
+          <p className="text-xl md:text-2xl text-white font-serif-kr mb-10 md:mb-12">
+            {t.hero.subtitle}
+          </p>
+          
+          {/* 시그니처 */}
+          <p className="text-lg md:text-xl text-[#C9A66B]">
+            {t.hero.signature}
+          </p>
         </div>
       </section>
 
