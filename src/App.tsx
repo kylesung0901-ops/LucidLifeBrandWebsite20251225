@@ -1120,59 +1120,47 @@ export default function App() {
       )}
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex flex-col overflow-hidden bg-[#141C2E]">
+      <section id="hero" className="min-h-screen flex flex-col bg-[#141C2E]">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/photo_2025-12-24_21-32-13.jpg')`
+            backgroundImage: `url('/photo_2025-12-24_21-32-13.jpg')`,
+            zIndex: -2
           }}
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-[#141C2E]/40" />
+        <div className="fixed inset-0 bg-[#141C2E]/40" style={{ zIndex: -1 }} />
         
-        {/* 모바일 버전: 상단 하늘 부분에 로고 */}
-        <div className="md:hidden absolute top-[140px] left-1/2 transform -translate-x-1/2 z-20">
-          <img 
-            src="/lucid_logo_white_3000.png" 
-            alt="Lucid Life Logo" 
-            className="w-20 h-20 object-contain"
-          />
-        </div>
-        
-        <div className="relative z-10 flex flex-col h-screen px-4 md:px-8 lg:px-12 xl:px-16 max-w-6xl mx-auto w-full">
-          {/* 하단: 로고 + 텍스트 영역 - 페이지 하단에 위치 */}
-          <div className="mt-auto pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28 text-center">
-            {/* PC 버전 로고 - 메인 텍스트 바로 위에 위치 */}
-            <div className="hidden md:flex justify-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-16">
+        <div className="flex flex-col min-h-screen px-4 max-w-6xl mx-auto w-full">
+          <div className="flex-grow"></div>
+          
+          <div className="pb-20 text-center">
+            <div className="flex justify-center mb-12">
               <img 
                 src="/lucid_logo_white_3000.png" 
                 alt="Lucid Life Logo" 
-                className="w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 xl:w-24 xl:h-24 2xl:w-28 2xl:h-28 object-contain"
+                className="w-20 h-20 object-contain"
               />
             </div>
             
-            {/* 메인 타이틀 */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-white leading-tight md:leading-snug lg:leading-relaxed font-serif-kr font-semibold mb-6 md:mb-8 lg:mb-10 xl:mb-12 px-2 md:px-4">
+            <h1 className="text-5xl text-white font-serif-kr font-semibold mb-8">
               {language === 'ko' ? (
                 <>
-                  <span className="block mb-3 md:mb-4 lg:mb-5 xl:mb-6">{t.hero.title}</span>
+                  <span className="block mb-4">{t.hero.title}</span>
                   <span className="block">{t.hero.titleLine2}</span>
                 </>
               ) : (
                 <>
-                  <span className="block mb-3 md:mb-4 lg:mb-5 xl:mb-6">{t.hero.title}</span>
+                  <span className="block mb-4">{t.hero.title}</span>
                   <span className="block">{t.hero.titleLine2}</span>
                 </>
               )}
             </h1>
             
-            {/* 서브 타이틀 */}
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-white/90 font-serif-kr mb-6 md:mb-8 lg:mb-10 xl:mb-12 px-2 md:px-4">
+            <p className="text-2xl text-white/90 font-serif-kr mb-8">
               {t.hero.subtitle}
             </p>
             
-            {/* 시그니처 */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#C9A66B] tracking-wider px-2 md:px-4">
+            <p className="text-xl text-[#C9A66B]">
               {t.hero.signature}
             </p>
           </div>
