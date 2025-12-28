@@ -46,7 +46,7 @@ export function Hero() {
       />
       
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 px-6 max-w-5xl mx-auto text-center flex flex-col items-center gap-6 sm:gap-7 md:gap-8 lg:gap-9">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,12 +55,12 @@ export function Hero() {
           <motion.div
             animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="inline-block mb-6"
+            className="inline-block"
           >
             <span className="text-[#D4AF37] tracking-widest uppercase">Since 2010</span>
           </motion.div>
           
-          <h1 className="text-white mb-4">
+          <h1 className="text-white leading-tight">
             Celebrating Life, Honoring Afterlife
           </h1>
         </motion.div>
@@ -69,7 +69,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-          className="text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-white/90 max-w-2xl mx-auto leading-relaxed"
         >
           Thoughtfully Curated Funeral & Memorial Services
         </motion.p>
