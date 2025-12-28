@@ -1138,25 +1138,16 @@ export default function App() {
               <img 
                 src="/lucid_logo_white_3000.png" 
                 alt="Lucid Life Logo" 
-                className="w-20 h-20 object-contain"
+                className="w-20 h-20"
               />
             </div>
             
             <h1 className="text-5xl text-white font-serif-kr font-semibold mb-8">
-              {language === 'ko' ? (
-                <>
-                  <span className="block mb-4">{t.hero.title}</span>
-                  <span className="block">{t.hero.titleLine2}</span>
-                </>
-              ) : (
-                <>
-                  <span className="block mb-4">{t.hero.title}</span>
-                  <span className="block">{t.hero.titleLine2}</span>
-                </>
-              )}
+              <span className="block mb-4">{language === 'ko' ? t.hero.title : t.hero.title}</span>
+              <span className="block">{language === 'ko' ? t.hero.titleLine2 : t.hero.titleLine2}</span>
             </h1>
             
-            <p className="text-2xl text-white/90 font-serif-kr mb-8">
+            <p className="text-2xl text-white font-serif-kr mb-8">
               {t.hero.subtitle}
             </p>
             
