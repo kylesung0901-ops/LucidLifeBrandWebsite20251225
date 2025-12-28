@@ -1129,24 +1129,22 @@ export default function App() {
         />
         <div className="absolute inset-0 bg-[#141C2E]/40" />
         
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 text-center">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 text-center flex flex-col items-center gap-6 sm:gap-7 md:gap-8 lg:gap-9">
           {/* 로고 */}
-          <div className="mb-12 sm:mb-14 md:mb-16 lg:mb-20">
-            <img 
-              src="/lucid_logo_white_3000.png" 
-              alt="Lucid Life Logo" 
-              className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto"
-            />
-          </div>
+          <img 
+            src="/lucid_logo_white_3000.png" 
+            alt="Lucid Life Logo" 
+            className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+          />
           
           {/* 메인 타이틀 */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-serif-kr font-semibold mb-8 sm:mb-9 md:mb-10 lg:mb-12">
-            <span className="block mb-2 sm:mb-3 md:mb-4">{language === 'ko' ? t.hero.title : t.hero.title}</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-serif-kr font-semibold leading-tight">
+            <span className="block">{language === 'ko' ? t.hero.title : t.hero.title}</span>
             <span className="block">{language === 'ko' ? t.hero.titleLine2 : t.hero.titleLine2}</span>
           </h1>
           
           {/* 서브 타이틀 */}
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-serif-kr mb-8 sm:mb-9 md:mb-10 lg:mb-12">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-serif-kr leading-relaxed">
             {t.hero.subtitle}
           </p>
           
