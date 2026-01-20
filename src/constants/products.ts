@@ -1,0 +1,218 @@
+import { Language } from './translations';
+
+export interface ProductItem {
+    label: string;
+    value: string;
+}
+
+export interface ProductDetail {
+    id: string;
+    name: string;
+    tagline: string;
+    price: number;
+    description: string;
+    items: ProductItem[];
+}
+
+export const getProductDetails = (lang: Language): Record<string, ProductDetail> => {
+    if (lang === 'en') {
+        return {
+            family: {
+                id: 'family',
+                name: 'Family Funeral · No Wake',
+                tagline: 'Quietly, family only',
+                price: 150,
+                description: 'A time for only the closest people to remain quietly and focus on farewell.',
+                items: [
+                    { label: 'Casket for the deceased', value: 'Paulownia wood standard casket' },
+                    { label: 'Last clothes (shroud)', value: 'Provided' },
+                    { label: 'Deceased\'s items', value: 'Alcohol, cotton, tying straps, etc.' },
+                    { label: 'Urn for eternal rest', value: 'Standard urn' },
+                    { label: 'Men\'s mourning attire', value: 'Total 5 sets' },
+                    { label: 'Women\'s mourning attire', value: '(Men and women combined)' },
+                    { label: 'Wake items', value: 'Incense, candles, guestbook, ancestral tablet' },
+                    { label: 'Floral tribute', value: '—' },
+                    { label: 'Funeral director', value: '1 person + 1 person (embalming)' },
+                    { label: 'Ceremonial assistant', value: '—' },
+                    { label: 'Limousine', value: 'Choose 1 / 150km' },
+                    { label: 'Bus', value: '(Limousine or bus)' },
+                    { label: 'Deceased transfer', value: 'Free within jurisdiction' },
+                    { label: 'Notification service', value: 'Mobile obituary, condolence reply' },
+                    { label: 'Additional service', value: 'Burial site arrangement' },
+                ],
+            },
+            practical: {
+                id: 'practical',
+                name: 'Practical Funeral',
+                tagline: 'Faithful to basics',
+                price: 290,
+                description: 'A realistic choice that reduces unnecessary burden and doesn\'t miss the basics of a funeral.',
+                items: [
+                    { label: 'Casket for the deceased', value: 'Paulownia wood standard casket' },
+                    { label: 'Last clothes (shroud)', value: 'Provided' },
+                    { label: 'Deceased\'s items', value: 'Alcohol, cotton, tying straps, etc.' },
+                    { label: 'Urn for eternal rest', value: 'Premium urn' },
+                    { label: 'Men\'s mourning attire', value: '5 sets' },
+                    { label: 'Women\'s mourning attire', value: '5 sets' },
+                    { label: 'Wake items', value: 'Incense, candles, guestbook, ancestral tablet' },
+                    { label: 'Floral tribute', value: '30 flowers' },
+                    { label: 'Funeral director', value: '1 person + 1 person (embalming)' },
+                    { label: 'Ceremonial assistant', value: '4 people (8 hours)' },
+                    { label: 'Limousine', value: 'Choose 1 / 150km' },
+                    { label: 'Bus', value: '(Limousine or bus)' },
+                    { label: 'Deceased transfer', value: 'Free within jurisdiction' },
+                    { label: 'Notification service', value: 'Mobile obituary, condolence reply' },
+                    { label: 'Additional service', value: 'Burial site arrangement' },
+                ],
+            },
+            standard: {
+                id: 'standard',
+                name: 'Standard Funeral',
+                tagline: 'Sufficiently, with care',
+                price: 360,
+                description: 'The basic funeral chosen by the most people, with balance and dignity.',
+                items: [
+                    { label: 'Casket for the deceased', value: 'Paulownia wood standard casket' },
+                    { label: 'Last clothes (shroud)', value: 'Provided' },
+                    { label: 'Deceased\'s items', value: 'Alcohol, cotton, tying straps, etc.' },
+                    { label: 'Urn for eternal rest', value: 'Standard urn' },
+                    { label: 'Men\'s mourning attire', value: '7 sets' },
+                    { label: 'Women\'s mourning attire', value: '7 sets' },
+                    { label: 'Wake items', value: 'Incense, candles, guestbook, ancestral tablet' },
+                    { label: 'Floral tribute', value: '30 flowers' },
+                    { label: 'Funeral director', value: '1 person + 1 person (embalming)' },
+                    { label: 'Ceremonial assistant', value: '6 people (8 hours)' },
+                    { label: 'Limousine', value: '150km' },
+                    { label: 'Bus', value: '150km' },
+                    { label: 'Deceased transfer', value: 'Free within jurisdiction' },
+                    { label: 'Notification service', value: 'Mobile obituary, condolence reply' },
+                    { label: 'Additional service', value: 'Burial site arrangement' },
+                ],
+            },
+            premium: {
+                id: 'premium',
+                name: 'Burial · American Style',
+                tagline: 'Perfect to the last',
+                price: 450,
+                description: 'A customized memorial service designed from the method to the space, centered on one person\'s life.',
+                items: [
+                    { label: 'Casket for the deceased', value: 'Paulownia wood premium casket' },
+                    { label: 'Last clothes (shroud)', value: 'Provided' },
+                    { label: 'Deceased\'s items', value: 'Alcohol, cotton, tying straps, etc.' },
+                    { label: 'Urn for eternal rest', value: 'Premium urn' },
+                    { label: 'Men\'s mourning attire', value: '9 sets' },
+                    { label: 'Women\'s mourning attire', value: '9 sets' },
+                    { label: 'Wake items', value: 'Incense, candles, guestbook, ancestral tablet' },
+                    { label: 'Floral tribute', value: '50 flowers' },
+                    { label: 'Funeral director', value: '1 person + 1 person (embalming)' },
+                    { label: 'Ceremonial assistant', value: '8 people (8 hours)' },
+                    { label: 'Limousine', value: '400km' },
+                    { label: 'Bus', value: 'Nationwide free' },
+                    { label: 'Deceased transfer', value: 'Free within jurisdiction' },
+                    { label: 'Notification service', value: 'Mobile obituary, condolence reply' },
+                    { label: 'Additional service', value: 'Burial site arrangement' },
+                ],
+            },
+        };
+    }
+
+    // Korean (default)
+    return {
+        family: {
+            id: 'family',
+            name: '가족장 · 무빈소',
+            tagline: '조용히, 가족만',
+            price: 150,
+            description: '조용히, 가장 가까운 사람들만 남아 이별에 집중하는 시간.',
+            items: [
+                { label: '고인을 모시는 관', value: '오동나무 일반관' },
+                { label: '마지막 옷 (수의)', value: '제공' },
+                { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
+                { label: '영면함 (유골함)', value: '일반함' },
+                { label: '남자 상복', value: '총 5벌' },
+                { label: '여자 상복', value: '(남녀 합계)' },
+                { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
+                { label: '헌화', value: '—' },
+                { label: '장례지도사', value: '1명 + 1명 (입관)' },
+                { label: '의전 도우미', value: '—' },
+                { label: '리무진', value: '택1 / 150km' },
+                { label: '버스', value: '(리무진 또는 버스)' },
+                { label: '고인 이송', value: '관내 무료' },
+                { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
+                { label: '추가 서비스', value: '장지 알선' },
+            ],
+        },
+        practical: {
+            id: 'practical',
+            name: '실용장',
+            tagline: '기본에 충실하게',
+            price: 290,
+            description: '불필요한 부담은 덜고, 장례의 기본은 놓치지 않은 현실적인 선택.',
+            items: [
+                { label: '고인을 모시는 관', value: '오동나무 일반관' },
+                { label: '마지막 옷 (수의)', value: '제공' },
+                { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
+                { label: '영면함 (유골함)', value: '고급함' },
+                { label: '남자 상복', value: '5벌' },
+                { label: '여자 상복', value: '5벌' },
+                { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
+                { label: '헌화', value: '30송이' },
+                { label: '장례지도사', value: '1명 + 1명 (입관)' },
+                { label: '의전 도우미', value: '4명 (8시간)' },
+                { label: '리무진', value: '택1 / 150km' },
+                { label: '버스', value: '(리무진 또는 버스)' },
+                { label: '고인 이송', value: '관내 무료' },
+                { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
+                { label: '추가 서비스', value: '장지 알선' },
+            ],
+        },
+        standard: {
+            id: 'standard',
+            name: '표준장',
+            tagline: '충분히, 정성껏',
+            price: 360,
+            description: '가장 많은 이들이 선택한, 균형과 품위를 갖춘 기본 장례.',
+            items: [
+                { label: '고인을 모시는 관', value: '오동나무 일반관' },
+                { label: '마지막 옷 (수의)', value: '제공' },
+                { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
+                { label: '영면함 (유골함)', value: '일반함' },
+                { label: '남자 상복', value: '7벌' },
+                { label: '여자 상복', value: '7벌' },
+                { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
+                { label: '헌화', value: '30송이' },
+                { label: '장례지도사', value: '1명 + 1명 (입관)' },
+                { label: '의전 도우미', value: '6명 (8시간)' },
+                { label: '리무진', value: '150km' },
+                { label: '버스', value: '150km' },
+                { label: '고인 이송', value: '관내 무료' },
+                { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
+                { label: '추가 서비스', value: '장지 알선' },
+            ],
+        },
+        premium: {
+            id: 'premium',
+            name: '매장 · 미국식장',
+            tagline: '마지막을 완벽하게',
+            price: 450,
+            description: '한 사람의 삶을 중심에 두고, 방식부터 공간까지 설계하는 맞춤형 추모 의식.',
+            items: [
+                { label: '고인을 모시는 관', value: '오동나무 고급관' },
+                { label: '마지막 옷 (수의)', value: '제공' },
+                { label: '고인 용품', value: '알코올, 탈지면, 결관바 등' },
+                { label: '영면함 (유골함)', value: '고급함' },
+                { label: '남자 상복', value: '9벌' },
+                { label: '여자 상복', value: '9벌' },
+                { label: '빈소 용품', value: '향, 초, 방명록, 위패' },
+                { label: '헌화', value: '50송이' },
+                { label: '장례지도사', value: '1명 + 1명 (입관)' },
+                { label: '의전 도우미', value: '8명 (8시간)' },
+                { label: '리무진', value: '400km' },
+                { label: '버스', value: '전국 무료' },
+                { label: '고인 이송', value: '관내 무료' },
+                { label: '알림 서비스', value: '모바일 부고, 조문 답례' },
+                { label: '추가 서비스', value: '장지 알선' },
+            ],
+        },
+    };
+};
