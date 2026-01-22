@@ -204,7 +204,7 @@ export default function App() {
           <img
             src="/lucid_logo_white_3000.png"
             alt="Lucid Life Logo"
-            className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+            className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 transform -translate-y-[20px]"
           />
 
           {/* 메인 타이틀 */}
