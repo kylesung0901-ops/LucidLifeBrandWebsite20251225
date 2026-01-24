@@ -66,11 +66,11 @@ export default function App() {
   };
 
   const openGoogleForm = () => {
-    window.open('https://forms.gle/tcBbh8kax7HL15ZeA', '_blank');
+    window.open('https://naver.me/FUQCJruc', '_blank');
   };
 
   const openMembershipForm = () => {
-    window.open('https://docs.google.com/forms/d/e/1FAIpQLSfS4JVmbSvHNcDjZg79VutuXk5dDb9A2twuui8xRyf9dA610Q/viewform', '_blank');
+    window.open('https://naver.me/FUQCJruc', '_blank');
   };
 
   return (
@@ -112,7 +112,7 @@ export default function App() {
 
               {/* 카카오톡 아이콘 */}
               <a
-                href="http://pf.kakao.com/_sAKxbn/chat"
+                href="https://open.kakao.com/me/lucidlife"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center hover:opacity-80 transition-opacity"
@@ -991,7 +991,7 @@ export default function App() {
           <Phone className="w-5 h-5 md:w-7 md:h-7 text-white" />
         </a>
         <a
-          href="http://pf.kakao.com/_sAKxbn/chat"
+          href="https://open.kakao.com/me/lucidlife"
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden shadow-2xl transition-all transform hover:scale-110"
