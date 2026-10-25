@@ -867,7 +867,7 @@ export default function App() {
           {/* 문의 정보 */}
           <div className="text-center mb-4 md:mb-5">
             <p className="text-xs md:text-sm lg:text-base text-red-300 font-medium whitespace-nowrap">
-              {t.common.contact_label} : 010-22254-4004 | lucidlife@kakao.com
+              {t.common.contact_label} : 010-2254-4004 | lucidlife@kakao.com
             </p>
           </div>
 
