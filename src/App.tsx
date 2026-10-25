@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Globe, Phone, MessageSquare, Heart, Flower2, MapPin, BookOpen, User, FileText, Edit3, Youtube, Instagram } from 'lucide-react';
 // import logoImage from './assets/ed9c4979525d1d92a2e2ee261a14686c632bc8de.png';
 const logoImage = '/logo.png';
-const ceoImage = '/KakaoTalk_20251225_191332983.png';
+const ceoImage = '/homepage_dowon.png';
 
 import { Language, translations } from './constants/translations';
 import { ProductDetail, getProductDetails } from './constants/products';
