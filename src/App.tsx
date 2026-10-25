@@ -96,7 +96,7 @@ export default function App() {
             <div className="flex items-center gap-3 md:gap-4">
               {/* 전화기 아이콘 */}
               <a
-                href="tel:01021164114"
+                href="tel:01022544004"
                 className="flex items-center text-[#C9A66B] hover:text-[#C9A66B]/80 transition-colors"
               >
                 <Phone className="w-5 h-5 md:w-6 md:h-6" />
@@ -104,7 +104,7 @@ export default function App() {
 
               {/* 긴급상담 텍스트 - Desktop */}
               <a
-                href="tel:01021164114"
+                href="tel:01022544004"
                 className="hidden md:flex items-center text-[#C9A66B] text-sm md:text-base hover:text-[#C9A66B]/80 transition-colors"
               >
                 {t.gnb.emergency}
@@ -867,7 +867,7 @@ export default function App() {
           {/* 문의 정보 */}
           <div className="text-center mb-4 md:mb-5">
             <p className="text-xs md:text-sm lg:text-base text-red-300 font-medium whitespace-nowrap">
-              {t.common.contact_label} : 010-2116-4114 | lucidlife@kakao.com
+              {t.common.contact_label} : 010-22254-4004 | lucidlife@kakao.com
             </p>
           </div>
 
@@ -984,7 +984,7 @@ export default function App() {
       {/* Floating Buttons */}
       <div className="fixed bottom-6 right-4 md:bottom-8 md:right-8 flex flex-col gap-3 md:gap-4 z-40">
         <a
-          href="tel:010-2116-4114"
+          href="tel:010-2254-4004"
           className="w-12 h-12 md:w-16 md:h-16 bg-[#C9A66B] hover:bg-[#C9A66B]/80 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110"
           title={language === 'ko' ? '전화' : 'Call'}
         >
