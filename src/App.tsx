@@ -882,7 +882,7 @@ export default function App() {
           {/* 회사 정보 - 가로 배치 */}
           <div className="text-center mb-4 md:mb-5">
             <p className="text-xs md:text-sm lg:text-base text-white/80 flex flex-wrap items-center justify-center gap-1 md:gap-2">
-              <span>{language === 'ko' ? '루시드라이프 대표 : 서동원' : 'Lucid Life CEO: Seo Dongwon'}</span>
+              <span>{language === 'ko' ? '대표 : 서동원' : 'Lucid Life CEO: Seo Dongwon'}</span>
               <span className="text-white/40">|</span>
               <span>{language === 'ko' ? '사업자번호 : 123-92-47792' : 'Business No.: 123-92-47792'}</span>
               <span className="text-white/40">|</span>
