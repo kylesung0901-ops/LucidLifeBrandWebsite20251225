@@ -748,10 +748,18 @@ export default function App() {
                 <p>{t.ceo.quoteLine3}</p>
               </blockquote>
 
-              <div className="mb-8 md:mb-10">
-                <p className="text-2xl md:text-3xl lg:text-4xl text-[#C9A66B] mb-2">{t.ceo.name}</p>
-                <p className="text-lg md:text-xl lg:text-2xl text-white/70">{t.ceo.title}</p>
-              </div>
+              
+<div className="mb-8 md:mb-10">
+  <p className="text-2xl md:text-3xl lg:text-4xl text-[#C9A66B] mb-2">
+    도원
+  </p>
+  <div className="text-lg md:text-xl text-white/70 leading-relaxed">
+    <p>루시드라이프 대표</p>
+    <p>국가자격 장례지도사</p>
+    <p>ABH 인증 최면심리상담사</p>
+  </div>
+</div>
+
 
               <button
                 onClick={openGoogleForm}
