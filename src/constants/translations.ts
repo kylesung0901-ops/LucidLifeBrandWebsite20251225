@@ -196,7 +196,7 @@ export const translations = {
             business_number: '768-81-03099',
             mail_order: '제 2024-서울송파-3850 호',
             email: 'lucid_life@naver.com',
-            tel: '010-2116-4114',
+            tel: '010-2254-4004',
             privacyBtn: '개인정보처리방침',
             termsBtn: '이용약관',
             copyright: '© 2024 Lucid Life. All rights reserved.',
@@ -219,7 +219,7 @@ export const translations = {
             { label: '추가 서비스', values: ['장지 알선', '장지 알선', '장지 알선', '장지 알선'] },
         ],
         gnb: {
-            emergency: '긴급상담 010-2116-4114',
+            emergency: '긴급상담 010-2254-4004',
             cta: '루시드 함께하기',
         },
         privacyPolicy: {
@@ -295,7 +295,7 @@ export const translations = {
             ○ 개인정보보호담당자 / 개인정보보호책임자
             성명 : 서동원
             소속 : 루시드라이프 대표
-            전화번호 : 010-5320-1237
+            전화번호 : 010-2254-4004
             이메일 : neen@kakao.com
             ○ 귀하께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보보호책임자 혹은 담당부서로 신고하실 수 있습니다.
             ○ 회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.
@@ -561,7 +561,7 @@ export const translations = {
             business_number: '768-81-03099',
             mail_order: 'No. 2024-Seoul Songpa-3850',
             email: 'lucid_life@naver.com',
-            tel: '+82 10-2116-4114',
+            tel: '+82 10-2254-4004',
             privacyBtn: 'Privacy Policy',
             termsBtn: 'Terms of Service',
             copyright: '© 2024 Lucid Life. All rights reserved.',
