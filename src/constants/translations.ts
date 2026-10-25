@@ -584,7 +584,7 @@ export const translations = {
             { label: 'Additional service', values: ['Burial site arrangement', 'Burial site arrangement', 'Burial site arrangement', 'Burial site arrangement'] },
         ],
         gnb: {
-            emergency: 'Emergency +82 10-2116-4114',
+            emergency: 'Emergency +82 10-2254-4004',
             cta: 'Join Lucid Life',
         },
         privacyPolicy: {
